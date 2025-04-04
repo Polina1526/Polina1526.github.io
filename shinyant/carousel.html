@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.carousel API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.carousel</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.carousel.carousel"><code class="name flex">
+<span>def <span class="ident">carousel</span></span>(<span>id: str,<br>items: list[typing.Any] | None = None,<br>arrows: bool = False,<br>autoplay: bool | dict[str, bool] = False,<br>autoplaySpeed: int = 3000,<br>adaptiveHeight: bool = False,<br>dotPosition: Literal['top', 'bottom', 'left', 'right'] = 'bottom',<br>dots: bool = True,<br>draggable: bool = False,<br>fade: bool = False,<br>infinite: bool = True,<br>speed: int = 500,<br>waitForAnimate: bool = False,<br>design: <a title="shinyant.carousel.CarouselDesignTokens" href="#shinyant.carousel.CarouselDesignTokens">CarouselDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.carousel.CarouselGlobalTokens" href="#shinyant.carousel.CarouselGlobalTokens">CarouselGlobalTokens</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def carousel(
+    id: str,
+    items: list[Any] | None = None,
+    arrows: bool = False,
+    autoplay: bool | dict[str, bool] = False,
+    autoplaySpeed: int = 3000,
+    adaptiveHeight: bool = False,
+    dotPosition: DotPositionTypes = &#34;bottom&#34;,
+    dots: bool = True,
+    draggable: bool = False,
+    fade: bool = False,
+    infinite: bool = True,
+    speed: int = 500,
+    waitForAnimate: bool = False,
+    design: CarouselDesignTokens | None = None,
+    globalDesign: CarouselGlobalTokens | None = None,
+):
+    &#34;&#34;&#34;
+    Creates a carousel component based on ant design react Carousel component
+
+    Attributes:
+        id (str): name of the component in the application
+        items (list[Any]): list of components to display on carousel slides. Defauls to None
+        arrows (bool): Whether to show switch arrows. Defauls to False
+        autoplay (bool | dict): Whether to scroll automatically, you can specify autoplay={&#39;dotDuration&#39;: True} to display the progress bar. Defauls to False
+        autoplaySpeed (int): Delay between each auto scroll (in milliseconds). Defauls to 3000
+        adaptiveHeight (bool): Adjust the slide&#39;s height automatically. Defauls to False
+        dotPosition (str): The position of the dots, which can be one of &#39;top&#39;, &#39;bottom&#39;, &#39;left&#39;, &#39;right&#39;. Defauls to &#39;bottom&#39;
+        dots (bool): Whether to show the dots at the bottom of the gallery. Defauls to True
+        draggable (bool): Enable scrollable via dragging on desktop. Defauls to False
+        fade (bool): Whether to use fade transition. Defauls to False
+        infinite (bool): Infinitely wrap around contents. Defauls to True
+        speed (int): Animation speed in milliseconds. Defauls to 500
+        waitForAnimate (bool): Whether to wait for the animation when switching. Defauls to CarouselDesignTokens
+        design (CarouselDesignTokens): Design of carousel (CarouselDesignTokens class object). Defauls to CarouselDesignTokens
+        globalDesign (CarouselGlobalTokens): Global design of carousel (CarouselGlobalTokens class object). Defauls to CarouselGlobalTokens
+    &#34;&#34;&#34;
+    if design is None:
+        design = CarouselDesignTokens()
+    if globalDesign is None:
+        globalDesign = CarouselGlobalTokens()
+
+    return Carousel(
+        id=id,
+        items=items,
+        arrows=arrows,
+        autoplay=autoplay,
+        autoplaySpeed=autoplaySpeed,
+        adaptiveHeight=adaptiveHeight,
+        dotPosition=dotPosition,
+        dots=dots,
+        draggable=draggable,
+        fade=fade,
+        infinite=infinite,
+        speed=speed,
+        waitForAnimate=waitForAnimate,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a carousel component based on ant design react Carousel component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>items</code></strong> :&ensp;<code>list[Any]</code></dt>
+<dd>list of components to display on carousel slides. Defauls to None</dd>
+<dt><strong><code>arrows</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show switch arrows. Defauls to False</dd>
+<dt><strong><code>autoplay</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Whether to scroll automatically, you can specify autoplay={'dotDuration': True} to display the progress bar. Defauls to False</dd>
+<dt><strong><code>autoplaySpeed</code></strong> :&ensp;<code>int</code></dt>
+<dd>Delay between each auto scroll (in milliseconds). Defauls to 3000</dd>
+<dt><strong><code>adaptiveHeight</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Adjust the slide's height automatically. Defauls to False</dd>
+<dt><strong><code>dotPosition</code></strong> :&ensp;<code>str</code></dt>
+<dd>The position of the dots, which can be one of 'top', 'bottom', 'left', 'right'. Defauls to 'bottom'</dd>
+<dt><strong><code>dots</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show the dots at the bottom of the gallery. Defauls to True</dd>
+<dt><strong><code>draggable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Enable scrollable via dragging on desktop. Defauls to False</dd>
+<dt><strong><code>fade</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to use fade transition. Defauls to False</dd>
+<dt><strong><code>infinite</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Infinitely wrap around contents. Defauls to True</dd>
+<dt><strong><code>speed</code></strong> :&ensp;<code>int</code></dt>
+<dd>Animation speed in milliseconds. Defauls to 500</dd>
+<dt><strong><code>waitForAnimate</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to wait for the animation when switching. Defauls to CarouselDesignTokens</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code><a title="shinyant.carousel.CarouselDesignTokens" href="#shinyant.carousel.CarouselDesignTokens">CarouselDesignTokens</a></code></dt>
+<dd>Design of carousel (CarouselDesignTokens class object). Defauls to CarouselDesignTokens</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code><a title="shinyant.carousel.CarouselGlobalTokens" href="#shinyant.carousel.CarouselGlobalTokens">CarouselGlobalTokens</a></code></dt>
+<dd>Global design of carousel (CarouselGlobalTokens class object). Defauls to CarouselGlobalTokens</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.carousel.Carousel"><code class="flex name class">
+<span>class <span class="ident">Carousel</span></span>
+<span>(</span><span>id: str,<br>items: list[typing.Any] | None,<br>arrows: bool,<br>autoplay: bool | dict[str, bool] | None,<br>autoplaySpeed: int,<br>adaptiveHeight: bool,<br>dotPosition: Literal['top', 'bottom', 'left', 'right'] | None,<br>dots: bool | dict[str, str] | None,<br>draggable: bool,<br>fade: bool,<br>infinite: bool,<br>speed: int,<br>waitForAnimate: bool,<br>design: <a title="shinyant.carousel.CarouselDesignTokens" href="#shinyant.carousel.CarouselDesignTokens">CarouselDesignTokens</a>,<br>globalDesign: <a title="shinyant.carousel.CarouselGlobalTokens" href="#shinyant.carousel.CarouselGlobalTokens">CarouselGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Carousel:
+    &#34;&#34;&#34;
+    Main class, stores all carousels and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __carousels: ClassVar[dict[str, &#34;Carousel&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        items: list[Any] | None,
+        arrows: bool,
+        autoplay: bool | dict[str, bool] | None,
+        autoplaySpeed: int,
+        adaptiveHeight: bool,
+        dotPosition: DotPositionTypes | None,
+        dots: bool | dict[str, str] | None,
+        draggable: bool,
+        fade: bool,
+        infinite: bool,
+        speed: int,
+        waitForAnimate: bool,
+        design: CarouselDesignTokens,
+        globalDesign: CarouselGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.items = items
+        self.arrows = arrows
+        self.autoplay = autoplay
+        self.autoplaySpeed = autoplaySpeed
+        self.adaptiveHeight = adaptiveHeight
+        self.dotPosition = dotPosition
+        self.dots = dots
+        self.draggable = draggable
+        self.fade = fade
+        self.infinite = infinite
+        self.speed = speed
+        self.waitForAnimate = waitForAnimate
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Carousel.__carousels:
+            raise KeyError(&#34;&#39;Carousel&#39; object with this id already exists&#34;)
+        Carousel.__carousels[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Carousel&#34;:
+        return Carousel.__carousels[resolve_id(id)]
+
+    @classmethod
+    async def change_items(cls, id: str, items: list[Tag] | None) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].items = items
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_arrows(cls, id: str, arrows: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].arrows = arrows
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_autoplay(cls, id: str, autoplay: bool | dict[str, bool] | None) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].autoplay = autoplay
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_autoplaySpeed(cls, id: str, autoplaySpeed: int) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].autoplaySpeed = autoplaySpeed
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_adaptiveHeight(cls, id: str, adaptiveHeight: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].adaptiveHeight = adaptiveHeight
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_dotPosition(cls, id: str, dotPosition: DotPositionTypes | None) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].dotPosition = dotPosition
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_dots(cls, id: str, dots: bool | dict[str, str] | None) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].dots = dots
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_draggable(cls, id: str, draggable: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].draggable = draggable
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_fade(cls, id: str, fade: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].fade = fade
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_infinite(cls, id: str, infinite: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].infinite = infinite
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_speed(cls, id: str, speed: int) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].speed = speed
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_waitForAnimate(cls, id: str, waitForAnimate: bool) -&gt; None:
+        Carousel.__carousels[resolve_id(id)].waitForAnimate = waitForAnimate
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        return {
+            &#34;shinyant_carousel&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;items&#34;: self.items,
+                &#34;arrows&#34;: self.arrows,
+                &#34;autoplay&#34;: self.autoplay,
+                &#34;autoplaySpeed&#34;: self.autoplaySpeed,
+                &#34;adaptiveHeight&#34;: self.adaptiveHeight,
+                &#34;dotPosition&#34;: self.dotPosition,
+                &#34;dots&#34;: self.dots,
+                &#34;draggable&#34;: self.draggable,
+                &#34;fade&#34;: self.fade,
+                &#34;infinite&#34;: self.infinite,
+                &#34;speed&#34;: self.speed,
+                &#34;waitForAnimate&#34;: self.waitForAnimate,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all carousels and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.carousel.Carousel.change_adaptiveHeight"><code class="name flex">
+<span>async def <span class="ident">change_adaptiveHeight</span></span>(<span>id: str, adaptiveHeight: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_arrows"><code class="name flex">
+<span>async def <span class="ident">change_arrows</span></span>(<span>id: str, arrows: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_autoplay"><code class="name flex">
+<span>async def <span class="ident">change_autoplay</span></span>(<span>id: str, autoplay: bool | dict[str, bool] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_autoplaySpeed"><code class="name flex">
+<span>async def <span class="ident">change_autoplaySpeed</span></span>(<span>id: str, autoplaySpeed: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_dotPosition"><code class="name flex">
+<span>async def <span class="ident">change_dotPosition</span></span>(<span>id: str, dotPosition: Literal['top', 'bottom', 'left', 'right'] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_dots"><code class="name flex">
+<span>async def <span class="ident">change_dots</span></span>(<span>id: str, dots: bool | dict[str, str] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_draggable"><code class="name flex">
+<span>async def <span class="ident">change_draggable</span></span>(<span>id: str, draggable: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_fade"><code class="name flex">
+<span>async def <span class="ident">change_fade</span></span>(<span>id: str, fade: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_infinite"><code class="name flex">
+<span>async def <span class="ident">change_infinite</span></span>(<span>id: str, infinite: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_items"><code class="name flex">
+<span>async def <span class="ident">change_items</span></span>(<span>id: str, items: list[htmltools._core.Tag] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_speed"><code class="name flex">
+<span>async def <span class="ident">change_speed</span></span>(<span>id: str, speed: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.change_waitForAnimate"><code class="name flex">
+<span>async def <span class="ident">change_waitForAnimate</span></span>(<span>id: str, waitForAnimate: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.Carousel.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.carousel.Carousel" href="#shinyant.carousel.Carousel">Carousel</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.carousel.Carousel.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    return {
+        &#34;shinyant_carousel&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;items&#34;: self.items,
+            &#34;arrows&#34;: self.arrows,
+            &#34;autoplay&#34;: self.autoplay,
+            &#34;autoplaySpeed&#34;: self.autoplaySpeed,
+            &#34;adaptiveHeight&#34;: self.adaptiveHeight,
+            &#34;dotPosition&#34;: self.dotPosition,
+            &#34;dots&#34;: self.dots,
+            &#34;draggable&#34;: self.draggable,
+            &#34;fade&#34;: self.fade,
+            &#34;infinite&#34;: self.infinite,
+            &#34;speed&#34;: self.speed,
+            &#34;waitForAnimate&#34;: self.waitForAnimate,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens"><code class="flex name class">
+<span>class <span class="ident">CarouselDesignTokens</span></span>
+<span>(</span><span>arrowOffset: int = 8,<br>arrowSize: int = 16,<br>dotActiveWidth: str | int = 24,<br>dotGap: int = 4,<br>dotHeight: str | int = 3,<br>dotOffset: int = 12,<br>dotWidth: str | int = 16)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class CarouselDesignTokens:
+    &#34;&#34;&#34;
+    Carousel Design class (Design Tokens from react ant.design for carousel)
+
+    Attributes:
+        arrowOffset (int): arrows offset to Carousel edge
+        arrowSize (int): Size of arrows
+        dotActiveWidth (str | int): Width of active indicator
+        dotGap (int): gap between indicator
+        dotHeight (str | int): Height of indicator
+        dotOffset (int): dot offset to Carousel edge
+        dotWidth (str | int): Width of indicator
+    &#34;&#34;&#34;
+
+    arrowOffset: int = 8
+    arrowSize: int = 16
+    dotActiveWidth: str | int = 24
+    dotGap: int = 4
+    dotHeight: str | int = 3
+    dotOffset: int = 12
+    dotWidth: str | int = 16</code></pre>
+</details>
+<div class="desc"><p>Carousel Design class (Design Tokens from react ant.design for carousel)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>arrowOffset</code></strong> :&ensp;<code>int</code></dt>
+<dd>arrows offset to Carousel edge</dd>
+<dt><strong><code>arrowSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of arrows</dd>
+<dt><strong><code>dotActiveWidth</code></strong> :&ensp;<code>str | int</code></dt>
+<dd>Width of active indicator</dd>
+<dt><strong><code>dotGap</code></strong> :&ensp;<code>int</code></dt>
+<dd>gap between indicator</dd>
+<dt><strong><code>dotHeight</code></strong> :&ensp;<code>str | int</code></dt>
+<dd>Height of indicator</dd>
+<dt><strong><code>dotOffset</code></strong> :&ensp;<code>int</code></dt>
+<dd>dot offset to Carousel edge</dd>
+<dt><strong><code>dotWidth</code></strong> :&ensp;<code>str | int</code></dt>
+<dd>Width of indicator</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.carousel.CarouselDesignTokens.arrowOffset"><code class="name">var <span class="ident">arrowOffset</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.arrowSize"><code class="name">var <span class="ident">arrowSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.dotActiveWidth"><code class="name">var <span class="ident">dotActiveWidth</span> : str | int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.dotGap"><code class="name">var <span class="ident">dotGap</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.dotHeight"><code class="name">var <span class="ident">dotHeight</span> : str | int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.dotOffset"><code class="name">var <span class="ident">dotOffset</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselDesignTokens.dotWidth"><code class="name">var <span class="ident">dotWidth</span> : str | int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">CarouselGlobalTokens</span></span>
+<span>(</span><span>colorBgContainer: str = '#ffffff',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>lineHeight: float = 1.5714285714285714,<br>marginXXS: int = 4,<br>motionDurationSlow: str = '0.3s')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class CarouselGlobalTokens:
+    &#34;&#34;&#34;
+    Carousel Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorBgContainer (str): Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`
+        colorText (str): Default text color which comply with W3C standards, and this color is also the darkest neutral color
+        fontFamily (str): The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics
+        fontSize (int): The most widely used font size in the design system, from which the text gradient will be derived
+        lineHeight (float): Line height of text
+        marginXXS (int): Control the margin of an element, with the smallest size
+        motionDurationSlow (str): Motion speed, slow speed. Used for large element animation interaction
+    &#34;&#34;&#34;
+
+    colorBgContainer: str = constants.GlobalToken.colorBgContainer
+    colorText: str = constants.GlobalToken.colorText
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    lineHeight: float = constants.GlobalToken.lineHeight
+    marginXXS: int = constants.GlobalToken.marginXXS
+    motionDurationSlow: str = constants.GlobalToken.motionDurationSlow</code></pre>
+</details>
+<div class="desc"><p>Carousel Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorBgContainer</code></strong> :&ensp;<code>str</code></dt>
+<dd>Container background color, e.g: default button, input box, etc. Be sure not to confuse this with <code>colorBgElevated</code></dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards, and this color is also the darkest neutral color</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system, from which the text gradient will be derived</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text</dd>
+<dt><strong><code>marginXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with the smallest size</dd>
+<dt><strong><code>motionDurationSlow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, slow speed. Used for large element animation interaction</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.carousel.CarouselGlobalTokens.colorBgContainer"><code class="name">var <span class="ident">colorBgContainer</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.marginXXS"><code class="name">var <span class="ident">marginXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.carousel.CarouselGlobalTokens.motionDurationSlow"><code class="name">var <span class="ident">motionDurationSlow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.carousel.carousel" href="#shinyant.carousel.carousel">carousel</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.carousel.Carousel" href="#shinyant.carousel.Carousel">Carousel</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.carousel.Carousel.change_adaptiveHeight" href="#shinyant.carousel.Carousel.change_adaptiveHeight">change_adaptiveHeight</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_arrows" href="#shinyant.carousel.Carousel.change_arrows">change_arrows</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_autoplay" href="#shinyant.carousel.Carousel.change_autoplay">change_autoplay</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_autoplaySpeed" href="#shinyant.carousel.Carousel.change_autoplaySpeed">change_autoplaySpeed</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_dotPosition" href="#shinyant.carousel.Carousel.change_dotPosition">change_dotPosition</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_dots" href="#shinyant.carousel.Carousel.change_dots">change_dots</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_draggable" href="#shinyant.carousel.Carousel.change_draggable">change_draggable</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_fade" href="#shinyant.carousel.Carousel.change_fade">change_fade</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_infinite" href="#shinyant.carousel.Carousel.change_infinite">change_infinite</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_items" href="#shinyant.carousel.Carousel.change_items">change_items</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_speed" href="#shinyant.carousel.Carousel.change_speed">change_speed</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.change_waitForAnimate" href="#shinyant.carousel.Carousel.change_waitForAnimate">change_waitForAnimate</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.dump" href="#shinyant.carousel.Carousel.dump">dump</a></code></li>
+<li><code><a title="shinyant.carousel.Carousel.get_component" href="#shinyant.carousel.Carousel.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.carousel.CarouselDesignTokens" href="#shinyant.carousel.CarouselDesignTokens">CarouselDesignTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.arrowOffset" href="#shinyant.carousel.CarouselDesignTokens.arrowOffset">arrowOffset</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.arrowSize" href="#shinyant.carousel.CarouselDesignTokens.arrowSize">arrowSize</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.dotActiveWidth" href="#shinyant.carousel.CarouselDesignTokens.dotActiveWidth">dotActiveWidth</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.dotGap" href="#shinyant.carousel.CarouselDesignTokens.dotGap">dotGap</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.dotHeight" href="#shinyant.carousel.CarouselDesignTokens.dotHeight">dotHeight</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.dotOffset" href="#shinyant.carousel.CarouselDesignTokens.dotOffset">dotOffset</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselDesignTokens.dotWidth" href="#shinyant.carousel.CarouselDesignTokens.dotWidth">dotWidth</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.carousel.CarouselGlobalTokens" href="#shinyant.carousel.CarouselGlobalTokens">CarouselGlobalTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.colorBgContainer" href="#shinyant.carousel.CarouselGlobalTokens.colorBgContainer">colorBgContainer</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.colorText" href="#shinyant.carousel.CarouselGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.fontFamily" href="#shinyant.carousel.CarouselGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.fontSize" href="#shinyant.carousel.CarouselGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.lineHeight" href="#shinyant.carousel.CarouselGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.marginXXS" href="#shinyant.carousel.CarouselGlobalTokens.marginXXS">marginXXS</a></code></li>
+<li><code><a title="shinyant.carousel.CarouselGlobalTokens.motionDurationSlow" href="#shinyant.carousel.CarouselGlobalTokens.motionDurationSlow">motionDurationSlow</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

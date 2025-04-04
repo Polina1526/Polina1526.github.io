@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.input API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.input</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.input.input"><code class="name flex">
+<span>def <span class="ident">input</span></span>(<span>id: str,<br>type: Literal['basic', 'password', 'textArea', 'search'] = 'basic',<br>defaultValue: str = '',<br>placeholder: str | None = '',<br>addonAfter: str | list[str] = '',<br>addonBefore: str | list[str] = '',<br>allowClear: bool = False,<br>autoSize: bool | dict[str, int] | None = None,<br>count: <a title="shinyant.input.InputCountConfig" href="#shinyant.input.InputCountConfig">InputCountConfig</a> | None = None,<br>disabled: bool = False,<br>enterButton: bool | None = False,<br>loading: bool | None = False,<br>maxLength: int | None = None,<br>prefix: str = '',<br>showCount: bool = False,<br>status: Literal['error', 'warning'] | None = None,<br>size: Literal['small', 'middle', 'large'] = 'middle',<br>suffix: str = '',<br>variant: Literal['outlined', 'borderless', 'filled', 'underlined'] = 'outlined',<br>design: <a title="shinyant.input.InputDesignTokens" href="#shinyant.input.InputDesignTokens">InputDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.input.InputGlobalTokens" href="#shinyant.input.InputGlobalTokens">InputGlobalTokens</a> | None = None) ‑> <a title="shinyant.input.Input" href="#shinyant.input.Input">Input</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def input(
+    id: str,
+    type: InputTypes = &#34;basic&#34;,
+    defaultValue: str = &#34;&#34;,
+    placeholder: str | None = &#34;&#34;,
+    addonAfter: str | list[str] = &#34;&#34;,
+    addonBefore: str | list[str] = &#34;&#34;,
+    allowClear: bool = False,
+    autoSize: bool | dict[str, int] | None = None,
+    count: InputCountConfig | None = None,
+    disabled: bool = False,
+    enterButton: bool | None = False,
+    loading: bool | None = False,
+    maxLength: int | None = None,
+    prefix: str = &#34;&#34;,
+    showCount: bool = False,
+    status: StatuaTypes | None = None,
+    size: SizeTypes = &#34;middle&#34;,
+    suffix: str = &#34;&#34;,
+    variant: VariantTypes = &#34;outlined&#34;,
+    design: InputDesignTokens | None = None,
+    globalDesign: InputGlobalTokens | None = None,
+) -&gt; &#34;Input&#34;:
+    &#34;&#34;&#34;
+    Creates a input component based on ant design react Input component
+
+    Attributes:
+        id (str): name of the component in the application
+        type (str): Input types: &#39;basic&#39;, &#39;password&#39;, &#39;textArea&#39;. Defauls to &#39;basic&#39;
+        defaultValue (str): The initial input content. Defauls to &#39;&#39;
+        placeholder (str): Placeholder to display in empty input field. Defauls to &#39;&#39;
+        addonAfter (str | list[str]): The label text displayed after (on the right side of) the input field.
+            Use a list[str] to manage addonAfter as SelectAfter. Defauls to &#39;&#39;
+        addonBefore (str | list[str]): The label text displayed before (on the left side of) the input field.
+            Use a list[str] to manage addonBefore as SelectBefore. Defauls to &#39;&#39;
+        allowClear (bool): If allow to remove input content with clear icon. Defauls to False
+        autoSize (bool | dict[str, int]): Whether to resize automatically (True/False), you can specify autoSize={&#34;minRows&#34;: 2, &#34;maxRows&#34;: 4} to specify resize limits.
+            Works only with parameter type=&#39;textArea&#39;. Defauls to None
+        count (InputCountConfig): Character count config, for more info see documentation for InputCountConfig. Defauls to None
+        disabled (bool): Whether the input is disabled. Defauls to False
+        enterButton (bool): False - displays the default button color, True - uses the primary color. Conflicts with addonAfter. Defauls to False
+        loading (bool): Search box with loading. Defauls to False
+        maxLength (int): The maximum number of characters in Input. Defauls to None
+        prefix (str): The prefix string for the Input. Defauls to &#39;&#39;
+        showCount (bool): Whether to show character count. Defauls to False
+        status (str | None): Set validation status  &#34;error&#34; | &#34;warning&#34;. Defauls to None
+        size (str): The size of the input box. Note: in the context of a form, the middle size is used. Defauls to &#39;middle&#39;
+        suffix (str): The suffix string for the Input. Defauls to &#39;&#39;
+        variant (str): Variants of Input. Defauls to &#39;outlined&#39;
+        design (InputDesignTokens): Design of input (InputDesignTokens class object). Defauls to InputDesignTokens
+        globalDesign (InputGlobalTokens): Global design of input (InputGlobalTokens class object). Defauls to InputGlobalTokens
+    &#34;&#34;&#34;
+    if design is None:
+        design = InputDesignTokens()
+    if globalDesign is None:
+        globalDesign = InputGlobalTokens()
+
+    if type != &#34;textArea&#34; and autoSize is not None:
+        autoSize = None
+
+    if type != &#34;search&#34; and (enterButton is not None or loading is not None):
+        enterButton = None
+        loading = None
+
+    value: str = defaultValue or &#34;&#34;
+
+    return Input(
+        id=id,
+        type=type,
+        addonAfter=addonAfter,
+        addonBefore=addonBefore,
+        allowClear=allowClear,
+        autoSize=autoSize,
+        count=count,
+        disabled=disabled,
+        maxLength=maxLength,
+        enterButton=enterButton,
+        loading=loading,
+        placeholder=placeholder,
+        prefix=prefix,
+        showCount=showCount,
+        status=status,
+        size=size,
+        suffix=suffix,
+        value=value,
+        variant=variant,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a input component based on ant design react Input component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Input types: 'basic', 'password', 'textArea'. Defauls to 'basic'</dd>
+<dt><strong><code>defaultValue</code></strong> :&ensp;<code>str</code></dt>
+<dd>The initial input content. Defauls to ''</dd>
+<dt><strong><code>placeholder</code></strong> :&ensp;<code>str</code></dt>
+<dd>Placeholder to display in empty input field. Defauls to ''</dd>
+<dt><strong><code>addonAfter</code></strong> :&ensp;<code>str | list[str]</code></dt>
+<dd>The label text displayed after (on the right side of) the input field.
+Use a list[str] to manage addonAfter as SelectAfter. Defauls to ''</dd>
+<dt><strong><code>addonBefore</code></strong> :&ensp;<code>str | list[str]</code></dt>
+<dd>The label text displayed before (on the left side of) the input field.
+Use a list[str] to manage addonBefore as SelectBefore. Defauls to ''</dd>
+<dt><strong><code>allowClear</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If allow to remove input content with clear icon. Defauls to False</dd>
+<dt><strong><code>autoSize</code></strong> :&ensp;<code>bool | dict[str, int]</code></dt>
+<dd>Whether to resize automatically (True/False), you can specify autoSize={"minRows": 2, "maxRows": 4} to specify resize limits.
+Works only with parameter type='textArea'. Defauls to None</dd>
+<dt><strong><code>count</code></strong> :&ensp;<code><a title="shinyant.input.InputCountConfig" href="#shinyant.input.InputCountConfig">InputCountConfig</a></code></dt>
+<dd>Character count config, for more info see documentation for InputCountConfig. Defauls to None</dd>
+<dt><strong><code>disabled</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the input is disabled. Defauls to False</dd>
+<dt><strong><code>enterButton</code></strong> :&ensp;<code>bool</code></dt>
+<dd>False - displays the default button color, True - uses the primary color. Conflicts with addonAfter. Defauls to False</dd>
+<dt><strong><code>loading</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Search box with loading. Defauls to False</dd>
+<dt><strong><code>maxLength</code></strong> :&ensp;<code>int</code></dt>
+<dd>The maximum number of characters in Input. Defauls to None</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code></dt>
+<dd>The prefix string for the Input. Defauls to ''</dd>
+<dt><strong><code>showCount</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to show character count. Defauls to False</dd>
+<dt><strong><code>status</code></strong> :&ensp;<code>str | None</code></dt>
+<dd>Set validation status
+"error" | "warning". Defauls to None</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>str</code></dt>
+<dd>The size of the input box. Note: in the context of a form, the middle size is used. Defauls to 'middle'</dd>
+<dt><strong><code>suffix</code></strong> :&ensp;<code>str</code></dt>
+<dd>The suffix string for the Input. Defauls to ''</dd>
+<dt><strong><code>variant</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variants of Input. Defauls to 'outlined'</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code><a title="shinyant.input.InputDesignTokens" href="#shinyant.input.InputDesignTokens">InputDesignTokens</a></code></dt>
+<dd>Design of input (InputDesignTokens class object). Defauls to InputDesignTokens</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code><a title="shinyant.input.InputGlobalTokens" href="#shinyant.input.InputGlobalTokens">InputGlobalTokens</a></code></dt>
+<dd>Global design of input (InputGlobalTokens class object). Defauls to InputGlobalTokens</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.input.Input"><code class="flex name class">
+<span>class <span class="ident">Input</span></span>
+<span>(</span><span>id: str,<br>type: Literal['basic', 'password', 'textArea', 'search'],<br>addonAfter: str | list[str],<br>addonBefore: str | list[str],<br>allowClear: bool,<br>autoSize: bool | dict[str, int] | None,<br>count: <a title="shinyant.input.InputCountConfig" href="#shinyant.input.InputCountConfig">InputCountConfig</a> | None,<br>disabled: bool,<br>enterButton: bool | None,<br>loading: bool | None,<br>maxLength: int | None,<br>placeholder: str | None,<br>prefix: str,<br>showCount: bool,<br>status: Literal['error', 'warning'] | None,<br>size: Literal['small', 'middle', 'large'] | None,<br>suffix: str,<br>value: str,<br>variant: Literal['outlined', 'borderless', 'filled', 'underlined'] | None,<br>design: <a title="shinyant.input.InputDesignTokens" href="#shinyant.input.InputDesignTokens">InputDesignTokens</a>,<br>globalDesign: <a title="shinyant.input.InputGlobalTokens" href="#shinyant.input.InputGlobalTokens">InputGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Input:
+    &#34;&#34;&#34;
+    Main class, stores all inputs and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __inputs: ClassVar[dict[str, &#34;Input&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        type: InputTypes,
+        addonAfter: str | list[str],
+        addonBefore: str | list[str],
+        allowClear: bool,
+        autoSize: bool | dict[str, int] | None,
+        count: InputCountConfig | None,
+        disabled: bool,
+        enterButton: bool | None,
+        loading: bool | None,
+        maxLength: int | None,
+        placeholder: str | None,
+        prefix: str,
+        showCount: bool,
+        status: StatuaTypes | None,
+        size: SizeTypes | None,
+        suffix: str,
+        value: str,
+        variant: VariantTypes | None,
+        design: InputDesignTokens,
+        globalDesign: InputGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.type = type
+        self.addonAfter = addonAfter
+        self.addonBefore = addonBefore
+        self.allowClear = allowClear
+        self.autoSize = autoSize
+        self.count = count
+        self.disabled = disabled
+        self.enterButton = enterButton
+        self.loading = loading
+        self.maxLength = maxLength
+        self.placeholder = placeholder
+        self.prefix = prefix
+        self.showCount = showCount
+        self.status = status
+        self.size = size
+        self.suffix = suffix
+        self.value = value
+        self.variant = variant
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Input.__inputs:
+            raise KeyError(&#34;&#39;Input&#39; object with this id already exists&#34;)
+        Input.__inputs[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Input&#34;:
+        return Input.__inputs[resolve_id(id)]
+
+    @classmethod
+    async def change_addonAfter(cls, id: str, addonAfter: str | list[str]) -&gt; None:
+        Input.__inputs[resolve_id(id)].addonAfter = addonAfter
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_addonBefore(cls, id: str, addonBefore: str | list[str]) -&gt; None:
+        Input.__inputs[resolve_id(id)].addonBefore = addonBefore
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_allowClear(cls, id: str, allowClear: bool) -&gt; None:
+        Input.__inputs[resolve_id(id)].allowClear = allowClear
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_count(cls, id: str, count: InputCountConfig | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].count = count
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_disabled(cls, id: str, disabled: bool) -&gt; None:
+        Input.__inputs[resolve_id(id)].disabled = disabled
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_maxLength(cls, id: str, maxLength: int | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].maxLength = maxLength
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_placeholder(cls, id: str, placeholder: str | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].placeholder = placeholder
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_prefix(cls, id: str, prefix: str) -&gt; None:
+        Input.__inputs[resolve_id(id)].prefix = prefix
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_showCount(cls, id: str, showCount: bool) -&gt; None:
+        Input.__inputs[resolve_id(id)].showCount = showCount
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_status(cls, id: str, status: StatuaTypes | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].status = status
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_size(cls, id: str, size: SizeTypes | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].size = size
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_suffix(cls, id: str, suffix: str) -&gt; None:
+        Input.__inputs[resolve_id(id)].suffix = suffix
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_value(cls, id: str, value: str) -&gt; None:
+        Input.__inputs[resolve_id(id)].value = value
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_variant(cls, id: str, variant: VariantTypes | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].variant = variant
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_type(cls, id: str, type: InputTypes) -&gt; None:
+        Input.__inputs[resolve_id(id)].type = type
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_autoSize(cls, id: str, autoSize: bool | dict[str, int] | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].autoSize = autoSize
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_enterButton(cls, id: str, enterButton: bool | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].enterButton = enterButton
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_loading(cls, id: str, loading: bool | None) -&gt; None:
+        Input.__inputs[resolve_id(id)].loading = loading
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: InputDesignTokens) -&gt; None:
+        Input.__inputs[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_global_design(cls, id: str, globalDesign: InputGlobalTokens) -&gt; None:
+        Input.__inputs[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        return {
+            &#34;shinyant_input&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;type&#34;: self.type,
+                &#34;addonAfter&#34;: self.addonAfter,
+                &#34;addonBefore&#34;: self.addonBefore,
+                &#34;allowClear&#34;: self.allowClear,
+                &#34;autoSize&#34;: self.autoSize,
+                &#34;count&#34;: asdict(self.count) if self.count is not None else None,
+                &#34;disabled&#34;: self.disabled,
+                &#34;enterButton&#34;: self.enterButton,
+                &#34;loading&#34;: self.loading,
+                &#34;maxLength&#34;: self.maxLength,
+                &#34;placeholder&#34;: self.placeholder,
+                &#34;prefix&#34;: self.prefix,
+                &#34;showCount&#34;: self.showCount,
+                &#34;status&#34;: self.status,
+                &#34;size&#34;: self.size,
+                &#34;suffix&#34;: self.suffix,
+                &#34;value&#34;: self.value,
+                &#34;variant&#34;: self.variant,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all inputs and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.input.Input.change_addonAfter"><code class="name flex">
+<span>async def <span class="ident">change_addonAfter</span></span>(<span>id: str, addonAfter: str | list[str]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_addonBefore"><code class="name flex">
+<span>async def <span class="ident">change_addonBefore</span></span>(<span>id: str, addonBefore: str | list[str]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_allowClear"><code class="name flex">
+<span>async def <span class="ident">change_allowClear</span></span>(<span>id: str, allowClear: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_autoSize"><code class="name flex">
+<span>async def <span class="ident">change_autoSize</span></span>(<span>id: str, autoSize: bool | dict[str, int] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_count"><code class="name flex">
+<span>async def <span class="ident">change_count</span></span>(<span>id: str,<br>count: <a title="shinyant.input.InputCountConfig" href="#shinyant.input.InputCountConfig">InputCountConfig</a> | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.input.InputDesignTokens" href="#shinyant.input.InputDesignTokens">InputDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_disabled"><code class="name flex">
+<span>async def <span class="ident">change_disabled</span></span>(<span>id: str, disabled: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_enterButton"><code class="name flex">
+<span>async def <span class="ident">change_enterButton</span></span>(<span>id: str, enterButton: bool | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_global_design"><code class="name flex">
+<span>async def <span class="ident">change_global_design</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.input.InputGlobalTokens" href="#shinyant.input.InputGlobalTokens">InputGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_loading"><code class="name flex">
+<span>async def <span class="ident">change_loading</span></span>(<span>id: str, loading: bool | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_maxLength"><code class="name flex">
+<span>async def <span class="ident">change_maxLength</span></span>(<span>id: str, maxLength: int | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_placeholder"><code class="name flex">
+<span>async def <span class="ident">change_placeholder</span></span>(<span>id: str, placeholder: str | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_prefix"><code class="name flex">
+<span>async def <span class="ident">change_prefix</span></span>(<span>id: str, prefix: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_showCount"><code class="name flex">
+<span>async def <span class="ident">change_showCount</span></span>(<span>id: str, showCount: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_size"><code class="name flex">
+<span>async def <span class="ident">change_size</span></span>(<span>id: str, size: Literal['small', 'middle', 'large'] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_status"><code class="name flex">
+<span>async def <span class="ident">change_status</span></span>(<span>id: str, status: Literal['error', 'warning'] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_suffix"><code class="name flex">
+<span>async def <span class="ident">change_suffix</span></span>(<span>id: str, suffix: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_type"><code class="name flex">
+<span>async def <span class="ident">change_type</span></span>(<span>id: str, type: Literal['basic', 'password', 'textArea', 'search']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_value"><code class="name flex">
+<span>async def <span class="ident">change_value</span></span>(<span>id: str, value: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.change_variant"><code class="name flex">
+<span>async def <span class="ident">change_variant</span></span>(<span>id: str,<br>variant: Literal['outlined', 'borderless', 'filled', 'underlined'] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.Input.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.input.Input" href="#shinyant.input.Input">Input</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.input.Input.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    return {
+        &#34;shinyant_input&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;type&#34;: self.type,
+            &#34;addonAfter&#34;: self.addonAfter,
+            &#34;addonBefore&#34;: self.addonBefore,
+            &#34;allowClear&#34;: self.allowClear,
+            &#34;autoSize&#34;: self.autoSize,
+            &#34;count&#34;: asdict(self.count) if self.count is not None else None,
+            &#34;disabled&#34;: self.disabled,
+            &#34;enterButton&#34;: self.enterButton,
+            &#34;loading&#34;: self.loading,
+            &#34;maxLength&#34;: self.maxLength,
+            &#34;placeholder&#34;: self.placeholder,
+            &#34;prefix&#34;: self.prefix,
+            &#34;showCount&#34;: self.showCount,
+            &#34;status&#34;: self.status,
+            &#34;size&#34;: self.size,
+            &#34;suffix&#34;: self.suffix,
+            &#34;value&#34;: self.value,
+            &#34;variant&#34;: self.variant,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.input.InputCountConfig"><code class="flex name class">
+<span>class <span class="ident">InputCountConfig</span></span>
+<span>(</span><span>max: int | None = None, show: bool = False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class InputCountConfig:
+    &#34;&#34;&#34;
+    Input Count Config class allows to customize the character count in the input field.
+    Different from the native `maxLength`, it will be marked warning but not truncated.
+
+    Attributes:
+        max (int): Max character count. Defauls to None
+        show (bool): Same as `showCount`. Defauls to False
+    &#34;&#34;&#34;
+
+    max: int | None = None
+    show: bool = False</code></pre>
+</details>
+<div class="desc"><p>Input Count Config class allows to customize the character count in the input field.
+Different from the native <code>maxLength</code>, it will be marked warning but not truncated.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>max</code></strong> :&ensp;<code>int</code></dt>
+<dd>Max character count. Defauls to None</dd>
+<dt><strong><code>show</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Same as <code>showCount</code>. Defauls to False</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.input.InputCountConfig.max"><code class="name">var <span class="ident">max</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputCountConfig.show"><code class="name">var <span class="ident">show</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.input.InputDesignTokens"><code class="flex name class">
+<span>class <span class="ident">InputDesignTokens</span></span>
+<span>(</span><span>activeBg: str = '#ffffff',<br>activeBorderColor: str = '#1677ff',<br>activeShadow: str = 'rgba(5,145,255,0.1)',<br>addonBg: str = 'rgba(0,0,0,0.02)',<br>errorActiveShadow: str = 'rgba(255,38,5,0.06)',<br>hoverBg: str = '#ffffff',<br>hoverBorderColor: str = '#4096ff',<br>inputFontSize: int = 14,<br>inputFontSizeLG: int = 16,<br>inputFontSizeSM: int = 14,<br>paddingBlock: int = 4,<br>paddingBlockLG: int = 7,<br>paddingBlockSM: int = 0,<br>paddingInline: int = 11,<br>paddingInlineLG: int = 11,<br>paddingInlineSM: int = 7,<br>warningActiveShadow: str = 'rgba(255,215,5,0.1)')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class InputDesignTokens:
+    &#34;&#34;&#34;
+    Input Design class (Design Tokens from react ant.design for input)
+
+    Attributes:
+        activeBg (str): Background color when the input box is activated
+        activeBorderColor (str): Active border color
+        activeShadow (str): Box-shadow when active
+        addonBg (str): Background color of addon
+        errorActiveShadow (str): Box-shadow when active in error status
+        hoverBg (str): Background color when the input box hovers
+        hoverBorderColor (str): Hover border color
+        inputFontSize (int): Font size
+        inputFontSizeLG (int): Font size of large
+        inputFontSizeSM (int): Font size of small
+        paddingBlock (int): Vertical padding of input
+        paddingBlockLG (int): Vertical padding of large input
+        paddingBlockSM (int): Vertical padding of small input
+        paddingInline (int): Horizontal padding of input
+        paddingInlineLG (int): Horizontal padding of large input
+        paddingInlineSM (int): Horizontal padding of small input
+        warningActiveShadow (str): Box-shadow when active in warning status
+    &#34;&#34;&#34;
+
+    activeBg: str = &#34;#ffffff&#34;
+    activeBorderColor: str = &#34;#1677ff&#34;
+    activeShadow: str = &#34;rgba(5,145,255,0.1)&#34;
+    addonBg: str = &#34;rgba(0,0,0,0.02)&#34;
+    errorActiveShadow: str = &#34;rgba(255,38,5,0.06)&#34;
+    hoverBg: str = &#34;#ffffff&#34;
+    hoverBorderColor: str = &#34;#4096ff&#34;
+    inputFontSize: int = 14
+    inputFontSizeLG: int = 16
+    inputFontSizeSM: int = 14
+    paddingBlock: int = 4
+    paddingBlockLG: int = 7
+    paddingBlockSM: int = 0
+    paddingInline: int = 11
+    paddingInlineLG: int = 11
+    paddingInlineSM: int = 7
+    warningActiveShadow: str = &#34;rgba(255,215,5,0.1)&#34;</code></pre>
+</details>
+<div class="desc"><p>Input Design class (Design Tokens from react ant.design for input)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>activeBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color when the input box is activated</dd>
+<dt><strong><code>activeBorderColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Active border color</dd>
+<dt><strong><code>activeShadow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Box-shadow when active</dd>
+<dt><strong><code>addonBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of addon</dd>
+<dt><strong><code>errorActiveShadow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Box-shadow when active in error status</dd>
+<dt><strong><code>hoverBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color when the input box hovers</dd>
+<dt><strong><code>hoverBorderColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Hover border color</dd>
+<dt><strong><code>inputFontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Font size</dd>
+<dt><strong><code>inputFontSizeLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>Font size of large</dd>
+<dt><strong><code>inputFontSizeSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Font size of small</dd>
+<dt><strong><code>paddingBlock</code></strong> :&ensp;<code>int</code></dt>
+<dd>Vertical padding of input</dd>
+<dt><strong><code>paddingBlockLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>Vertical padding of large input</dd>
+<dt><strong><code>paddingBlockSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Vertical padding of small input</dd>
+<dt><strong><code>paddingInline</code></strong> :&ensp;<code>int</code></dt>
+<dd>Horizontal padding of input</dd>
+<dt><strong><code>paddingInlineLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>Horizontal padding of large input</dd>
+<dt><strong><code>paddingInlineSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Horizontal padding of small input</dd>
+<dt><strong><code>warningActiveShadow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Box-shadow when active in warning status</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.input.InputDesignTokens.activeBg"><code class="name">var <span class="ident">activeBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.activeBorderColor"><code class="name">var <span class="ident">activeBorderColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.activeShadow"><code class="name">var <span class="ident">activeShadow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.addonBg"><code class="name">var <span class="ident">addonBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.errorActiveShadow"><code class="name">var <span class="ident">errorActiveShadow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.hoverBg"><code class="name">var <span class="ident">hoverBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.hoverBorderColor"><code class="name">var <span class="ident">hoverBorderColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.inputFontSize"><code class="name">var <span class="ident">inputFontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.inputFontSizeLG"><code class="name">var <span class="ident">inputFontSizeLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.inputFontSizeSM"><code class="name">var <span class="ident">inputFontSizeSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingBlock"><code class="name">var <span class="ident">paddingBlock</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingBlockLG"><code class="name">var <span class="ident">paddingBlockLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingBlockSM"><code class="name">var <span class="ident">paddingBlockSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingInline"><code class="name">var <span class="ident">paddingInline</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingInlineLG"><code class="name">var <span class="ident">paddingInlineLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.paddingInlineSM"><code class="name">var <span class="ident">paddingInlineSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputDesignTokens.warningActiveShadow"><code class="name">var <span class="ident">warningActiveShadow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">InputGlobalTokens</span></span>
+<span>(</span><span>colorBgContainerDisabled: str = 'rgba(0,0,0,0.04)',<br>colorBorder: str = '#d9d9d9',<br>colorError: str = '#ff4d4f',<br>colorErrorBg: str = '#fff2f0',<br>colorErrorText: str = '#ff4d4f',<br>colorFillTertiary: str = 'rgba(0,0,0,0.04)',<br>colorPrimaryActive: str = '#0958d9',<br>colorPrimaryHover: str = '#4096ff',<br>colorSplit: str = 'rgba(5,5,5,0.06)',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>colorTextDescription: str = 'rgba(0,0,0,0.45)',<br>colorTextDisabled: str = 'rgba(0,0,0,0.25)',<br>colorWarning: str = '#faad14',<br>colorWarningBg: str = '#fffbe6',<br>colorWarningText: str = '#faad14',<br>borderRadius: int = 6,<br>borderRadiusLG: int = 8,<br>borderRadiusSM: int = 4,<br>controlHeight: int = 32,<br>controlHeightLG: int = 40,<br>controlHeightSM: int = 24,<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>lineHeight: float = 1.5714285714285714,<br>lineHeightLG: float = 1.5,<br>lineType: str = 'solid',<br>lineWidth: int = 1,<br>motionDurationSlow: str = '0.3s',<br>paddingXS: int = 8,<br>paddingXXS: int = 4)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class InputGlobalTokens:
+    &#34;&#34;&#34;
+    Input Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorBgContainerDisabled (str): Control the background color of container in disabled state
+        colorBorder (str): Default border color, used to separate different elements, such as: form separator, card separator, etc
+        colorError (str): Used to represent the visual elements of the operation failure, such as the error Button, error Result component, etc
+        colorErrorBg (str): The background color of the error state
+        colorErrorText (str): The default state of the text in the error color
+        colorFillTertiary (str): The third level of fill color is used to outline the shape of the element, such as Slider, Segmented, etc. If there is no emphasis requirement, it is recommended to use the third level of fill color as the default fill color
+        colorPrimaryActive (str): Dark active state under the main color gradient
+        colorPrimaryHover (str): Hover state under the main color gradient
+        colorSplit (str): Used as the color of separator, this color is the same as colorBorderSecondary but with transparency
+        colorText (str): Default text color which comply with W3C standards, and this color is also the darkest neutral color
+        colorTextDescription (str): Control the font color of text description
+        colorTextDisabled (str): Control the color of text in disabled state
+        colorWarning (str): Used to represent the warning map token, such as Notification, Alert, etc. Alert or Control component(like Input) will use these map tokens
+        colorWarningBg (str): The background color of the warning state
+        colorWarningText (str): The default state of the text in the warning color
+        borderRadius (int): Border radius of base components
+        borderRadiusLG (int): LG size border radius, used in some large border radius components, such as Card, Modal and other components
+        borderRadiusSM (int): SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size
+        controlHeight (int): The height of the basic controls such as buttons and input boxes in Ant Design
+        controlHeightLG (int): LG component height
+        controlHeightSM (int): SM component height
+        fontFamily (str): The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics
+        fontSize (int): The most widely used font size in the design system, from which the text gradient will be derived
+        lineHeight (float): Line height of text
+        lineHeightLG (float): Line height of large text
+        lineType (str): Border style of base components
+        lineWidth (int): Border width of base components
+        motionDurationSlow (str): Motion speed, slow speed. Used for large element animation interaction
+        paddingXS (int): Control the extra small padding of the element
+        paddingXXS (int): Control the extra extra small padding of the element
+    &#34;&#34;&#34;
+
+    colorBgContainerDisabled: str = constants.GlobalToken.colorBgContainerDisabled
+    colorBorder: str = constants.GlobalToken.colorBorder
+    colorError: str = constants.GlobalToken.colorError
+    colorErrorBg: str = constants.GlobalToken.colorErrorBg
+    colorErrorText: str = constants.GlobalToken.colorErrorText
+    colorFillTertiary: str = constants.GlobalToken.colorFillTertiary
+    colorPrimaryActive: str = constants.GlobalToken.colorPrimaryActive
+    colorPrimaryHover: str = constants.GlobalToken.colorPrimaryHover
+    colorSplit: str = constants.GlobalToken.colorSplit
+    colorText: str = constants.GlobalToken.colorText
+    colorTextDescription: str = constants.GlobalToken.colorTextDescription
+    colorTextDisabled: str = constants.GlobalToken.colorTextDisabled
+    colorWarning: str = constants.GlobalToken.colorWarning
+    colorWarningBg: str = constants.GlobalToken.colorWarningBg
+    colorWarningText: str = constants.GlobalToken.colorWarningText
+    borderRadius: int = constants.GlobalToken.borderRadius
+    borderRadiusLG: int = constants.GlobalToken.borderRadiusLG
+    borderRadiusSM: int = constants.GlobalToken.borderRadiusSM
+    controlHeight: int = constants.GlobalToken.controlHeight
+    controlHeightLG: int = constants.GlobalToken.controlHeightLG
+    controlHeightSM: int = constants.GlobalToken.controlHeightSM
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineHeightLG: float = constants.GlobalToken.lineHeightLG
+    lineType: str = constants.GlobalToken.lineType
+    lineWidth: int = constants.GlobalToken.lineWidth
+    motionDurationSlow: str = constants.GlobalToken.motionDurationSlow
+    paddingXS: int = constants.GlobalToken.paddingXS
+    paddingXXS: int = constants.GlobalToken.paddingXXS</code></pre>
+</details>
+<div class="desc"><p>Input Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorBgContainerDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of container in disabled state</dd>
+<dt><strong><code>colorBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default border color, used to separate different elements, such as: form separator, card separator, etc</dd>
+<dt><strong><code>colorError</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used to represent the visual elements of the operation failure, such as the error Button, error Result component, etc</dd>
+<dt><strong><code>colorErrorBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>The background color of the error state</dd>
+<dt><strong><code>colorErrorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>The default state of the text in the error color</dd>
+<dt><strong><code>colorFillTertiary</code></strong> :&ensp;<code>str</code></dt>
+<dd>The third level of fill color is used to outline the shape of the element, such as Slider, Segmented, etc. If there is no emphasis requirement, it is recommended to use the third level of fill color as the default fill color</dd>
+<dt><strong><code>colorPrimaryActive</code></strong> :&ensp;<code>str</code></dt>
+<dd>Dark active state under the main color gradient</dd>
+<dt><strong><code>colorPrimaryHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Hover state under the main color gradient</dd>
+<dt><strong><code>colorSplit</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used as the color of separator, this color is the same as colorBorderSecondary but with transparency</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards, and this color is also the darkest neutral color</dd>
+<dt><strong><code>colorTextDescription</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the font color of text description</dd>
+<dt><strong><code>colorTextDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of text in disabled state</dd>
+<dt><strong><code>colorWarning</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used to represent the warning map token, such as Notification, Alert, etc. Alert or Control component(like Input) will use these map tokens</dd>
+<dt><strong><code>colorWarningBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>The background color of the warning state</dd>
+<dt><strong><code>colorWarningText</code></strong> :&ensp;<code>str</code></dt>
+<dd>The default state of the text in the warning color</dd>
+<dt><strong><code>borderRadius</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border radius of base components</dd>
+<dt><strong><code>borderRadiusLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG size border radius, used in some large border radius components, such as Card, Modal and other components</dd>
+<dt><strong><code>borderRadiusSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size</dd>
+<dt><strong><code>controlHeight</code></strong> :&ensp;<code>int</code></dt>
+<dd>The height of the basic controls such as buttons and input boxes in Ant Design</dd>
+<dt><strong><code>controlHeightLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG component height</dd>
+<dt><strong><code>controlHeightSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM component height</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system, from which the text gradient will be derived</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text</dd>
+<dt><strong><code>lineHeightLG</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of large text</dd>
+<dt><strong><code>lineType</code></strong> :&ensp;<code>str</code></dt>
+<dd>Border style of base components</dd>
+<dt><strong><code>lineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of base components</dd>
+<dt><strong><code>motionDurationSlow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, slow speed. Used for large element animation interaction</dd>
+<dt><strong><code>paddingXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra small padding of the element</dd>
+<dt><strong><code>paddingXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra extra small padding of the element</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.input.InputGlobalTokens.borderRadius"><code class="name">var <span class="ident">borderRadius</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.borderRadiusLG"><code class="name">var <span class="ident">borderRadiusLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.borderRadiusSM"><code class="name">var <span class="ident">borderRadiusSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorBgContainerDisabled"><code class="name">var <span class="ident">colorBgContainerDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorBorder"><code class="name">var <span class="ident">colorBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorError"><code class="name">var <span class="ident">colorError</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorErrorBg"><code class="name">var <span class="ident">colorErrorBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorErrorText"><code class="name">var <span class="ident">colorErrorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorFillTertiary"><code class="name">var <span class="ident">colorFillTertiary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorPrimaryActive"><code class="name">var <span class="ident">colorPrimaryActive</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorPrimaryHover"><code class="name">var <span class="ident">colorPrimaryHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorSplit"><code class="name">var <span class="ident">colorSplit</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorTextDescription"><code class="name">var <span class="ident">colorTextDescription</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorTextDisabled"><code class="name">var <span class="ident">colorTextDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorWarning"><code class="name">var <span class="ident">colorWarning</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorWarningBg"><code class="name">var <span class="ident">colorWarningBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.colorWarningText"><code class="name">var <span class="ident">colorWarningText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.controlHeight"><code class="name">var <span class="ident">controlHeight</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.controlHeightLG"><code class="name">var <span class="ident">controlHeightLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.controlHeightSM"><code class="name">var <span class="ident">controlHeightSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.lineHeightLG"><code class="name">var <span class="ident">lineHeightLG</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.lineType"><code class="name">var <span class="ident">lineType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.lineWidth"><code class="name">var <span class="ident">lineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.motionDurationSlow"><code class="name">var <span class="ident">motionDurationSlow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.paddingXS"><code class="name">var <span class="ident">paddingXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.input.InputGlobalTokens.paddingXXS"><code class="name">var <span class="ident">paddingXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.input.input" href="#shinyant.input.input">input</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.input.Input" href="#shinyant.input.Input">Input</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.input.Input.change_addonAfter" href="#shinyant.input.Input.change_addonAfter">change_addonAfter</a></code></li>
+<li><code><a title="shinyant.input.Input.change_addonBefore" href="#shinyant.input.Input.change_addonBefore">change_addonBefore</a></code></li>
+<li><code><a title="shinyant.input.Input.change_allowClear" href="#shinyant.input.Input.change_allowClear">change_allowClear</a></code></li>
+<li><code><a title="shinyant.input.Input.change_autoSize" href="#shinyant.input.Input.change_autoSize">change_autoSize</a></code></li>
+<li><code><a title="shinyant.input.Input.change_count" href="#shinyant.input.Input.change_count">change_count</a></code></li>
+<li><code><a title="shinyant.input.Input.change_design" href="#shinyant.input.Input.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.input.Input.change_disabled" href="#shinyant.input.Input.change_disabled">change_disabled</a></code></li>
+<li><code><a title="shinyant.input.Input.change_enterButton" href="#shinyant.input.Input.change_enterButton">change_enterButton</a></code></li>
+<li><code><a title="shinyant.input.Input.change_global_design" href="#shinyant.input.Input.change_global_design">change_global_design</a></code></li>
+<li><code><a title="shinyant.input.Input.change_loading" href="#shinyant.input.Input.change_loading">change_loading</a></code></li>
+<li><code><a title="shinyant.input.Input.change_maxLength" href="#shinyant.input.Input.change_maxLength">change_maxLength</a></code></li>
+<li><code><a title="shinyant.input.Input.change_placeholder" href="#shinyant.input.Input.change_placeholder">change_placeholder</a></code></li>
+<li><code><a title="shinyant.input.Input.change_prefix" href="#shinyant.input.Input.change_prefix">change_prefix</a></code></li>
+<li><code><a title="shinyant.input.Input.change_showCount" href="#shinyant.input.Input.change_showCount">change_showCount</a></code></li>
+<li><code><a title="shinyant.input.Input.change_size" href="#shinyant.input.Input.change_size">change_size</a></code></li>
+<li><code><a title="shinyant.input.Input.change_status" href="#shinyant.input.Input.change_status">change_status</a></code></li>
+<li><code><a title="shinyant.input.Input.change_suffix" href="#shinyant.input.Input.change_suffix">change_suffix</a></code></li>
+<li><code><a title="shinyant.input.Input.change_type" href="#shinyant.input.Input.change_type">change_type</a></code></li>
+<li><code><a title="shinyant.input.Input.change_value" href="#shinyant.input.Input.change_value">change_value</a></code></li>
+<li><code><a title="shinyant.input.Input.change_variant" href="#shinyant.input.Input.change_variant">change_variant</a></code></li>
+<li><code><a title="shinyant.input.Input.dump" href="#shinyant.input.Input.dump">dump</a></code></li>
+<li><code><a title="shinyant.input.Input.get_component" href="#shinyant.input.Input.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.input.InputCountConfig" href="#shinyant.input.InputCountConfig">InputCountConfig</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.input.InputCountConfig.max" href="#shinyant.input.InputCountConfig.max">max</a></code></li>
+<li><code><a title="shinyant.input.InputCountConfig.show" href="#shinyant.input.InputCountConfig.show">show</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.input.InputDesignTokens" href="#shinyant.input.InputDesignTokens">InputDesignTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.input.InputDesignTokens.activeBg" href="#shinyant.input.InputDesignTokens.activeBg">activeBg</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.activeBorderColor" href="#shinyant.input.InputDesignTokens.activeBorderColor">activeBorderColor</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.activeShadow" href="#shinyant.input.InputDesignTokens.activeShadow">activeShadow</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.addonBg" href="#shinyant.input.InputDesignTokens.addonBg">addonBg</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.errorActiveShadow" href="#shinyant.input.InputDesignTokens.errorActiveShadow">errorActiveShadow</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.hoverBg" href="#shinyant.input.InputDesignTokens.hoverBg">hoverBg</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.hoverBorderColor" href="#shinyant.input.InputDesignTokens.hoverBorderColor">hoverBorderColor</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.inputFontSize" href="#shinyant.input.InputDesignTokens.inputFontSize">inputFontSize</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.inputFontSizeLG" href="#shinyant.input.InputDesignTokens.inputFontSizeLG">inputFontSizeLG</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.inputFontSizeSM" href="#shinyant.input.InputDesignTokens.inputFontSizeSM">inputFontSizeSM</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingBlock" href="#shinyant.input.InputDesignTokens.paddingBlock">paddingBlock</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingBlockLG" href="#shinyant.input.InputDesignTokens.paddingBlockLG">paddingBlockLG</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingBlockSM" href="#shinyant.input.InputDesignTokens.paddingBlockSM">paddingBlockSM</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingInline" href="#shinyant.input.InputDesignTokens.paddingInline">paddingInline</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingInlineLG" href="#shinyant.input.InputDesignTokens.paddingInlineLG">paddingInlineLG</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.paddingInlineSM" href="#shinyant.input.InputDesignTokens.paddingInlineSM">paddingInlineSM</a></code></li>
+<li><code><a title="shinyant.input.InputDesignTokens.warningActiveShadow" href="#shinyant.input.InputDesignTokens.warningActiveShadow">warningActiveShadow</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.input.InputGlobalTokens" href="#shinyant.input.InputGlobalTokens">InputGlobalTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.input.InputGlobalTokens.borderRadius" href="#shinyant.input.InputGlobalTokens.borderRadius">borderRadius</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.borderRadiusLG" href="#shinyant.input.InputGlobalTokens.borderRadiusLG">borderRadiusLG</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.borderRadiusSM" href="#shinyant.input.InputGlobalTokens.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorBgContainerDisabled" href="#shinyant.input.InputGlobalTokens.colorBgContainerDisabled">colorBgContainerDisabled</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorBorder" href="#shinyant.input.InputGlobalTokens.colorBorder">colorBorder</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorError" href="#shinyant.input.InputGlobalTokens.colorError">colorError</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorErrorBg" href="#shinyant.input.InputGlobalTokens.colorErrorBg">colorErrorBg</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorErrorText" href="#shinyant.input.InputGlobalTokens.colorErrorText">colorErrorText</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorFillTertiary" href="#shinyant.input.InputGlobalTokens.colorFillTertiary">colorFillTertiary</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorPrimaryActive" href="#shinyant.input.InputGlobalTokens.colorPrimaryActive">colorPrimaryActive</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorPrimaryHover" href="#shinyant.input.InputGlobalTokens.colorPrimaryHover">colorPrimaryHover</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorSplit" href="#shinyant.input.InputGlobalTokens.colorSplit">colorSplit</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorText" href="#shinyant.input.InputGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorTextDescription" href="#shinyant.input.InputGlobalTokens.colorTextDescription">colorTextDescription</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorTextDisabled" href="#shinyant.input.InputGlobalTokens.colorTextDisabled">colorTextDisabled</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorWarning" href="#shinyant.input.InputGlobalTokens.colorWarning">colorWarning</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorWarningBg" href="#shinyant.input.InputGlobalTokens.colorWarningBg">colorWarningBg</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.colorWarningText" href="#shinyant.input.InputGlobalTokens.colorWarningText">colorWarningText</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.controlHeight" href="#shinyant.input.InputGlobalTokens.controlHeight">controlHeight</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.controlHeightLG" href="#shinyant.input.InputGlobalTokens.controlHeightLG">controlHeightLG</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.controlHeightSM" href="#shinyant.input.InputGlobalTokens.controlHeightSM">controlHeightSM</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.fontFamily" href="#shinyant.input.InputGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.fontSize" href="#shinyant.input.InputGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.lineHeight" href="#shinyant.input.InputGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.lineHeightLG" href="#shinyant.input.InputGlobalTokens.lineHeightLG">lineHeightLG</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.lineType" href="#shinyant.input.InputGlobalTokens.lineType">lineType</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.lineWidth" href="#shinyant.input.InputGlobalTokens.lineWidth">lineWidth</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.motionDurationSlow" href="#shinyant.input.InputGlobalTokens.motionDurationSlow">motionDurationSlow</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.paddingXS" href="#shinyant.input.InputGlobalTokens.paddingXS">paddingXS</a></code></li>
+<li><code><a title="shinyant.input.InputGlobalTokens.paddingXXS" href="#shinyant.input.InputGlobalTokens.paddingXXS">paddingXXS</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

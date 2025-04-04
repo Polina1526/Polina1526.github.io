@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.timeline API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.timeline</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.timeline.timeline"><code class="name flex">
+<span>def <span class="ident">timeline</span></span>(<span>id: str,<br>mode: str = 'left',<br>pending: bool = False,<br>reverse: bool = False,<br>items: list[<a title="shinyant.timeline.TimelineItem" href="#shinyant.timeline.TimelineItem">TimelineItem</a>] | None = None,<br>design: <a title="shinyant.timeline.TimelineDesignTokens" href="#shinyant.timeline.TimelineDesignTokens">TimelineDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.timeline.TimelineGlobalTokens" href="#shinyant.timeline.TimelineGlobalTokens">TimelineGlobalTokens</a> | None = None) ‑> <a title="shinyant.timeline.Timeline" href="#shinyant.timeline.Timeline">Timeline</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def timeline(
+    id: str,
+    mode: str = &#34;left&#34;,
+    pending: bool = False,
+    reverse: bool = False,
+    items: list[TimelineItem] | None = None,
+    design: TimelineDesignTokens | None = None,
+    globalDesign: TimelineGlobalTokens | None = None,
+) -&gt; &#34;Timeline&#34;:
+    &#34;&#34;&#34;
+    Creates a timeline component based on ant design react Timeline component
+
+    Attributes:
+        id (str): name of the component in the application
+        mode (str): distibution of nodes (left | right | alternate). Defaults to &#39;left&#39;
+        pending (bool): Set the last ghost node&#39;s existence. Defaults to False
+        reverse (bool): Whether reverse nodes or not. Defautls to False
+        items (list[TimelineItem]): List of nodes of timeline (TimelineItem class objects). Defaults to None
+        design (TimelineDesignTokens): Design of timeline (TimelineDesignTokens class object). Defaults to None
+        globalDesign (TimelineGlobalTokens): Global design of timeline (TimelineGlobalTokens class object). Defaults to None
+    &#34;&#34;&#34;
+    if items is None:
+        items = []
+    if design is None:
+        design = TimelineDesignTokens()
+    if globalDesign is None:
+        globalDesign = TimelineGlobalTokens()
+
+    return Timeline(id, mode, pending, reverse, items, design, globalDesign)</code></pre>
+</details>
+<div class="desc"><p>Creates a timeline component based on ant design react Timeline component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>mode</code></strong> :&ensp;<code>str</code></dt>
+<dd>distibution of nodes (left | right | alternate). Defaults to 'left'</dd>
+<dt><strong><code>pending</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Set the last ghost node's existence. Defaults to False</dd>
+<dt><strong><code>reverse</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether reverse nodes or not. Defautls to False</dd>
+<dt><strong><code>items</code></strong> :&ensp;<code>list[<a title="shinyant.timeline.TimelineItem" href="#shinyant.timeline.TimelineItem">TimelineItem</a>]</code></dt>
+<dd>List of nodes of timeline (TimelineItem class objects). Defaults to None</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code><a title="shinyant.timeline.TimelineDesignTokens" href="#shinyant.timeline.TimelineDesignTokens">TimelineDesignTokens</a></code></dt>
+<dd>Design of timeline (TimelineDesignTokens class object). Defaults to None</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code><a title="shinyant.timeline.TimelineGlobalTokens" href="#shinyant.timeline.TimelineGlobalTokens">TimelineGlobalTokens</a></code></dt>
+<dd>Global design of timeline (TimelineGlobalTokens class object). Defaults to None</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.timeline.Timeline"><code class="flex name class">
+<span>class <span class="ident">Timeline</span></span>
+<span>(</span><span>id: str,<br>mode: str,<br>pending: bool,<br>reverse: bool,<br>items: list[<a title="shinyant.timeline.TimelineItem" href="#shinyant.timeline.TimelineItem">TimelineItem</a>],<br>design: <a title="shinyant.timeline.TimelineDesignTokens" href="#shinyant.timeline.TimelineDesignTokens">TimelineDesignTokens</a>,<br>globalDesign: <a title="shinyant.timeline.TimelineGlobalTokens" href="#shinyant.timeline.TimelineGlobalTokens">TimelineGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Timeline:
+    &#34;&#34;&#34;
+    Main class, stores all timelines and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __timelines: ClassVar[dict[str, &#34;Timeline&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        mode: str,
+        pending: bool,
+        reverse: bool,
+        items: list[TimelineItem],
+        design: TimelineDesignTokens,
+        globalDesign: TimelineGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.mode = mode
+        self.pending = pending
+        self.reverse = reverse
+        self.items = items
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Timeline.__timelines:
+            raise KeyError(&#34;&#39;Timeline&#39; object with this id already exists&#34;)
+        Timeline.__timelines[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Timeline&#34;:
+        return Timeline.__timelines[resolve_id(id)]
+
+    @classmethod
+    async def change_mode(cls, id: str, mode: str) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].mode = mode
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_pending(cls, id: str, pending: bool) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].pending = pending
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_reverse(cls, id: str, reverse: bool) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].reverse = reverse
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_items(cls, id: str, items: list[TimelineItem]) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].items = items
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: TimelineDesignTokens) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_global_design(cls, id: str, globalDesign: TimelineGlobalTokens) -&gt; None:
+        Timeline.__timelines[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        data = {
+            &#34;shinyant_timeline&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;mode&#34;: self.mode,
+                &#34;pending&#34;: self.pending,
+                &#34;reverse&#34;: self.reverse,
+                &#34;items&#34;: [{key: value for key, value in asdict(item).items() if value != &#34;&#34;} for item in self.items],
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }
+        return data</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all timelines and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.timeline.Timeline.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.timeline.TimelineDesignTokens" href="#shinyant.timeline.TimelineDesignTokens">TimelineDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.change_global_design"><code class="name flex">
+<span>async def <span class="ident">change_global_design</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.timeline.TimelineGlobalTokens" href="#shinyant.timeline.TimelineGlobalTokens">TimelineGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.change_items"><code class="name flex">
+<span>async def <span class="ident">change_items</span></span>(<span>id: str,<br>items: list[<a title="shinyant.timeline.TimelineItem" href="#shinyant.timeline.TimelineItem">TimelineItem</a>]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.change_mode"><code class="name flex">
+<span>async def <span class="ident">change_mode</span></span>(<span>id: str, mode: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.change_pending"><code class="name flex">
+<span>async def <span class="ident">change_pending</span></span>(<span>id: str, pending: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.change_reverse"><code class="name flex">
+<span>async def <span class="ident">change_reverse</span></span>(<span>id: str, reverse: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.Timeline.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.timeline.Timeline" href="#shinyant.timeline.Timeline">Timeline</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.timeline.Timeline.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    data = {
+        &#34;shinyant_timeline&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;mode&#34;: self.mode,
+            &#34;pending&#34;: self.pending,
+            &#34;reverse&#34;: self.reverse,
+            &#34;items&#34;: [{key: value for key, value in asdict(item).items() if value != &#34;&#34;} for item in self.items],
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }
+    return data</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.timeline.TimelineDesignTokens"><code class="flex name class">
+<span>class <span class="ident">TimelineDesignTokens</span></span>
+<span>(</span><span>dotBg: str = '#ffffff',<br>dotBorderWidth: int = 2,<br>itemPaddingBottom: int = 20,<br>tailColor: str = 'rgba(5, 5, 5, 0.06)',<br>tailWidth: int = 2)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TimelineDesignTokens:
+    &#34;&#34;&#34;
+    Timeline Design class (Design Tokens from react ant.design for timeline)
+
+    Attributes:
+        dotBg (str): Background color of node. Defauls to &#39;#ffffff&#39;
+        dotBorderWidth (int): Border width of node. Defauls to 2
+        itemPaddingBottom (int): Bottom padding of item. Defauls to 20
+        tailColor (str): Line color. Defauls to &#39;rgba(5, 5, 5, 0.06)&#39;
+        tailWidth (int): Line width. Defauls to 2
+    &#34;&#34;&#34;
+
+    dotBg: str = &#34;#ffffff&#34;
+    dotBorderWidth: int = 2
+    itemPaddingBottom: int = 20
+    tailColor: str = &#34;rgba(5, 5, 5, 0.06)&#34;
+    tailWidth: int = 2</code></pre>
+</details>
+<div class="desc"><p>Timeline Design class (Design Tokens from react ant.design for timeline)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>dotBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of node. Defauls to '#ffffff'</dd>
+<dt><strong><code>dotBorderWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of node. Defauls to 2</dd>
+<dt><strong><code>itemPaddingBottom</code></strong> :&ensp;<code>int</code></dt>
+<dd>Bottom padding of item. Defauls to 20</dd>
+<dt><strong><code>tailColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Line color. Defauls to 'rgba(5, 5, 5, 0.06)'</dd>
+<dt><strong><code>tailWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Line width. Defauls to 2</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.timeline.TimelineDesignTokens.dotBg"><code class="name">var <span class="ident">dotBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineDesignTokens.dotBorderWidth"><code class="name">var <span class="ident">dotBorderWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineDesignTokens.itemPaddingBottom"><code class="name">var <span class="ident">itemPaddingBottom</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineDesignTokens.tailColor"><code class="name">var <span class="ident">tailColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineDesignTokens.tailWidth"><code class="name">var <span class="ident">tailWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">TimelineGlobalTokens</span></span>
+<span>(</span><span>colorError: str = '#ff4d4f',<br>colorPrimary: str = '#1677ff',<br>colorSuccess: str = '#52c41a',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>colorTextDisabled: str = 'rgba(0,0,0,0.25)',<br>controlHeightLG: int = 40,<br>fontSize: int = 14,<br>fontSizeSM: int = 12,<br>lineHeight: float = 1.5714285714285714,<br>lineType: str = 'solid',<br>lineWidth: int = 1,<br>margin: int = 16,<br>marginSM: int = 12,<br>marginXS: int = 8,<br>marginXXS: int = 4,<br>paddingXXS: int = 4)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TimelineGlobalTokens:
+    &#34;&#34;&#34;
+    Timeline Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorError (str): Used to represent the visual elements of the operation failure. Defauls to &#39;#ff4d4f&#39;
+        colorPrimary (str): Brand color. Defauls to &#39;#1677ff&#39;
+        colorSuccess (str): Used to represent the token sequence of operation success. Defauls to &#39;#52c41a&#39;
+        colorText (str): Default text color which comply with W3C standards. Defauls to &#39;rgba(0, 0, 0, 0.88)&#39;
+        colorTextDisabled (str): Control the color of text in disabled state. Defauls to &#39;rgba(0, 0, 0, 0.25)&#39;
+        controlHeightLG (int): LG component height. Defauls to 40
+        fontSize (int): The most widely used font size in the design system. Defauls to 14
+        fontSizeSM (int): Small font size. Defauls to 12
+        lineHeight (float): Line height of text. Defauls to 1.5714285714285714
+        lineType (str): Border style of base components. Defauls to &#39;solid&#39;
+        lineWidth (int): Border width of base components. Defauls to 1
+        margin (int): Control the margin of an element, with a medium size. Defauls to 16
+        marginSM (int): Control the margin of an element, with a medium-small size. Defauls to 12
+        marginXS (int): Control the margin of an element, with a small size. Defauls to 8
+        marginXXS (int): Control the margin of an element, with the smallest size. Defauls to 4
+        paddingXXS (int): Control the extra extra small padding of the element. Defauls to 4
+    &#34;&#34;&#34;
+
+    colorError: str = constants.GlobalToken.colorError
+    colorPrimary: str = constants.GlobalToken.colorPrimary
+    colorSuccess: str = constants.GlobalToken.colorSuccess
+    colorText: str = constants.GlobalToken.colorText
+    colorTextDisabled: str = constants.GlobalToken.colorTextDisabled
+    controlHeightLG: int = constants.GlobalToken.controlHeightLG
+    fontSize: int = constants.GlobalToken.fontSize
+    fontSizeSM: int = constants.GlobalToken.fontSizeSM
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineType: str = constants.GlobalToken.lineType
+    lineWidth: int = constants.GlobalToken.lineWidth
+    margin: int = constants.GlobalToken.margin
+    marginSM: int = constants.GlobalToken.marginSM
+    marginXS: int = constants.GlobalToken.marginXS
+    marginXXS: int = constants.GlobalToken.marginXXS
+    paddingXXS: int = constants.GlobalToken.paddingXXS</code></pre>
+</details>
+<div class="desc"><p>Timeline Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorError</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used to represent the visual elements of the operation failure. Defauls to '#ff4d4f'</dd>
+<dt><strong><code>colorPrimary</code></strong> :&ensp;<code>str</code></dt>
+<dd>Brand color. Defauls to '#1677ff'</dd>
+<dt><strong><code>colorSuccess</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used to represent the token sequence of operation success. Defauls to '#52c41a'</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards. Defauls to 'rgba(0, 0, 0, 0.88)'</dd>
+<dt><strong><code>colorTextDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of text in disabled state. Defauls to 'rgba(0, 0, 0, 0.25)'</dd>
+<dt><strong><code>controlHeightLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG component height. Defauls to 40</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system. Defauls to 14</dd>
+<dt><strong><code>fontSizeSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Small font size. Defauls to 12</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text. Defauls to 1.5714285714285714</dd>
+<dt><strong><code>lineType</code></strong> :&ensp;<code>str</code></dt>
+<dd>Border style of base components. Defauls to 'solid'</dd>
+<dt><strong><code>lineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of base components. Defauls to 1</dd>
+<dt><strong><code>margin</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a medium size. Defauls to 16</dd>
+<dt><strong><code>marginSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a medium-small size. Defauls to 12</dd>
+<dt><strong><code>marginXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a small size. Defauls to 8</dd>
+<dt><strong><code>marginXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with the smallest size. Defauls to 4</dd>
+<dt><strong><code>paddingXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra extra small padding of the element. Defauls to 4</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.timeline.TimelineGlobalTokens.colorError"><code class="name">var <span class="ident">colorError</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.colorPrimary"><code class="name">var <span class="ident">colorPrimary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.colorSuccess"><code class="name">var <span class="ident">colorSuccess</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.colorTextDisabled"><code class="name">var <span class="ident">colorTextDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.controlHeightLG"><code class="name">var <span class="ident">controlHeightLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.fontSizeSM"><code class="name">var <span class="ident">fontSizeSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.lineType"><code class="name">var <span class="ident">lineType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.lineWidth"><code class="name">var <span class="ident">lineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.margin"><code class="name">var <span class="ident">margin</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.marginSM"><code class="name">var <span class="ident">marginSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.marginXS"><code class="name">var <span class="ident">marginXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.marginXXS"><code class="name">var <span class="ident">marginXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineGlobalTokens.paddingXXS"><code class="name">var <span class="ident">paddingXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.timeline.TimelineItem"><code class="flex name class">
+<span>class <span class="ident">TimelineItem</span></span>
+<span>(</span><span>color: str = '',<br>dot: str = '',<br>label: Any = '',<br>children: Any = '',<br>position: str = '')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TimelineItem:
+    &#34;&#34;&#34;
+    Timeline Item class (one node of timeline)
+
+    Attributes:
+        color (str): Set the circle&#39;s color. Defaults to &#39;&#39;
+        dot (str): Customize timeline dot. Defaults to &#39;&#39;
+        label (Any): Set the label (Any tag, component or plain type). Defaults to &#39;&#39;
+        children (Any): Set the label (Any tag, component or plain type). Defaults to &#39;&#39;
+        position (str): Customize node position (left | right | None). Defaults to &#39;&#39;
+    &#34;&#34;&#34;
+
+    color: str = &#34;&#34;
+    dot: str = &#34;&#34;
+    label: Any = &#34;&#34;
+    children: Any = &#34;&#34;
+    position: str = &#34;&#34;</code></pre>
+</details>
+<div class="desc"><p>Timeline Item class (one node of timeline)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>color</code></strong> :&ensp;<code>str</code></dt>
+<dd>Set the circle's color. Defaults to ''</dd>
+<dt><strong><code>dot</code></strong> :&ensp;<code>str</code></dt>
+<dd>Customize timeline dot. Defaults to ''</dd>
+<dt><strong><code>label</code></strong> :&ensp;<code>Any</code></dt>
+<dd>Set the label (Any tag, component or plain type). Defaults to ''</dd>
+<dt><strong><code>children</code></strong> :&ensp;<code>Any</code></dt>
+<dd>Set the label (Any tag, component or plain type). Defaults to ''</dd>
+<dt><strong><code>position</code></strong> :&ensp;<code>str</code></dt>
+<dd>Customize node position (left | right | None). Defaults to ''</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.timeline.TimelineItem.children"><code class="name">var <span class="ident">children</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineItem.color"><code class="name">var <span class="ident">color</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineItem.dot"><code class="name">var <span class="ident">dot</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineItem.label"><code class="name">var <span class="ident">label</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.timeline.TimelineItem.position"><code class="name">var <span class="ident">position</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.timeline.timeline" href="#shinyant.timeline.timeline">timeline</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.timeline.Timeline" href="#shinyant.timeline.Timeline">Timeline</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.timeline.Timeline.change_design" href="#shinyant.timeline.Timeline.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.change_global_design" href="#shinyant.timeline.Timeline.change_global_design">change_global_design</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.change_items" href="#shinyant.timeline.Timeline.change_items">change_items</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.change_mode" href="#shinyant.timeline.Timeline.change_mode">change_mode</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.change_pending" href="#shinyant.timeline.Timeline.change_pending">change_pending</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.change_reverse" href="#shinyant.timeline.Timeline.change_reverse">change_reverse</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.dump" href="#shinyant.timeline.Timeline.dump">dump</a></code></li>
+<li><code><a title="shinyant.timeline.Timeline.get_component" href="#shinyant.timeline.Timeline.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.timeline.TimelineDesignTokens" href="#shinyant.timeline.TimelineDesignTokens">TimelineDesignTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.timeline.TimelineDesignTokens.dotBg" href="#shinyant.timeline.TimelineDesignTokens.dotBg">dotBg</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineDesignTokens.dotBorderWidth" href="#shinyant.timeline.TimelineDesignTokens.dotBorderWidth">dotBorderWidth</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineDesignTokens.itemPaddingBottom" href="#shinyant.timeline.TimelineDesignTokens.itemPaddingBottom">itemPaddingBottom</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineDesignTokens.tailColor" href="#shinyant.timeline.TimelineDesignTokens.tailColor">tailColor</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineDesignTokens.tailWidth" href="#shinyant.timeline.TimelineDesignTokens.tailWidth">tailWidth</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.timeline.TimelineGlobalTokens" href="#shinyant.timeline.TimelineGlobalTokens">TimelineGlobalTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.colorError" href="#shinyant.timeline.TimelineGlobalTokens.colorError">colorError</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.colorPrimary" href="#shinyant.timeline.TimelineGlobalTokens.colorPrimary">colorPrimary</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.colorSuccess" href="#shinyant.timeline.TimelineGlobalTokens.colorSuccess">colorSuccess</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.colorText" href="#shinyant.timeline.TimelineGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.colorTextDisabled" href="#shinyant.timeline.TimelineGlobalTokens.colorTextDisabled">colorTextDisabled</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.controlHeightLG" href="#shinyant.timeline.TimelineGlobalTokens.controlHeightLG">controlHeightLG</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.fontSize" href="#shinyant.timeline.TimelineGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.fontSizeSM" href="#shinyant.timeline.TimelineGlobalTokens.fontSizeSM">fontSizeSM</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.lineHeight" href="#shinyant.timeline.TimelineGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.lineType" href="#shinyant.timeline.TimelineGlobalTokens.lineType">lineType</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.lineWidth" href="#shinyant.timeline.TimelineGlobalTokens.lineWidth">lineWidth</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.margin" href="#shinyant.timeline.TimelineGlobalTokens.margin">margin</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.marginSM" href="#shinyant.timeline.TimelineGlobalTokens.marginSM">marginSM</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.marginXS" href="#shinyant.timeline.TimelineGlobalTokens.marginXS">marginXS</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.marginXXS" href="#shinyant.timeline.TimelineGlobalTokens.marginXXS">marginXXS</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineGlobalTokens.paddingXXS" href="#shinyant.timeline.TimelineGlobalTokens.paddingXXS">paddingXXS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.timeline.TimelineItem" href="#shinyant.timeline.TimelineItem">TimelineItem</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.timeline.TimelineItem.children" href="#shinyant.timeline.TimelineItem.children">children</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineItem.color" href="#shinyant.timeline.TimelineItem.color">color</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineItem.dot" href="#shinyant.timeline.TimelineItem.dot">dot</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineItem.label" href="#shinyant.timeline.TimelineItem.label">label</a></code></li>
+<li><code><a title="shinyant.timeline.TimelineItem.position" href="#shinyant.timeline.TimelineItem.position">position</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

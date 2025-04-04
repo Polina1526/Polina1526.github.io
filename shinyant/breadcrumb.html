@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.breadcrumb API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.breadcrumb</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.breadcrumb.breadcrumb"><code class="name flex">
+<span>def <span class="ident">breadcrumb</span></span>(<span>id: str,<br>items: list[<a title="shinyant.breadcrumb.BreadcrumbItem" href="#shinyant.breadcrumb.BreadcrumbItem">BreadcrumbItem</a>] | None = None,<br>separator: str = '/',<br>design: <a title="shinyant.breadcrumb.BreadcrumbDesignTokens" href="#shinyant.breadcrumb.BreadcrumbDesignTokens">BreadcrumbDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.breadcrumb.BreadcrumbGlobalTokens" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens">BreadcrumbGlobalTokens</a> | None = None) ‑> <a title="shinyant.breadcrumb.Breadcrumb" href="#shinyant.breadcrumb.Breadcrumb">Breadcrumb</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def breadcrumb(
+    id: str,
+    items: list[BreadcrumbItem] | None = None,
+    separator: str = &#34;/&#34;,
+    design: BreadcrumbDesignTokens | None = None,
+    globalDesign: BreadcrumbGlobalTokens | None = None,
+) -&gt; &#34;Breadcrumb&#34;:
+    &#34;&#34;&#34;
+    Creates a breadcrumb component based on ant design react Breadcrumb component
+
+    Attributes:
+        id (str): name of the component in the application
+        items (list[BreadcrumbItem]): The routing stack information of router. Defauls to None
+        separator (str): Custom separator. Set as &#39;&#39; to disable the common separator and enable customization of individual separators with BreadcrumbItem. Defauls to &#39;/&#39;
+        design (BreadcrumbDesignTokens): Design of breadcrumb (BreadcrumbDesignTokens class object). Defauls to BreadcrumbDesignTokens
+        globalDesign (BreadcrumbGlobalTokens): Global design of breadcrumb (BreadcrumbGlobalTokens class object). Defauls to BreadcrumbGlobalTokens
+    &#34;&#34;&#34;
+    if items is None:
+        items = []
+    if design is None:
+        design = BreadcrumbDesignTokens()
+    if globalDesign is None:
+        globalDesign = BreadcrumbGlobalTokens()
+
+    return Breadcrumb(
+        id=id,
+        items=items,
+        separator=separator,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a breadcrumb component based on ant design react Breadcrumb component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>items</code></strong> :&ensp;<code>list[<a title="shinyant.breadcrumb.BreadcrumbItem" href="#shinyant.breadcrumb.BreadcrumbItem">BreadcrumbItem</a>]</code></dt>
+<dd>The routing stack information of router. Defauls to None</dd>
+<dt><strong><code>separator</code></strong> :&ensp;<code>str</code></dt>
+<dd>Custom separator. Set as '' to disable the common separator and enable customization of individual separators with BreadcrumbItem. Defauls to '/'</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens" href="#shinyant.breadcrumb.BreadcrumbDesignTokens">BreadcrumbDesignTokens</a></code></dt>
+<dd>Design of breadcrumb (BreadcrumbDesignTokens class object). Defauls to BreadcrumbDesignTokens</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens">BreadcrumbGlobalTokens</a></code></dt>
+<dd>Global design of breadcrumb (BreadcrumbGlobalTokens class object). Defauls to BreadcrumbGlobalTokens</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.breadcrumb.Breadcrumb"><code class="flex name class">
+<span>class <span class="ident">Breadcrumb</span></span>
+<span>(</span><span>id: str,<br>items: list[<a title="shinyant.breadcrumb.BreadcrumbItem" href="#shinyant.breadcrumb.BreadcrumbItem">BreadcrumbItem</a>],<br>separator: str,<br>design: <a title="shinyant.breadcrumb.BreadcrumbDesignTokens" href="#shinyant.breadcrumb.BreadcrumbDesignTokens">BreadcrumbDesignTokens</a>,<br>globalDesign: <a title="shinyant.breadcrumb.BreadcrumbGlobalTokens" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens">BreadcrumbGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Breadcrumb:
+    &#34;&#34;&#34;
+    Main class, stores all breadcrumb and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __breadcrumb: ClassVar[dict[str, &#34;Breadcrumb&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        items: list[BreadcrumbItem],
+        separator: str,
+        design: BreadcrumbDesignTokens,
+        globalDesign: BreadcrumbGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.items = items
+        self.separator = separator
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Breadcrumb.__breadcrumb:
+            raise KeyError(&#34;&#39;Breadcrumb&#39; object with this id already exists&#34;)
+        Breadcrumb.__breadcrumb[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Breadcrumb&#34;:
+        return Breadcrumb.__breadcrumb[resolve_id(id)]
+
+    @classmethod
+    async def change_items(cls, id: str, items: list[BreadcrumbItem]) -&gt; None:
+        Breadcrumb.__breadcrumb[resolve_id(id)].items = items
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_separator(cls, id: str, separator: str) -&gt; None:
+        Breadcrumb.__breadcrumb[resolve_id(id)].separator = separator
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: BreadcrumbDesignTokens) -&gt; None:
+        Breadcrumb.__breadcrumb[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_global_design(cls, id: str, globalDesign: BreadcrumbGlobalTokens) -&gt; None:
+        Breadcrumb.__breadcrumb[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        data = {
+            &#34;shinyant_breadcrumb&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;items&#34;: [{key: value for key, value in asdict(item).items() if value != &#34;&#34;} for item in self.items],
+                &#34;separator&#34;: self.separator,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }
+        return data</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all breadcrumb and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.breadcrumb.Breadcrumb.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.breadcrumb.BreadcrumbDesignTokens" href="#shinyant.breadcrumb.BreadcrumbDesignTokens">BreadcrumbDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.Breadcrumb.change_global_design"><code class="name flex">
+<span>async def <span class="ident">change_global_design</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.breadcrumb.BreadcrumbGlobalTokens" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens">BreadcrumbGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.Breadcrumb.change_items"><code class="name flex">
+<span>async def <span class="ident">change_items</span></span>(<span>id: str,<br>items: list[<a title="shinyant.breadcrumb.BreadcrumbItem" href="#shinyant.breadcrumb.BreadcrumbItem">BreadcrumbItem</a>]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.Breadcrumb.change_separator"><code class="name flex">
+<span>async def <span class="ident">change_separator</span></span>(<span>id: str, separator: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.Breadcrumb.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.breadcrumb.Breadcrumb" href="#shinyant.breadcrumb.Breadcrumb">Breadcrumb</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.breadcrumb.Breadcrumb.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    data = {
+        &#34;shinyant_breadcrumb&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;items&#34;: [{key: value for key, value in asdict(item).items() if value != &#34;&#34;} for item in self.items],
+            &#34;separator&#34;: self.separator,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }
+    return data</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens"><code class="flex name class">
+<span>class <span class="ident">BreadcrumbDesignTokens</span></span>
+<span>(</span><span>iconFontSize: int = 14,<br>itemColor: str = 'rgba(0,0,0,0.45)',<br>lastItemColor: str = 'rgba(0,0,0,0.88)',<br>linkColor: str = 'rgba(0,0,0,0.45)',<br>linkHoverColor: str = 'rgba(0,0,0,0.88)',<br>separatorColor: str = 'rgba(0,0,0,0.45)',<br>separatorMargin: int = 8)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class BreadcrumbDesignTokens:
+    &#34;&#34;&#34;
+    Breadcrumb Design class (Design Tokens from react ant.design for breadcrumb)
+
+    Attributes:
+        iconFontSize (int): Icon size. Defaults to 14
+        itemColor (str): Text color of Breadcrumb item. Defaults to &#39;rgba(0,0,0,0.45)&#39;
+        lastItemColor (str): Text color of the last item. Defaults to &#39;rgba(0,0,0,0.88)&#39;
+        linkColor (str): Text color of link. Defaults to &#39;rgba(0,0,0,0.45)&#39;
+        linkHoverColor (str): Color of hovered link. Defaults to &#39;rgba(0,0,0,0.88)&#39;
+        separatorColor (str): Color of separator. Defaults to &#39;rgba(0,0,0,0.45)&#39;
+        separatorMargin (int): Margin of separator. Defaults to 8
+    &#34;&#34;&#34;
+
+    iconFontSize: int = 14
+    itemColor: str = &#34;rgba(0,0,0,0.45)&#34;
+    lastItemColor: str = &#34;rgba(0,0,0,0.88)&#34;
+    linkColor: str = &#34;rgba(0,0,0,0.45)&#34;
+    linkHoverColor: str = &#34;rgba(0,0,0,0.88)&#34;
+    separatorColor: str = &#34;rgba(0,0,0,0.45)&#34;
+    separatorMargin: int = 8</code></pre>
+</details>
+<div class="desc"><p>Breadcrumb Design class (Design Tokens from react ant.design for breadcrumb)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>iconFontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Icon size. Defaults to 14</dd>
+<dt><strong><code>itemColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of Breadcrumb item. Defaults to 'rgba(0,0,0,0.45)'</dd>
+<dt><strong><code>lastItemColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of the last item. Defaults to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>linkColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of link. Defaults to 'rgba(0,0,0,0.45)'</dd>
+<dt><strong><code>linkHoverColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Color of hovered link. Defaults to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>separatorColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Color of separator. Defaults to 'rgba(0,0,0,0.45)'</dd>
+<dt><strong><code>separatorMargin</code></strong> :&ensp;<code>int</code></dt>
+<dd>Margin of separator. Defaults to 8</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.iconFontSize"><code class="name">var <span class="ident">iconFontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.itemColor"><code class="name">var <span class="ident">itemColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.lastItemColor"><code class="name">var <span class="ident">lastItemColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.linkColor"><code class="name">var <span class="ident">linkColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.linkHoverColor"><code class="name">var <span class="ident">linkHoverColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.separatorColor"><code class="name">var <span class="ident">separatorColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbDesignTokens.separatorMargin"><code class="name">var <span class="ident">separatorMargin</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">BreadcrumbGlobalTokens</span></span>
+<span>(</span><span>colorBgTextHover: str = 'rgba(0,0,0,0.06)',<br>colorPrimaryBorder: str = '#91caff',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>borderRadiusSM: int = 4,<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>fontSizeIcon: int = 12,<br>lineHeight: float = 1.5714285714285714,<br>lineWidthFocus: int = 3,<br>marginXXS: int = 4,<br>motionDurationMid: str = '0.2s',<br>paddingXXS: int = 4)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class BreadcrumbGlobalTokens:
+    &#34;&#34;&#34;
+    Breadcrumb Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorBgTextHover (str): Control the background color of text in hover state. Defaults to &#39;rgba(0,0,0,0.06)&#39;
+        colorPrimaryBorder (str): The stroke color under the main color gradient, used on the stroke of components such as Slider. Defaults to &#39;#91caff&#39;
+        colorText (str): Default text color which comply with W3C standards, and this color is also the darkest neutral color. Defaults to &#39;rgba(0,0,0,0.88)&#39;
+        borderRadiusSM (int): SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size. Defaults to 4
+        fontFamily (str): The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics. Defaults to FontFamily
+        fontSize (int): The most widely used font size in the design system, from which the text gradient will be derived. Defaults to 14
+        fontSizeIcon (int): Control the font size of operation icon in Select, Cascader, etc. Normally same as fontSizeSM. Defaults to 12
+        lineHeight (float): Line height of text. Defaults to 1.5714285714285714
+        lineWidthFocus (int): Control the width of the line when the component is in focus state. Defaults to 3
+        marginXXS (int): Control the margin of an element, with the smallest size. Defaults to 4
+        motionDurationMid (str): Motion speed, medium speed. Used for medium element animation interaction. Defaults to &#39;0.2s&#39;
+        paddingXXS (int): Control the extra extra small padding of the element. Defaults to 4
+    &#34;&#34;&#34;
+
+    colorBgTextHover: str = constants.GlobalToken.colorBgTextHover
+    colorPrimaryBorder: str = constants.GlobalToken.colorPrimaryBorder
+    colorText: str = constants.GlobalToken.colorText
+    borderRadiusSM: int = constants.GlobalToken.borderRadiusSM
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    fontSizeIcon: int = constants.GlobalToken.fontSizeIcon
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineWidthFocus: int = constants.GlobalToken.lineWidthFocus
+    marginXXS: int = constants.GlobalToken.marginXXS
+    motionDurationMid: str = constants.GlobalToken.motionDurationMid
+    paddingXXS: int = constants.GlobalToken.paddingXXS</code></pre>
+</details>
+<div class="desc"><p>Breadcrumb Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorBgTextHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of text in hover state. Defaults to 'rgba(0,0,0,0.06)'</dd>
+<dt><strong><code>colorPrimaryBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>The stroke color under the main color gradient, used on the stroke of components such as Slider. Defaults to '#91caff'</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards, and this color is also the darkest neutral color. Defaults to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>borderRadiusSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size. Defaults to 4</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics. Defaults to FontFamily</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system, from which the text gradient will be derived. Defaults to 14</dd>
+<dt><strong><code>fontSizeIcon</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the font size of operation icon in Select, Cascader, etc. Normally same as fontSizeSM. Defaults to 12</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text. Defaults to 1.5714285714285714</dd>
+<dt><strong><code>lineWidthFocus</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the width of the line when the component is in focus state. Defaults to 3</dd>
+<dt><strong><code>marginXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with the smallest size. Defaults to 4</dd>
+<dt><strong><code>motionDurationMid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, medium speed. Used for medium element animation interaction. Defaults to '0.2s'</dd>
+<dt><strong><code>paddingXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra extra small padding of the element. Defaults to 4</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.borderRadiusSM"><code class="name">var <span class="ident">borderRadiusSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorBgTextHover"><code class="name">var <span class="ident">colorBgTextHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorPrimaryBorder"><code class="name">var <span class="ident">colorPrimaryBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSizeIcon"><code class="name">var <span class="ident">fontSizeIcon</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.lineWidthFocus"><code class="name">var <span class="ident">lineWidthFocus</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.marginXXS"><code class="name">var <span class="ident">marginXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.motionDurationMid"><code class="name">var <span class="ident">motionDurationMid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbGlobalTokens.paddingXXS"><code class="name">var <span class="ident">paddingXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbItem"><code class="flex name class">
+<span>class <span class="ident">BreadcrumbItem</span></span>
+<span>(</span><span>href: str = '',<br>title: str = '',<br>menu: <a title="shinyant.breadcrumb.BreadcrumbMenuProps" href="#shinyant.breadcrumb.BreadcrumbMenuProps">BreadcrumbMenuProps</a> | None = None,<br>type: Literal['separator'] | None = None,<br>separator: str = '/')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class BreadcrumbItem:
+    &#34;&#34;&#34;
+    Breadcrumb Item class (combination of RouteItem and Separator of breadcrumb)
+
+    Attributes:
+        href (str): Target of hyperlink. Defaults to &#39;&#39;
+        title (str): Item name. Defaults to &#39;&#39;
+        menu (BreadcrumbMenuProps): The menu props. Defaults to None
+        type (str): Mark as &#39;separator&#39; to switch the element to &#39;separator&#39; mode. Defaults to None
+        separator (str): Custom separator. Defaults to None
+    &#34;&#34;&#34;
+
+    href: str = &#34;&#34;
+    title: str = &#34;&#34;
+    menu: BreadcrumbMenuProps | None = None
+    type: Literal[&#34;separator&#34;] | None = None
+    separator: str = &#34;/&#34;</code></pre>
+</details>
+<div class="desc"><p>Breadcrumb Item class (combination of RouteItem and Separator of breadcrumb)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>href</code></strong> :&ensp;<code>str</code></dt>
+<dd>Target of hyperlink. Defaults to ''</dd>
+<dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
+<dd>Item name. Defaults to ''</dd>
+<dt><strong><code>menu</code></strong> :&ensp;<code><a title="shinyant.breadcrumb.BreadcrumbMenuProps" href="#shinyant.breadcrumb.BreadcrumbMenuProps">BreadcrumbMenuProps</a></code></dt>
+<dd>The menu props. Defaults to None</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Mark as 'separator' to switch the element to 'separator' mode. Defaults to None</dd>
+<dt><strong><code>separator</code></strong> :&ensp;<code>str</code></dt>
+<dd>Custom separator. Defaults to None</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.breadcrumb.BreadcrumbItem.href"><code class="name">var <span class="ident">href</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbItem.menu"><code class="name">var <span class="ident">menu</span> : <a title="shinyant.breadcrumb.BreadcrumbMenuProps" href="#shinyant.breadcrumb.BreadcrumbMenuProps">BreadcrumbMenuProps</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbItem.separator"><code class="name">var <span class="ident">separator</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbItem.title"><code class="name">var <span class="ident">title</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbItem.type"><code class="name">var <span class="ident">type</span> : Literal['separator'] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem"><code class="flex name class">
+<span>class <span class="ident">BreadcrumbMenuItem</span></span>
+<span>(</span><span>danger: bool = False,<br>disabled: bool = False,<br>label: Any = None,<br>type: Literal['divider'] | None = None,<br>dashed: bool = False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class BreadcrumbMenuItem:
+    &#34;&#34;&#34;
+    Props for MenuItems.
+
+    Attributes:
+        danger (bool): Display the danger style. Defaults to False
+        disabled (bool): Whether menu item is disabled. Defaults to False
+        label (str | Tag): Menu label. Defaults to None
+        type (str): Mark as &#39;divider&#39; to switch the element to &#39;divider&#39; mode. Defaults to None
+        dashed (bool): Whether line is dashed. Defaults to False
+    &#34;&#34;&#34;
+
+    danger: bool = False
+    disabled: bool = False
+    label: Any = None
+    type: Literal[&#34;divider&#34;] | None = None
+    dashed: bool = False</code></pre>
+</details>
+<div class="desc"><p>Props for MenuItems.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>danger</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Display the danger style. Defaults to False</dd>
+<dt><strong><code>disabled</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether menu item is disabled. Defaults to False</dd>
+<dt><strong><code>label</code></strong> :&ensp;<code>str | Tag</code></dt>
+<dd>Menu label. Defaults to None</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Mark as 'divider' to switch the element to 'divider' mode. Defaults to None</dd>
+<dt><strong><code>dashed</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether line is dashed. Defaults to False</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem.danger"><code class="name">var <span class="ident">danger</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem.dashed"><code class="name">var <span class="ident">dashed</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem.disabled"><code class="name">var <span class="ident">disabled</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem.label"><code class="name">var <span class="ident">label</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuItem.type"><code class="name">var <span class="ident">type</span> : Literal['divider'] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuProps"><code class="flex name class">
+<span>class <span class="ident">BreadcrumbMenuProps</span></span>
+<span>(</span><span>items: list[<a title="shinyant.breadcrumb.BreadcrumbMenuItem" href="#shinyant.breadcrumb.BreadcrumbMenuItem">BreadcrumbMenuItem</a>] | None = None,<br>selectable: bool = True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class BreadcrumbMenuProps:
+    &#34;&#34;&#34;
+    Props for Menu for Dropdown component inside Breadcrumb.
+
+    Attributes:
+        items (list[BreadcrumbMenuItem]): Menu item content. Defaults to None
+        selectable (bool): Allows selecting menu items. Defaults to True
+    &#34;&#34;&#34;
+
+    items: list[BreadcrumbMenuItem] | None = None
+    selectable: bool = True</code></pre>
+</details>
+<div class="desc"><p>Props for Menu for Dropdown component inside Breadcrumb.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>items</code></strong> :&ensp;<code>list[<a title="shinyant.breadcrumb.BreadcrumbMenuItem" href="#shinyant.breadcrumb.BreadcrumbMenuItem">BreadcrumbMenuItem</a>]</code></dt>
+<dd>Menu item content. Defaults to None</dd>
+<dt><strong><code>selectable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Allows selecting menu items. Defaults to True</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuProps.items"><code class="name">var <span class="ident">items</span> : list[<a title="shinyant.breadcrumb.BreadcrumbMenuItem" href="#shinyant.breadcrumb.BreadcrumbMenuItem">BreadcrumbMenuItem</a>] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.breadcrumb.BreadcrumbMenuProps.selectable"><code class="name">var <span class="ident">selectable</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.breadcrumb.breadcrumb" href="#shinyant.breadcrumb.breadcrumb">breadcrumb</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.breadcrumb.Breadcrumb" href="#shinyant.breadcrumb.Breadcrumb">Breadcrumb</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.change_design" href="#shinyant.breadcrumb.Breadcrumb.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.change_global_design" href="#shinyant.breadcrumb.Breadcrumb.change_global_design">change_global_design</a></code></li>
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.change_items" href="#shinyant.breadcrumb.Breadcrumb.change_items">change_items</a></code></li>
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.change_separator" href="#shinyant.breadcrumb.Breadcrumb.change_separator">change_separator</a></code></li>
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.dump" href="#shinyant.breadcrumb.Breadcrumb.dump">dump</a></code></li>
+<li><code><a title="shinyant.breadcrumb.Breadcrumb.get_component" href="#shinyant.breadcrumb.Breadcrumb.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens" href="#shinyant.breadcrumb.BreadcrumbDesignTokens">BreadcrumbDesignTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.iconFontSize" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.iconFontSize">iconFontSize</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.itemColor" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.itemColor">itemColor</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.lastItemColor" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.lastItemColor">lastItemColor</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.linkColor" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.linkColor">linkColor</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.linkHoverColor" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.linkHoverColor">linkHoverColor</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.separatorColor" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.separatorColor">separatorColor</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbDesignTokens.separatorMargin" href="#shinyant.breadcrumb.BreadcrumbDesignTokens.separatorMargin">separatorMargin</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens">BreadcrumbGlobalTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.borderRadiusSM" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorBgTextHover" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.colorBgTextHover">colorBgTextHover</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorPrimaryBorder" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.colorPrimaryBorder">colorPrimaryBorder</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.colorText" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontFamily" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSize" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSizeIcon" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.fontSizeIcon">fontSizeIcon</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.lineHeight" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.lineWidthFocus" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.lineWidthFocus">lineWidthFocus</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.marginXXS" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.marginXXS">marginXXS</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.motionDurationMid" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.motionDurationMid">motionDurationMid</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbGlobalTokens.paddingXXS" href="#shinyant.breadcrumb.BreadcrumbGlobalTokens.paddingXXS">paddingXXS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.breadcrumb.BreadcrumbItem" href="#shinyant.breadcrumb.BreadcrumbItem">BreadcrumbItem</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.breadcrumb.BreadcrumbItem.href" href="#shinyant.breadcrumb.BreadcrumbItem.href">href</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbItem.menu" href="#shinyant.breadcrumb.BreadcrumbItem.menu">menu</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbItem.separator" href="#shinyant.breadcrumb.BreadcrumbItem.separator">separator</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbItem.title" href="#shinyant.breadcrumb.BreadcrumbItem.title">title</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbItem.type" href="#shinyant.breadcrumb.BreadcrumbItem.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem" href="#shinyant.breadcrumb.BreadcrumbMenuItem">BreadcrumbMenuItem</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem.danger" href="#shinyant.breadcrumb.BreadcrumbMenuItem.danger">danger</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem.dashed" href="#shinyant.breadcrumb.BreadcrumbMenuItem.dashed">dashed</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem.disabled" href="#shinyant.breadcrumb.BreadcrumbMenuItem.disabled">disabled</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem.label" href="#shinyant.breadcrumb.BreadcrumbMenuItem.label">label</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuItem.type" href="#shinyant.breadcrumb.BreadcrumbMenuItem.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.breadcrumb.BreadcrumbMenuProps" href="#shinyant.breadcrumb.BreadcrumbMenuProps">BreadcrumbMenuProps</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuProps.items" href="#shinyant.breadcrumb.BreadcrumbMenuProps.items">items</a></code></li>
+<li><code><a title="shinyant.breadcrumb.BreadcrumbMenuProps.selectable" href="#shinyant.breadcrumb.BreadcrumbMenuProps.selectable">selectable</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.tree API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.tree</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.tree.tree"><code class="name flex">
+<span>def <span class="ident">tree</span></span>(<span>id: str,<br>autoExpandParent: bool = False,<br>blockNode: bool = False,<br>checkable: bool = False,<br>checkStrictly: bool = False,<br>defaultCheckedKeys: list[str] | None = None,<br>defaultExpandAll: bool = False,<br>defaultExpandedKeys: list[str] | None = None,<br>defaultExpandParent: bool = True,<br>defaultSelectedKeys: list[str] | None = None,<br>disabled: bool = False,<br>draggable: bool = False,<br>multiple: bool = False,<br>selectable: bool = True,<br>showIcon: bool = False,<br>showLine: bool = False,<br>treeData: list[typing.Any] | None = None,<br>virtual: bool = True,<br>design: <a title="shinyant.tree.TreeDesignTokens" href="#shinyant.tree.TreeDesignTokens">TreeDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.tree.TreeGlobalTokens" href="#shinyant.tree.TreeGlobalTokens">TreeGlobalTokens</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tree(
+    id: str,
+    autoExpandParent: bool = False,
+    blockNode: bool = False,
+    checkable: bool = False,
+    checkStrictly: bool = False,
+    defaultCheckedKeys: list[str] | None = None,
+    defaultExpandAll: bool = False,
+    defaultExpandedKeys: list[str] | None = None,
+    defaultExpandParent: bool = True,
+    defaultSelectedKeys: list[str] | None = None,
+    disabled: bool = False,
+    draggable: bool = False,
+    multiple: bool = False,
+    selectable: bool = True,
+    showIcon: bool = False,
+    showLine: bool = False,
+    treeData: list[Any] | None = None,
+    virtual: bool = True,
+    design: TreeDesignTokens | None = None,
+    globalDesign: TreeGlobalTokens | None = None,
+):
+    &#34;&#34;&#34;
+    Creates a tree component based on ant design react Tree component
+
+    Attributes:
+        id (str): name of the component in the application
+        autoExpandParent (bool): Whether to automatically expand a parent treeNode. Defaults to False
+        blockNode (bool): Whether treeNode fill remaining horizontal space. Defaults to False
+        checkable (bool): Add a Checkbox before the treeNodes. Defaults to False
+        checkedKeys (list[str]): Specifies the keys of the checked treeNodes. Defaults to []
+        checkStrictly (bool): Check treeNode precisely; parent treeNode and children treeNodes are not associated. Defaults to False
+        defaultCheckedKeys (list[str]): Specifies the keys of the default checked treeNodes. Defaults to []
+        defaultExpandAll (bool): Whether to expand all treeNodes by default. Defaults to False
+        defaultExpandedKeys (list[str]): Specify the keys of the default expanded treeNodes. Defaults to []
+        defaultExpandParent (bool): If auto expand parent treeNodes when init. Defaults to True
+        defaultSelectedKeys (list[str]): Specifies the keys of the default selected treeNodes. Defaults to []
+        disabled (bool): Whether disabled the tree. Defaults to False
+
+        draggable (bool): Specifies whether this Tree or the node is draggable. Defaults to False \n
+         doesn&#39;t compatible with change_treeData function, change_treeData with draggable=True will have no effect,
+         because we can&#39;t sync shiny with react when changes happen there and not in shiny. Also, shiny side will store initial
+         treeData and you can&#39;t get actual treeData right now, but still can get selected and checked keys using input in server.
+         TODO: implement sending the same JSON structure back to shiny
+
+        expandedKeys (list[str]): (Controlled) Specifies the keys of the expanded treeNodes. Defaults to all keys
+        multiple (bool): Allows selecting multiple treeNodes. Defaults to False
+        selectable (bool): Whether can be selected. Defaults to True
+        selectedKeys (list[str]): (Controlled) Specifies the keys of the selected treeNodes, multiple selection needs to set multiple to true. Defaults to all keys
+        showIcon (bool): Controls whether to display the icon node, no default style. Defaults to False
+        showLine (bool): Shows a connecting line. Defaults to False
+        treeData (list[Any]): The treeNodes data Array. Defaults to []
+        virtual (bool): Disable virtual scroll when set to false. Defaults to True
+        design (TreeDesignTokens | None): Design of tree (TreeDesignTokens class object). Defaults to None
+        globalDesign (TreeGlobalTokens | None): Global Design of tree (TreeGlobalTokens class object). Defaults to None
+    &#34;&#34;&#34;
+
+    if design is None:
+        design = TreeDesignTokens()
+    if globalDesign is None:
+        globalDesign = TreeGlobalTokens()
+    if defaultCheckedKeys is None:
+        defaultCheckedKeys = []
+    if defaultExpandedKeys is None:
+        defaultExpandedKeys = []
+    if defaultSelectedKeys is None:
+        defaultSelectedKeys = []
+    if treeData is None:
+        treeData = []
+
+    return Tree(
+        id,
+        autoExpandParent,
+        blockNode,
+        checkable,
+        checkStrictly,
+        defaultCheckedKeys,
+        defaultExpandAll,
+        defaultExpandedKeys,
+        defaultExpandParent,
+        defaultSelectedKeys,
+        disabled,
+        draggable,
+        multiple,
+        selectable,
+        showIcon,
+        showLine,
+        treeData,
+        virtual,
+        design,
+        globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a tree component based on ant design react Tree component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>autoExpandParent</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to automatically expand a parent treeNode. Defaults to False</dd>
+<dt><strong><code>blockNode</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether treeNode fill remaining horizontal space. Defaults to False</dd>
+<dt><strong><code>checkable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Add a Checkbox before the treeNodes. Defaults to False</dd>
+<dt><strong><code>checkedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Specifies the keys of the checked treeNodes. Defaults to []</dd>
+<dt><strong><code>checkStrictly</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Check treeNode precisely; parent treeNode and children treeNodes are not associated. Defaults to False</dd>
+<dt><strong><code>defaultCheckedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Specifies the keys of the default checked treeNodes. Defaults to []</dd>
+<dt><strong><code>defaultExpandAll</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to expand all treeNodes by default. Defaults to False</dd>
+<dt><strong><code>defaultExpandedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Specify the keys of the default expanded treeNodes. Defaults to []</dd>
+<dt><strong><code>defaultExpandParent</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If auto expand parent treeNodes when init. Defaults to True</dd>
+<dt><strong><code>defaultSelectedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>Specifies the keys of the default selected treeNodes. Defaults to []</dd>
+<dt><strong><code>disabled</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether disabled the tree. Defaults to False</dd>
+<dt><strong><code>draggable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Specifies whether this Tree or the node is draggable. Defaults to False </dd>
+</dl>
+<p>doesn't compatible with change_treeData function, change_treeData with draggable=True will have no effect,
+because we can't sync shiny with react when changes happen there and not in shiny. Also, shiny side will store initial
+treeData and you can't get actual treeData right now, but still can get selected and checked keys using input in server.
+TODO: implement sending the same JSON structure back to shiny</p>
+<dl>
+<dt><strong><code>expandedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>(Controlled) Specifies the keys of the expanded treeNodes. Defaults to all keys</dd>
+<dt><strong><code>multiple</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Allows selecting multiple treeNodes. Defaults to False</dd>
+<dt><strong><code>selectable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether can be selected. Defaults to True</dd>
+<dt><strong><code>selectedKeys</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>(Controlled) Specifies the keys of the selected treeNodes, multiple selection needs to set multiple to true. Defaults to all keys</dd>
+<dt><strong><code>showIcon</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Controls whether to display the icon node, no default style. Defaults to False</dd>
+<dt><strong><code>showLine</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Shows a connecting line. Defaults to False</dd>
+<dt><strong><code>treeData</code></strong> :&ensp;<code>list[Any]</code></dt>
+<dd>The treeNodes data Array. Defaults to []</dd>
+<dt><strong><code>virtual</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Disable virtual scroll when set to false. Defaults to True</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code>TreeDesignTokens | None</code></dt>
+<dd>Design of tree (TreeDesignTokens class object). Defaults to None</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code>TreeGlobalTokens | None</code></dt>
+<dd>Global Design of tree (TreeGlobalTokens class object). Defaults to None</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.tree.Tree"><code class="flex name class">
+<span>class <span class="ident">Tree</span></span>
+<span>(</span><span>id: str,<br>autoExpandParent: bool,<br>blockNode: bool,<br>checkable: bool,<br>checkStrictly: bool,<br>defaultCheckedKeys: list[str],<br>defaultExpandAll: bool,<br>defaultExpandedKeys: list[str],<br>defaultExpandParent: bool,<br>defaultSelectedKeys: list[str],<br>disabled: bool,<br>draggable: bool,<br>multiple: bool,<br>selectable: bool,<br>showIcon: bool,<br>showLine: bool,<br>treeData: list[typing.Any],<br>virtual: bool,<br>design: <a title="shinyant.tree.TreeDesignTokens" href="#shinyant.tree.TreeDesignTokens">TreeDesignTokens</a>,<br>globalDesign: <a title="shinyant.tree.TreeGlobalTokens" href="#shinyant.tree.TreeGlobalTokens">TreeGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Tree:
+    &#34;&#34;&#34;
+    Main class, stores all trees and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __trees: ClassVar[dict[str, &#34;Tree&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        autoExpandParent: bool,
+        blockNode: bool,
+        checkable: bool,
+        checkStrictly: bool,
+        defaultCheckedKeys: list[str],
+        defaultExpandAll: bool,
+        defaultExpandedKeys: list[str],
+        defaultExpandParent: bool,
+        defaultSelectedKeys: list[str],
+        disabled: bool,
+        draggable: bool,
+        multiple: bool,
+        selectable: bool,
+        showIcon: bool,
+        showLine: bool,
+        treeData: list[Any],
+        virtual: bool,
+        design: TreeDesignTokens,
+        globalDesign: TreeGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.autoExpandParent = autoExpandParent
+        self.blockNode = blockNode
+        self.checkable = checkable
+        self.checkStrictly = checkStrictly
+        self.defaultCheckedKeys = defaultCheckedKeys
+        self.defaultExpandAll = defaultExpandAll
+        self.defaultExpandedKeys = defaultExpandedKeys
+        self.defaultExpandParent = defaultExpandParent
+        self.defaultSelectedKeys = defaultSelectedKeys
+        self.disabled = disabled
+        self.draggable = draggable
+        self.multiple = multiple
+        self.selectable = selectable
+        self.showIcon = showIcon
+        self.showLine = showLine
+        self.treeData = treeData
+        self.virtual = virtual
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Tree.__trees:
+            raise KeyError(&#34;&#39;Tree&#39; object with this id already exists&#34;)
+        Tree.__trees[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Tree&#34;:
+        return Tree.__trees[resolve_id(id)]
+
+    @classmethod
+    async def change_autoExpandParent(cls, id: str, autoExpandParent: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].autoExpandParent = autoExpandParent
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_blockNode(cls, id: str, blockNode: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].blockNode = blockNode
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_checkable(cls, id: str, checkable: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].checkable = checkable
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_checkStrictly(cls, id: str, checkStrictly: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].checkStrictly = checkStrictly
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_disabled(cls, id: str, disabled: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].disabled = disabled
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_multiple(cls, id: str, multiple: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].multiple = multiple
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_selectable(cls, id: str, selectable: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].selectable = selectable
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_showIcon(cls, id: str, showIcon: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].showIcon = showIcon
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_showLine(cls, id: str, showLine: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].showLine = showLine
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_treeData(cls, id: str, treeData: list[Any]) -&gt; None:
+        Tree.__trees[resolve_id(id)].treeData = treeData
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_virtual(cls, id: str, virtual: bool) -&gt; None:
+        Tree.__trees[resolve_id(id)].virtual = virtual
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: TreeDesignTokens) -&gt; None:
+        Tree.__trees[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_globalDesign(cls, id: str, globalDesign: TreeGlobalTokens) -&gt; None:
+        Tree.__trees[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        data = {
+            &#34;shinyant_tree&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;autoExpandParent&#34;: self.autoExpandParent,
+                &#34;blockNode&#34;: self.blockNode,
+                &#34;checkable&#34;: self.checkable,
+                &#34;checkStrictly&#34;: self.checkStrictly,
+                &#34;defaultCheckedKeys&#34;: self.defaultCheckedKeys,
+                &#34;defaultExpandAll&#34;: self.defaultExpandAll,
+                &#34;defaultExpandedKeys&#34;: self.defaultExpandedKeys,
+                &#34;defaultExpandParent&#34;: self.defaultExpandParent,
+                &#34;defaultSelectedKeys&#34;: self.defaultSelectedKeys,
+                &#34;disabled&#34;: self.disabled,
+                &#34;draggable&#34;: self.draggable,
+                &#34;multiple&#34;: self.multiple,
+                &#34;selectable&#34;: self.selectable,
+                &#34;showIcon&#34;: self.showIcon,
+                &#34;showLine&#34;: self.showLine,
+                &#34;treeData&#34;: [node.to_dict() for node in self.treeData],
+                &#34;virtual&#34;: self.virtual,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }
+        return data</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all trees and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.tree.Tree.change_autoExpandParent"><code class="name flex">
+<span>async def <span class="ident">change_autoExpandParent</span></span>(<span>id: str, autoExpandParent: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_blockNode"><code class="name flex">
+<span>async def <span class="ident">change_blockNode</span></span>(<span>id: str, blockNode: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_checkStrictly"><code class="name flex">
+<span>async def <span class="ident">change_checkStrictly</span></span>(<span>id: str, checkStrictly: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_checkable"><code class="name flex">
+<span>async def <span class="ident">change_checkable</span></span>(<span>id: str, checkable: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.tree.TreeDesignTokens" href="#shinyant.tree.TreeDesignTokens">TreeDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_disabled"><code class="name flex">
+<span>async def <span class="ident">change_disabled</span></span>(<span>id: str, disabled: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_globalDesign"><code class="name flex">
+<span>async def <span class="ident">change_globalDesign</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.tree.TreeGlobalTokens" href="#shinyant.tree.TreeGlobalTokens">TreeGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_multiple"><code class="name flex">
+<span>async def <span class="ident">change_multiple</span></span>(<span>id: str, multiple: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_selectable"><code class="name flex">
+<span>async def <span class="ident">change_selectable</span></span>(<span>id: str, selectable: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_showIcon"><code class="name flex">
+<span>async def <span class="ident">change_showIcon</span></span>(<span>id: str, showIcon: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_showLine"><code class="name flex">
+<span>async def <span class="ident">change_showLine</span></span>(<span>id: str, showLine: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_treeData"><code class="name flex">
+<span>async def <span class="ident">change_treeData</span></span>(<span>id: str, treeData: list[typing.Any]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.change_virtual"><code class="name flex">
+<span>async def <span class="ident">change_virtual</span></span>(<span>id: str, virtual: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.Tree.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.tree.Tree" href="#shinyant.tree.Tree">Tree</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.tree.Tree.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    data = {
+        &#34;shinyant_tree&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;autoExpandParent&#34;: self.autoExpandParent,
+            &#34;blockNode&#34;: self.blockNode,
+            &#34;checkable&#34;: self.checkable,
+            &#34;checkStrictly&#34;: self.checkStrictly,
+            &#34;defaultCheckedKeys&#34;: self.defaultCheckedKeys,
+            &#34;defaultExpandAll&#34;: self.defaultExpandAll,
+            &#34;defaultExpandedKeys&#34;: self.defaultExpandedKeys,
+            &#34;defaultExpandParent&#34;: self.defaultExpandParent,
+            &#34;defaultSelectedKeys&#34;: self.defaultSelectedKeys,
+            &#34;disabled&#34;: self.disabled,
+            &#34;draggable&#34;: self.draggable,
+            &#34;multiple&#34;: self.multiple,
+            &#34;selectable&#34;: self.selectable,
+            &#34;showIcon&#34;: self.showIcon,
+            &#34;showLine&#34;: self.showLine,
+            &#34;treeData&#34;: [node.to_dict() for node in self.treeData],
+            &#34;virtual&#34;: self.virtual,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }
+    return data</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens"><code class="flex name class">
+<span>class <span class="ident">TreeDesignTokens</span></span>
+<span>(</span><span>directoryNodeSelectedBg: str = '#1677ff',<br>directoryNodeSelectedColor: str = '#fff',<br>indentSize: int = 24,<br>nodeHoverBg: str = 'rgba(0,0,0,0.04)',<br>nodeHoverColor: str = 'rgba(0,0,0,0.88)',<br>nodeSelectedBg: str = '#e6f4ff',<br>nodeSelectedColor: str = 'rgba(0,0,0,0.88)',<br>titleHeight: int = 24)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TreeDesignTokens:
+    &#34;&#34;&#34;
+    Tree Design class (Design Tokens from react ant.design for tree)
+
+    Attributes:
+        directoryNodeSelectedBg (str): Background color of selected directory node. Defaults to &#34;#1677ff&#34;
+        directoryNodeSelectedColor (str): Text color of selected directory node. Defaults to &#34;#fff&#34;
+        indentSize (int): Indent width of tree. Defaults to 24
+        nodeHoverBg (str): Background color of hovered node. Defaults to &#34;rgba(0,0,0,0.04)&#34;
+        nodeHoverColor (str): Text color of hovered node. Defaults to &#34;rgba(0,0,0,0.88)&#34;
+        nodeSelectedBg (str): Background color of selected node. Defaults to &#34;#e6f4ff&#34;
+        nodeSelectedColor (str): Text color of selected node. Defaults to &#34;rgba(0,0,0,0.88)&#34;
+        titleHeight (int): Node title height. Defaults to 24
+    &#34;&#34;&#34;
+
+    directoryNodeSelectedBg: str = &#34;#1677ff&#34;
+    directoryNodeSelectedColor: str = &#34;#fff&#34;
+    indentSize: int = 24
+    nodeHoverBg: str = &#34;rgba(0,0,0,0.04)&#34;
+    nodeHoverColor: str = &#34;rgba(0,0,0,0.88)&#34;
+    nodeSelectedBg: str = &#34;#e6f4ff&#34;
+    nodeSelectedColor: str = &#34;rgba(0,0,0,0.88)&#34;
+    titleHeight: int = 24</code></pre>
+</details>
+<div class="desc"><p>Tree Design class (Design Tokens from react ant.design for tree)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>directoryNodeSelectedBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of selected directory node. Defaults to "#1677ff"</dd>
+<dt><strong><code>directoryNodeSelectedColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of selected directory node. Defaults to "#fff"</dd>
+<dt><strong><code>indentSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Indent width of tree. Defaults to 24</dd>
+<dt><strong><code>nodeHoverBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of hovered node. Defaults to "rgba(0,0,0,0.04)"</dd>
+<dt><strong><code>nodeHoverColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of hovered node. Defaults to "rgba(0,0,0,0.88)"</dd>
+<dt><strong><code>nodeSelectedBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of selected node. Defaults to "#e6f4ff"</dd>
+<dt><strong><code>nodeSelectedColor</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of selected node. Defaults to "rgba(0,0,0,0.88)"</dd>
+<dt><strong><code>titleHeight</code></strong> :&ensp;<code>int</code></dt>
+<dd>Node title height. Defaults to 24</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.tree.TreeDesignTokens.directoryNodeSelectedBg"><code class="name">var <span class="ident">directoryNodeSelectedBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.directoryNodeSelectedColor"><code class="name">var <span class="ident">directoryNodeSelectedColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.indentSize"><code class="name">var <span class="ident">indentSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.nodeHoverBg"><code class="name">var <span class="ident">nodeHoverBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.nodeHoverColor"><code class="name">var <span class="ident">nodeHoverColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.nodeSelectedBg"><code class="name">var <span class="ident">nodeSelectedBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.nodeSelectedColor"><code class="name">var <span class="ident">nodeSelectedColor</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeDesignTokens.titleHeight"><code class="name">var <span class="ident">titleHeight</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">TreeGlobalTokens</span></span>
+<span>(</span><span>colorBgContainer: str = '#ffffff',<br>colorBgContainerDisabled: str = 'rgba(0,0,0,0.04)',<br>colorBgTextHover: str = 'rgba(0,0,0,0.06)',<br>colorBorder: str = '#d9d9d9',<br>colorPrimary: str = '#1677ff',<br>colorPrimaryBorder: str = '#91caff',<br>colorPrimaryHover: str = '#4096ff',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>colorTextDisabled: str = 'rgba(0,0,0,0.25)',<br>colorTextQuaternary: str = 'rgba(0,0,0,0.25)',<br>colorWhite: str = '#fff',<br>borderRadius: int = 6,<br>borderRadiusSM: int = 4,<br>controlInteractiveSize: int = 16,<br>controlItemBgActiveDisabled: str = 'rgba(0,0,0,0.04)',<br>controlItemBgHover: str = 'rgba(0,0,0,0.04)',<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>fontSizeLG: int = 16,<br>lineHeight: float = 1.5714285714285714,<br>lineType: str = 'solid',<br>lineWidth: int = 1,<br>lineWidthBold: int = 2,<br>lineWidthFocus: int = 3,<br>marginXS: int = 8,<br>motionDurationFast: str = '0.1s',<br>motionDurationMid: str = '0.2s',<br>motionDurationSlow: str = '0.3s',<br>motionEaseInBack: str = 'cubic-bezier(0.71,-0.46,0.88,0.6)',<br>motionEaseInOut: str = 'cubic-bezier(0.645,0.045,0.355,1)',<br>motionEaseOutBack: str = 'cubic-bezier(0.12,0.4,0.29,1.46)',<br>paddingXS: int = 8)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TreeGlobalTokens:
+    &#34;&#34;&#34;
+        Tree Global Design class (Global Tokens from react ant.design)&#34;
+
+    Attributes:
+        colorBgContainer [str]: Container background color
+        colorBgContainerDisabled [str]: Control the background color of container in disabled state
+        colorBgTextHover [str]: Control the background color of text in hover state
+        colorBorder [str]: Default border color, used to separate different elements
+        colorPrimary [str]: Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
+        colorPrimaryBorder [str]: The stroke color under the main color gradient, used on the stroke of components such as Slider
+        colorPrimaryHover [str]: Hover state under the main color gradient
+        colorText [str]: Default text color which comply with W3C standards
+        colorTextDisabled [str]: Control the color of text in disabled state
+        colorTextQuaternary [str]: The fourth level of text color is the lightest text color
+        colorWhite [str]: Pure white color don&#39;t changed by theme
+        borderRadius [int]: Border radius of base components
+        borderRadiusSM [int]: SM size border radius, used in small size components
+        controlInteractiveSize [int]: Control the interactive size of control component
+        controlItemBgActiveDisabled [str]: Control the background color of control component item when active and disabled
+        controlItemBgHover [str]: Control the background color of control component item when hovering
+        fontFamily [str]: font family
+        fontSize [int]: The most widely used font size in the design system, from which the text gradient will be derived
+        fontSizeLG [int]: Large font size
+        lineHeight [int]: Line height of text
+        lineType [str]: Border style of base components
+        lineWidth [int]: Border width of base components
+        lineWidthBold [int]: The default line width of the outline class components
+        lineWidthFocus [int]: Control the width of the line when the component is in focus state
+        marginXS [int]: Control the margin of an element, with a small size
+        motionDurationFast [str]: Motion speed, fast speed. Used for small element animation interaction
+        motionDurationMid [str]: Motion speed, medium speed. Used for medium element animation interaction
+        motionDurationSlow [str]: Motion speed, slow speed. Used for large element animation interaction
+        motionEaseInBack [str]: Preset motion curve
+        motionEaseInOut [str]: Preset motion curve
+        motionEaseOutBack [str]: Preset motion curve
+        paddingXS [int]: Control the extra small padding of the element
+    &#34;&#34;&#34;
+
+    colorBgContainer: str = constants.GlobalToken.colorBgContainer
+    colorBgContainerDisabled: str = constants.GlobalToken.colorBgContainerDisabled
+    colorBgTextHover: str = constants.GlobalToken.colorBgTextHover
+    colorBorder: str = constants.GlobalToken.colorBorder
+    colorPrimary: str = constants.GlobalToken.colorPrimary
+    colorPrimaryBorder: str = constants.GlobalToken.colorPrimaryBorder
+    colorPrimaryHover: str = constants.GlobalToken.colorPrimaryHover
+    colorText: str = constants.GlobalToken.colorText
+    colorTextDisabled: str = constants.GlobalToken.colorTextQuaternary
+    colorTextQuaternary: str = constants.GlobalToken.colorTextQuaternary
+    colorWhite: str = constants.GlobalToken.colorWhite
+    borderRadius: int = constants.GlobalToken.borderRadius
+    borderRadiusSM: int = constants.GlobalToken.borderRadiusSM
+    controlInteractiveSize: int = constants.GlobalToken.controlInteractiveSize
+    controlItemBgActiveDisabled: str = constants.GlobalToken.controlItemBgActiveDisabled
+    controlItemBgHover: str = constants.GlobalToken.controlItemBgHover
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    fontSizeLG: int = constants.GlobalToken.fontSizeLG
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineType: str = constants.GlobalToken.lineType
+    lineWidth: int = constants.GlobalToken.lineWidth
+    lineWidthBold: int = constants.GlobalToken.lineWidthBold
+    lineWidthFocus: int = constants.GlobalToken.lineWidthFocus
+    marginXS: int = constants.GlobalToken.marginXS
+    motionDurationFast: str = constants.GlobalToken.motionDurationFast
+    motionDurationMid: str = constants.GlobalToken.motionDurationMid
+    motionDurationSlow: str = constants.GlobalToken.motionDurationSlow
+    motionEaseInBack: str = constants.GlobalToken.motionEaseInBack
+    motionEaseInOut: str = constants.GlobalToken.motionEaseInOut
+    motionEaseOutBack: str = constants.GlobalToken.motionEaseOutBack
+    paddingXS: int = constants.GlobalToken.paddingXS</code></pre>
+</details>
+<div class="desc"><p>Tree Global Design class (Global Tokens from react ant.design)"</p>
+<h2 id="attributes">Attributes</h2>
+<p>colorBgContainer [str]: Container background color
+colorBgContainerDisabled [str]: Control the background color of container in disabled state
+colorBgTextHover [str]: Control the background color of text in hover state
+colorBorder [str]: Default border color, used to separate different elements
+colorPrimary [str]: Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
+colorPrimaryBorder [str]: The stroke color under the main color gradient, used on the stroke of components such as Slider
+colorPrimaryHover [str]: Hover state under the main color gradient
+colorText [str]: Default text color which comply with W3C standards
+colorTextDisabled [str]: Control the color of text in disabled state
+colorTextQuaternary [str]: The fourth level of text color is the lightest text color
+colorWhite [str]: Pure white color don't changed by theme
+borderRadius [int]: Border radius of base components
+borderRadiusSM [int]: SM size border radius, used in small size components
+controlInteractiveSize [int]: Control the interactive size of control component
+controlItemBgActiveDisabled [str]: Control the background color of control component item when active and disabled
+controlItemBgHover [str]: Control the background color of control component item when hovering
+fontFamily [str]: font family
+fontSize [int]: The most widely used font size in the design system, from which the text gradient will be derived
+fontSizeLG [int]: Large font size
+lineHeight [int]: Line height of text
+lineType [str]: Border style of base components
+lineWidth [int]: Border width of base components
+lineWidthBold [int]: The default line width of the outline class components
+lineWidthFocus [int]: Control the width of the line when the component is in focus state
+marginXS [int]: Control the margin of an element, with a small size
+motionDurationFast [str]: Motion speed, fast speed. Used for small element animation interaction
+motionDurationMid [str]: Motion speed, medium speed. Used for medium element animation interaction
+motionDurationSlow [str]: Motion speed, slow speed. Used for large element animation interaction
+motionEaseInBack [str]: Preset motion curve
+motionEaseInOut [str]: Preset motion curve
+motionEaseOutBack [str]: Preset motion curve
+paddingXS [int]: Control the extra small padding of the element</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.tree.TreeGlobalTokens.borderRadius"><code class="name">var <span class="ident">borderRadius</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.borderRadiusSM"><code class="name">var <span class="ident">borderRadiusSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorBgContainer"><code class="name">var <span class="ident">colorBgContainer</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorBgContainerDisabled"><code class="name">var <span class="ident">colorBgContainerDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorBgTextHover"><code class="name">var <span class="ident">colorBgTextHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorBorder"><code class="name">var <span class="ident">colorBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorPrimary"><code class="name">var <span class="ident">colorPrimary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorPrimaryBorder"><code class="name">var <span class="ident">colorPrimaryBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorPrimaryHover"><code class="name">var <span class="ident">colorPrimaryHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorTextDisabled"><code class="name">var <span class="ident">colorTextDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorTextQuaternary"><code class="name">var <span class="ident">colorTextQuaternary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.colorWhite"><code class="name">var <span class="ident">colorWhite</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.controlInteractiveSize"><code class="name">var <span class="ident">controlInteractiveSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.controlItemBgActiveDisabled"><code class="name">var <span class="ident">controlItemBgActiveDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.controlItemBgHover"><code class="name">var <span class="ident">controlItemBgHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.fontSizeLG"><code class="name">var <span class="ident">fontSizeLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.lineType"><code class="name">var <span class="ident">lineType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.lineWidth"><code class="name">var <span class="ident">lineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.lineWidthBold"><code class="name">var <span class="ident">lineWidthBold</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.lineWidthFocus"><code class="name">var <span class="ident">lineWidthFocus</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.marginXS"><code class="name">var <span class="ident">marginXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionDurationFast"><code class="name">var <span class="ident">motionDurationFast</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionDurationMid"><code class="name">var <span class="ident">motionDurationMid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionDurationSlow"><code class="name">var <span class="ident">motionDurationSlow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionEaseInBack"><code class="name">var <span class="ident">motionEaseInBack</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionEaseInOut"><code class="name">var <span class="ident">motionEaseInOut</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.motionEaseOutBack"><code class="name">var <span class="ident">motionEaseOutBack</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeGlobalTokens.paddingXS"><code class="name">var <span class="ident">paddingXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.tree.TreeNode"><code class="flex name class">
+<span>class <span class="ident">TreeNode</span></span>
+<span>(</span><span>key: str,<br>title: Any,<br>children: list['<a title="shinyant.tree.TreeNode" href="#shinyant.tree.TreeNode">TreeNode</a>'] = &lt;factory&gt;,<br>checkable: bool = False,<br>disableCheckbox: bool = False,<br>disabled: bool = False,<br>selectable: bool = True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TreeNode:
+    &#34;&#34;&#34;
+    TreeNode Class (one node of Tree)
+
+    Attributes:
+        key (str): Must be unique in all of treeNodes of the tree
+        title (str): Title
+        checkable (bool): When Tree is checkable, set TreeNode display Checkbox or not. Defaults to False
+        disableCheckbox (bool): Disables the checkbox of the treeNode. Defaults to False
+        disabled (bool): Disables the treeNode. Defaults to False
+        icon: (str): Customize icon. Defaults to &#34;&#34;
+        selectable (bool): Set whether the treeNode can be selected. Defaults to True
+    &#34;&#34;&#34;
+
+    key: str
+    title: Any
+    children: list[&#34;TreeNode&#34;] = field(default_factory=list)
+    checkable: bool = False
+    disableCheckbox: bool = False
+    disabled: bool = False
+    selectable: bool = True
+
+    def to_dict(self) -&gt; dict[str, Any]:
+        &#34;&#34;&#34;
+        Recursively builds a dictionary
+        &#34;&#34;&#34;
+
+        return {
+            &#34;key&#34;: self.key,
+            &#34;title&#34;: self.title,
+            &#34;checkable&#34;: self.checkable,
+            &#34;disableCheckbox&#34;: self.disableCheckbox,
+            &#34;disabled&#34;: self.disabled,
+            &#34;selectable&#34;: self.selectable,
+            &#34;children&#34;: [child.to_dict() for child in self.children],
+        }</code></pre>
+</details>
+<div class="desc"><p>TreeNode Class (one node of Tree)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>key</code></strong> :&ensp;<code>str</code></dt>
+<dd>Must be unique in all of treeNodes of the tree</dd>
+<dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
+<dd>Title</dd>
+<dt><strong><code>checkable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>When Tree is checkable, set TreeNode display Checkbox or not. Defaults to False</dd>
+<dt><strong><code>disableCheckbox</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Disables the checkbox of the treeNode. Defaults to False</dd>
+<dt><strong><code>disabled</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Disables the treeNode. Defaults to False</dd>
+<dt><strong><code>icon</code></strong></dt>
+<dd>(str): Customize icon. Defaults to ""</dd>
+<dt><strong><code>selectable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Set whether the treeNode can be selected. Defaults to True</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.tree.TreeNode.checkable"><code class="name">var <span class="ident">checkable</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.children"><code class="name">var <span class="ident">children</span> : list[<a title="shinyant.tree.TreeNode" href="#shinyant.tree.TreeNode">TreeNode</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.disableCheckbox"><code class="name">var <span class="ident">disableCheckbox</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.disabled"><code class="name">var <span class="ident">disabled</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.key"><code class="name">var <span class="ident">key</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.selectable"><code class="name">var <span class="ident">selectable</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.tree.TreeNode.title"><code class="name">var <span class="ident">title</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.tree.TreeNode.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict[str, typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict[str, Any]:
+    &#34;&#34;&#34;
+    Recursively builds a dictionary
+    &#34;&#34;&#34;
+
+    return {
+        &#34;key&#34;: self.key,
+        &#34;title&#34;: self.title,
+        &#34;checkable&#34;: self.checkable,
+        &#34;disableCheckbox&#34;: self.disableCheckbox,
+        &#34;disabled&#34;: self.disabled,
+        &#34;selectable&#34;: self.selectable,
+        &#34;children&#34;: [child.to_dict() for child in self.children],
+    }</code></pre>
+</details>
+<div class="desc"><p>Recursively builds a dictionary</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.tree.tree" href="#shinyant.tree.tree">tree</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.tree.Tree" href="#shinyant.tree.Tree">Tree</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.tree.Tree.change_autoExpandParent" href="#shinyant.tree.Tree.change_autoExpandParent">change_autoExpandParent</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_blockNode" href="#shinyant.tree.Tree.change_blockNode">change_blockNode</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_checkStrictly" href="#shinyant.tree.Tree.change_checkStrictly">change_checkStrictly</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_checkable" href="#shinyant.tree.Tree.change_checkable">change_checkable</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_design" href="#shinyant.tree.Tree.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_disabled" href="#shinyant.tree.Tree.change_disabled">change_disabled</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_globalDesign" href="#shinyant.tree.Tree.change_globalDesign">change_globalDesign</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_multiple" href="#shinyant.tree.Tree.change_multiple">change_multiple</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_selectable" href="#shinyant.tree.Tree.change_selectable">change_selectable</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_showIcon" href="#shinyant.tree.Tree.change_showIcon">change_showIcon</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_showLine" href="#shinyant.tree.Tree.change_showLine">change_showLine</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_treeData" href="#shinyant.tree.Tree.change_treeData">change_treeData</a></code></li>
+<li><code><a title="shinyant.tree.Tree.change_virtual" href="#shinyant.tree.Tree.change_virtual">change_virtual</a></code></li>
+<li><code><a title="shinyant.tree.Tree.dump" href="#shinyant.tree.Tree.dump">dump</a></code></li>
+<li><code><a title="shinyant.tree.Tree.get_component" href="#shinyant.tree.Tree.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.tree.TreeDesignTokens" href="#shinyant.tree.TreeDesignTokens">TreeDesignTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.tree.TreeDesignTokens.directoryNodeSelectedBg" href="#shinyant.tree.TreeDesignTokens.directoryNodeSelectedBg">directoryNodeSelectedBg</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.directoryNodeSelectedColor" href="#shinyant.tree.TreeDesignTokens.directoryNodeSelectedColor">directoryNodeSelectedColor</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.indentSize" href="#shinyant.tree.TreeDesignTokens.indentSize">indentSize</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.nodeHoverBg" href="#shinyant.tree.TreeDesignTokens.nodeHoverBg">nodeHoverBg</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.nodeHoverColor" href="#shinyant.tree.TreeDesignTokens.nodeHoverColor">nodeHoverColor</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.nodeSelectedBg" href="#shinyant.tree.TreeDesignTokens.nodeSelectedBg">nodeSelectedBg</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.nodeSelectedColor" href="#shinyant.tree.TreeDesignTokens.nodeSelectedColor">nodeSelectedColor</a></code></li>
+<li><code><a title="shinyant.tree.TreeDesignTokens.titleHeight" href="#shinyant.tree.TreeDesignTokens.titleHeight">titleHeight</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.tree.TreeGlobalTokens" href="#shinyant.tree.TreeGlobalTokens">TreeGlobalTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.tree.TreeGlobalTokens.borderRadius" href="#shinyant.tree.TreeGlobalTokens.borderRadius">borderRadius</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.borderRadiusSM" href="#shinyant.tree.TreeGlobalTokens.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorBgContainer" href="#shinyant.tree.TreeGlobalTokens.colorBgContainer">colorBgContainer</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorBgContainerDisabled" href="#shinyant.tree.TreeGlobalTokens.colorBgContainerDisabled">colorBgContainerDisabled</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorBgTextHover" href="#shinyant.tree.TreeGlobalTokens.colorBgTextHover">colorBgTextHover</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorBorder" href="#shinyant.tree.TreeGlobalTokens.colorBorder">colorBorder</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorPrimary" href="#shinyant.tree.TreeGlobalTokens.colorPrimary">colorPrimary</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorPrimaryBorder" href="#shinyant.tree.TreeGlobalTokens.colorPrimaryBorder">colorPrimaryBorder</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorPrimaryHover" href="#shinyant.tree.TreeGlobalTokens.colorPrimaryHover">colorPrimaryHover</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorText" href="#shinyant.tree.TreeGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorTextDisabled" href="#shinyant.tree.TreeGlobalTokens.colorTextDisabled">colorTextDisabled</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorTextQuaternary" href="#shinyant.tree.TreeGlobalTokens.colorTextQuaternary">colorTextQuaternary</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.colorWhite" href="#shinyant.tree.TreeGlobalTokens.colorWhite">colorWhite</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.controlInteractiveSize" href="#shinyant.tree.TreeGlobalTokens.controlInteractiveSize">controlInteractiveSize</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.controlItemBgActiveDisabled" href="#shinyant.tree.TreeGlobalTokens.controlItemBgActiveDisabled">controlItemBgActiveDisabled</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.controlItemBgHover" href="#shinyant.tree.TreeGlobalTokens.controlItemBgHover">controlItemBgHover</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.fontFamily" href="#shinyant.tree.TreeGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.fontSize" href="#shinyant.tree.TreeGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.fontSizeLG" href="#shinyant.tree.TreeGlobalTokens.fontSizeLG">fontSizeLG</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.lineHeight" href="#shinyant.tree.TreeGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.lineType" href="#shinyant.tree.TreeGlobalTokens.lineType">lineType</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.lineWidth" href="#shinyant.tree.TreeGlobalTokens.lineWidth">lineWidth</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.lineWidthBold" href="#shinyant.tree.TreeGlobalTokens.lineWidthBold">lineWidthBold</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.lineWidthFocus" href="#shinyant.tree.TreeGlobalTokens.lineWidthFocus">lineWidthFocus</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.marginXS" href="#shinyant.tree.TreeGlobalTokens.marginXS">marginXS</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionDurationFast" href="#shinyant.tree.TreeGlobalTokens.motionDurationFast">motionDurationFast</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionDurationMid" href="#shinyant.tree.TreeGlobalTokens.motionDurationMid">motionDurationMid</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionDurationSlow" href="#shinyant.tree.TreeGlobalTokens.motionDurationSlow">motionDurationSlow</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionEaseInBack" href="#shinyant.tree.TreeGlobalTokens.motionEaseInBack">motionEaseInBack</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionEaseInOut" href="#shinyant.tree.TreeGlobalTokens.motionEaseInOut">motionEaseInOut</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.motionEaseOutBack" href="#shinyant.tree.TreeGlobalTokens.motionEaseOutBack">motionEaseOutBack</a></code></li>
+<li><code><a title="shinyant.tree.TreeGlobalTokens.paddingXS" href="#shinyant.tree.TreeGlobalTokens.paddingXS">paddingXS</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.tree.TreeNode" href="#shinyant.tree.TreeNode">TreeNode</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.tree.TreeNode.checkable" href="#shinyant.tree.TreeNode.checkable">checkable</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.children" href="#shinyant.tree.TreeNode.children">children</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.disableCheckbox" href="#shinyant.tree.TreeNode.disableCheckbox">disableCheckbox</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.disabled" href="#shinyant.tree.TreeNode.disabled">disabled</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.key" href="#shinyant.tree.TreeNode.key">key</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.selectable" href="#shinyant.tree.TreeNode.selectable">selectable</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.title" href="#shinyant.tree.TreeNode.title">title</a></code></li>
+<li><code><a title="shinyant.tree.TreeNode.to_dict" href="#shinyant.tree.TreeNode.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

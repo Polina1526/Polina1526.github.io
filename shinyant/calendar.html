@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.calendar API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.calendar</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.calendar.calendar"><code class="name flex">
+<span>def <span class="ident">calendar</span></span>(<span>id: str,<br>defaultValue: str | None = None,<br>fullscreen: bool = False,<br>showWeek: bool = False,<br>locale: Literal['enUS', 'ruRU'] = 'enUS',<br>mode: Literal['month', 'year'] = 'month',<br>validRange: list[str] | None = None,<br>design: <a title="shinyant.calendar.CalendarDesignTokens" href="#shinyant.calendar.CalendarDesignTokens">CalendarDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.calendar.CalendarGlobalTokens" href="#shinyant.calendar.CalendarGlobalTokens">CalendarGlobalTokens</a> | None = None) ‑> <a title="shinyant.calendar.Calendar" href="#shinyant.calendar.Calendar">Calendar</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calendar(
+    id: str,
+    defaultValue: str | None = None,
+    fullscreen: bool = False,
+    showWeek: bool = False,
+    locale: LocaleType = &#34;enUS&#34;,
+    mode: ModeType = &#34;month&#34;,
+    validRange: list[str] | None = None,
+    design: CalendarDesignTokens | None = None,
+    globalDesign: CalendarGlobalTokens | None = None,
+) -&gt; &#34;Calendar&#34;:
+    &#34;&#34;&#34;
+    Creates a input component based on ant design react Input component
+
+    Attributes:
+        id (str): name of the component in the application
+        defaultValue (str): The date selected by default. Defauls to &#39;&#39;
+        fullscreen (bool): Whether to display in full-screen. Defauls to False
+        showWeek (bool): Whether to display week number. Defauls to False
+        locale (str): The calendar&#39;s locale: &#39;enUS&#39;, &#39;ruRU&#39;. Defauls to &#34;enUS&#34;
+        mode (str): The display mode of the calendar. Defauls to &#39;month&#39;
+        validRange (list[str]): To set valid range: list with start and end range date. Defauls to None
+        design (CalendarDesignTokens): Design of input (CalendarDesignTokens class object). Defauls to CalendarDesignTokens
+        globalDesign (CalendarGlobalTokens): Global design of input (CalendarGlobalTokens class object). Defauls to CalendarGlobalTokens
+    &#34;&#34;&#34;
+    if design is None:
+        design = CalendarDesignTokens()
+    if globalDesign is None:
+        globalDesign = CalendarGlobalTokens()
+
+    value: str = defaultValue or &#34;&#34;
+
+    return Calendar(
+        id=id,
+        fullscreen=fullscreen,
+        showWeek=showWeek,
+        locale=locale,
+        mode=mode,
+        validRange=validRange,
+        value=value,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a input component based on ant design react Input component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>defaultValue</code></strong> :&ensp;<code>str</code></dt>
+<dd>The date selected by default. Defauls to ''</dd>
+<dt><strong><code>fullscreen</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to display in full-screen. Defauls to False</dd>
+<dt><strong><code>showWeek</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to display week number. Defauls to False</dd>
+<dt><strong><code>locale</code></strong> :&ensp;<code>str</code></dt>
+<dd>The calendar's locale: 'enUS', 'ruRU'. Defauls to "enUS"</dd>
+<dt><strong><code>mode</code></strong> :&ensp;<code>str</code></dt>
+<dd>The display mode of the calendar. Defauls to 'month'</dd>
+<dt><strong><code>validRange</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>To set valid range: list with start and end range date. Defauls to None</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code><a title="shinyant.calendar.CalendarDesignTokens" href="#shinyant.calendar.CalendarDesignTokens">CalendarDesignTokens</a></code></dt>
+<dd>Design of input (CalendarDesignTokens class object). Defauls to CalendarDesignTokens</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code><a title="shinyant.calendar.CalendarGlobalTokens" href="#shinyant.calendar.CalendarGlobalTokens">CalendarGlobalTokens</a></code></dt>
+<dd>Global design of input (CalendarGlobalTokens class object). Defauls to CalendarGlobalTokens</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.calendar.Calendar"><code class="flex name class">
+<span>class <span class="ident">Calendar</span></span>
+<span>(</span><span>id: str,<br>fullscreen: bool,<br>showWeek: bool,<br>locale: Literal['enUS', 'ruRU'],<br>mode: Literal['month', 'year'],<br>validRange: list[str] | None,<br>value: str,<br>design: <a title="shinyant.calendar.CalendarDesignTokens" href="#shinyant.calendar.CalendarDesignTokens">CalendarDesignTokens</a>,<br>globalDesign: <a title="shinyant.calendar.CalendarGlobalTokens" href="#shinyant.calendar.CalendarGlobalTokens">CalendarGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Calendar:
+    &#34;&#34;&#34;
+    Main class, stores all calendar and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __calendars: ClassVar[dict[str, &#34;Calendar&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        fullscreen: bool,
+        showWeek: bool,
+        locale: LocaleType,
+        mode: ModeType,
+        validRange: list[str] | None,
+        value: str,
+        design: CalendarDesignTokens,
+        globalDesign: CalendarGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.fullscreen = fullscreen
+        self.showWeek = showWeek
+        self.locale = locale
+        self.mode = mode
+        self.validRange = validRange
+        self.value = value
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Calendar.__calendars:
+            raise KeyError(&#34;&#39;Calendar&#39; object with this id already exists&#34;)
+        Calendar.__calendars[resolve_id(id)] = self
+
+    @classmethod
+    async def change_fullscreen(cls, id: str, fullscreen: bool) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].fullscreen = fullscreen
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_showWeek(cls, id: str, showWeek: bool) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].showWeek = showWeek
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_locale(cls, id: str, locale: LocaleType) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].locale = locale
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_mode(cls, id: str, mode: ModeType) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].mode = mode
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_validRange(cls, id: str, validRange: list[str] | None) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].validRange = validRange
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_value(cls, id: str, value: str) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].value = value
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: CalendarDesignTokens) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_globalDesign(cls, id: str, globalDesign: CalendarGlobalTokens) -&gt; None:
+        Calendar.__calendars[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        return {
+            &#34;shinyant_calendar&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;fullscreen&#34;: self.fullscreen,
+                &#34;showWeek&#34;: self.showWeek,
+                &#34;locale&#34;: self.locale,
+                &#34;mode&#34;: self.mode,
+                &#34;validRange&#34;: self.validRange,
+                &#34;value&#34;: self.value,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all calendar and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.calendar.Calendar.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.calendar.CalendarDesignTokens" href="#shinyant.calendar.CalendarDesignTokens">CalendarDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_fullscreen"><code class="name flex">
+<span>async def <span class="ident">change_fullscreen</span></span>(<span>id: str, fullscreen: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_globalDesign"><code class="name flex">
+<span>async def <span class="ident">change_globalDesign</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.calendar.CalendarGlobalTokens" href="#shinyant.calendar.CalendarGlobalTokens">CalendarGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_locale"><code class="name flex">
+<span>async def <span class="ident">change_locale</span></span>(<span>id: str, locale: Literal['enUS', 'ruRU']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_mode"><code class="name flex">
+<span>async def <span class="ident">change_mode</span></span>(<span>id: str, mode: Literal['month', 'year']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_showWeek"><code class="name flex">
+<span>async def <span class="ident">change_showWeek</span></span>(<span>id: str, showWeek: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_validRange"><code class="name flex">
+<span>async def <span class="ident">change_validRange</span></span>(<span>id: str, validRange: list[str] | None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.Calendar.change_value"><code class="name flex">
+<span>async def <span class="ident">change_value</span></span>(<span>id: str, value: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.calendar.Calendar.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    return {
+        &#34;shinyant_calendar&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;fullscreen&#34;: self.fullscreen,
+            &#34;showWeek&#34;: self.showWeek,
+            &#34;locale&#34;: self.locale,
+            &#34;mode&#34;: self.mode,
+            &#34;validRange&#34;: self.validRange,
+            &#34;value&#34;: self.value,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens"><code class="flex name class">
+<span>class <span class="ident">CalendarDesignTokens</span></span>
+<span>(</span><span>fullBg: str = '#ffffff',<br>fullPanelBg: str = '#ffffff',<br>itemActiveBg: str = '#e6f4ff',<br>miniContentHeight: int = 256,<br>monthControlWidth: int = 70,<br>yearControlWidth: int = 80)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class CalendarDesignTokens:
+    &#34;&#34;&#34;
+    Calendar Design class (Design Tokens from react ant.design for calendar)
+
+    Attributes:
+        fullBg (str): Background color of full calendar. Defauls to &#39;#ffffff&#39;
+        fullPanelBg (str): Background color of full calendar panel. Defauls to &#39;#ffffff&#39;
+        itemActiveBg (str): Background color of selected date item. Defauls to &#39;#e6f4ff&#39;
+        miniContentHeight (int): Height of mini calendar content. Defauls to 256
+        monthControlWidth (int): Width of month select. Defauls to 70
+        yearControlWidth (int): Width of year select. Defauls to 80
+    &#34;&#34;&#34;
+
+    fullBg: str = &#34;#ffffff&#34;
+    fullPanelBg: str = &#34;#ffffff&#34;
+    itemActiveBg: str = &#34;#e6f4ff&#34;
+    miniContentHeight: int = 256
+    monthControlWidth: int = 70
+    yearControlWidth: int = 80</code></pre>
+</details>
+<div class="desc"><p>Calendar Design class (Design Tokens from react ant.design for calendar)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>fullBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of full calendar. Defauls to '#ffffff'</dd>
+<dt><strong><code>fullPanelBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of full calendar panel. Defauls to '#ffffff'</dd>
+<dt><strong><code>itemActiveBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of selected date item. Defauls to '#e6f4ff'</dd>
+<dt><strong><code>miniContentHeight</code></strong> :&ensp;<code>int</code></dt>
+<dd>Height of mini calendar content. Defauls to 256</dd>
+<dt><strong><code>monthControlWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Width of month select. Defauls to 70</dd>
+<dt><strong><code>yearControlWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Width of year select. Defauls to 80</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.calendar.CalendarDesignTokens.fullBg"><code class="name">var <span class="ident">fullBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens.fullPanelBg"><code class="name">var <span class="ident">fullPanelBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens.itemActiveBg"><code class="name">var <span class="ident">itemActiveBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens.miniContentHeight"><code class="name">var <span class="ident">miniContentHeight</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens.monthControlWidth"><code class="name">var <span class="ident">monthControlWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarDesignTokens.yearControlWidth"><code class="name">var <span class="ident">yearControlWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">CalendarGlobalTokens</span></span>
+<span>(</span><span>colorBgContainer: str = '#ffffff',<br>colorFillSecondary: str = 'rgba(0,0,0,0.06)',<br>colorIcon: str = 'rgba(0,0,0,0.45)',<br>colorIconHover: str = 'rgba(0,0,0,0.88)',<br>colorPrimary: str = '#1677ff',<br>colorSplit: str = 'rgba(5,5,5,0.06)',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>colorTextDisabled: str = 'rgba(0,0,0,0.25)',<br>colorTextHeading: str = 'rgba(0,0,0,0.88)',<br>colorTextLightSolid: str = '#fff',<br>colorTextTertiary: str = 'rgba(0,0,0,0.45)',<br>borderRadiusLG: int = 8,<br>borderRadiusSM: int = 4,<br>controlHeightLG: int = 40,<br>controlHeightSM: int = 24,<br>controlItemBgActive: str = '#e6f4ff',<br>controlItemBgHover: str = 'rgba(0,0,0,0.04)',<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>fontWeightStrong: int = 600,<br>lineHeight: float = 1.5714285714285714,<br>lineType: str = 'solid',<br>lineWidth: int = 1,<br>lineWidthBold: int = 2,<br>marginXS: int = 8,<br>marginXXS: int = 4,<br>motionDurationMid: str = '0.2s',<br>motionDurationSlow: str = '0.3s',<br>padding: int = 16,<br>paddingSM: int = 12,<br>paddingXS: int = 8,<br>paddingXXS: int = 4,<br>screenXS: int = 480)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class CalendarGlobalTokens:
+    &#34;&#34;&#34;
+    Calendar Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorBgContainer (str): Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`. Defauls to &#39;#ffffff&#39;
+        colorFillSecondary (str): The second level of fill color can outline the shape of the element more clearly, such as Rate, Skeleton, etc. It can also be used as the Hover state of the third level of fill color, such as Table, etc. Defauls to &#39;rgba(0,0,0,0.06)&#39;
+        colorIcon (str): Weak action. Such as `allowClear` or Alert close button. Defauls to &#39;rgba(0,0,0,0.45)&#39;
+        colorIconHover (str): Weak action hover color. Such as `allowClear` or Alert close button. Defauls to &#39;rgba(0,0,0,0.88)&#39;
+        colorPrimary (str): Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product. After you have selected the brand color, we will automatically generate a complete color palette and assign it effective design semantics. Defauls to &#39;#1677ff&#39;
+        colorSplit (str): Used as the color of separator, this color is the same as colorBorderSecondary but with transparency. Defauls to &#39;rgba(5,5,5,0.06)&#39;
+        colorText (str): Default text color which comply with W3C standards, and this color is also the darkest neutral color. Defauls to &#39;rgba(0,0,0,0.88)&#39;
+        colorTextDisabled (str): Control the color of text in disabled state. Defauls to &#39;rgba(0,0,0,0.25)&#39;
+        colorTextHeading (str): Control the font color of heading. Defauls to &#39;rgba(0,0,0,0.88)&#39;
+        colorTextLightSolid (str): Control the highlight color of text with background color, such as the text in Primary Button components. Defauls to &#39;#fff&#39;
+        colorTextTertiary (str): The third level of text color is generally used for descriptive text, such as form supplementary explanation text, list descriptive text, etc. Defauls to &#39;rgba(0,0,0,0.45)&#39;
+        borderRadiusLG (int): LG size border radius, used in some large border radius components, such as Card, Modal and other components. Defauls to 8
+        borderRadiusSM (int): SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size. Defauls to 4
+        controlHeightLG (int): LG component height. Defauls to 40
+        controlHeightSM (int): SM component height. Defauls to 24
+        controlItemBgActive (str): Control the background color of control component item when active. Defauls to &#39;#e6f4ff&#39;
+        controlItemBgHover (str): Control the background color of control component item when hovering. Defauls to &#39;rgba(0,0,0,0.04)&#39;
+        fontFamily (str): The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics. Defauls to fontFamily
+        fontSize (int): The most widely used font size in the design system, from which the text gradient will be derived
+        fontWeightStrong (int): Control the font weight of heading components (such as h1, h2, h3) or selected item. Defauls to 600
+        lineHeight (float): Line height of text. Defauls to 1.5714285714285714
+        lineType (str): Border style of base components. Defauls to &#39;solid&#39;
+        lineWidth (int): Border width of base components. Defauls to 1
+        lineWidthBold (int): The default line width of the outline class components, such as Button, Input, Select, etc. Defauls to 2
+        marginXS (int): Control the margin of an element, with a small size. Defauls to 8
+        marginXXS (int): Control the margin of an element, with the smallest siz. Defauls to 4
+        motionDurationMid (str): Motion speed, medium speed. Used for medium element animation interaction. Defauls to &#39;0.2s&#39;
+        motionDurationSlow (str): Motion speed, slow speed. Used for large element animation interaction. Defauls to &#39;0.3s&#39;
+        padding (int): Control the padding of the element. Defauls to 16
+        paddingSM (int): Control the small padding of the element. Defauls to 12
+        paddingXS (int): Control the extra small padding of the element. Defauls to 8
+        paddingXXS (int): Control the extra extra small padding of the element. Defauls to 4
+        screenXS (int): Control the screen width of extra small screens. Defauls to 480
+    &#34;&#34;&#34;
+
+    colorBgContainer: str = constants.GlobalToken.colorBgContainer
+    colorFillSecondary: str = constants.GlobalToken.colorFillSecondary
+    colorIcon: str = constants.GlobalToken.colorIcon
+    colorIconHover: str = constants.GlobalToken.colorIconHover
+    colorPrimary: str = constants.GlobalToken.colorPrimary
+    colorSplit: str = constants.GlobalToken.colorSplit
+    colorText: str = constants.GlobalToken.colorText
+    colorTextDisabled: str = constants.GlobalToken.colorTextDisabled
+    colorTextHeading: str = constants.GlobalToken.colorTextHeading
+    colorTextLightSolid: str = constants.GlobalToken.colorTextLightSolid
+    colorTextTertiary: str = constants.GlobalToken.colorTextTertiary
+    borderRadiusLG: int = constants.GlobalToken.borderRadiusLG
+    borderRadiusSM: int = constants.GlobalToken.borderRadiusSM
+    controlHeightLG: int = constants.GlobalToken.controlHeightLG
+    controlHeightSM: int = constants.GlobalToken.controlHeightSM
+    controlItemBgActive: str = constants.GlobalToken.controlItemBgActive
+    controlItemBgHover: str = constants.GlobalToken.controlItemBgHover
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    fontWeightStrong: int = constants.GlobalToken.fontWeightStrong
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineType: str = constants.GlobalToken.lineType
+    lineWidth: int = constants.GlobalToken.lineWidth
+    lineWidthBold: int = constants.GlobalToken.lineWidthBold
+    marginXS: int = constants.GlobalToken.marginXS
+    marginXXS: int = constants.GlobalToken.marginXXS
+    motionDurationMid: str = constants.GlobalToken.motionDurationMid
+    motionDurationSlow: str = constants.GlobalToken.motionDurationSlow
+    padding: int = constants.GlobalToken.padding
+    paddingSM: int = constants.GlobalToken.paddingSM
+    paddingXS: int = constants.GlobalToken.paddingXS
+    paddingXXS: int = constants.GlobalToken.paddingXXS
+    screenXS: int = constants.GlobalToken.screenXS</code></pre>
+</details>
+<div class="desc"><p>Calendar Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorBgContainer</code></strong> :&ensp;<code>str</code></dt>
+<dd>Container background color, e.g: default button, input box, etc. Be sure not to confuse this with <code>colorBgElevated</code>. Defauls to '#ffffff'</dd>
+<dt><strong><code>colorFillSecondary</code></strong> :&ensp;<code>str</code></dt>
+<dd>The second level of fill color can outline the shape of the element more clearly, such as Rate, Skeleton, etc. It can also be used as the Hover state of the third level of fill color, such as Table, etc. Defauls to 'rgba(0,0,0,0.06)'</dd>
+<dt><strong><code>colorIcon</code></strong> :&ensp;<code>str</code></dt>
+<dd>Weak action. Such as <code>allowClear</code> or Alert close button. Defauls to 'rgba(0,0,0,0.45)'</dd>
+<dt><strong><code>colorIconHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Weak action hover color. Such as <code>allowClear</code> or Alert close button. Defauls to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>colorPrimary</code></strong> :&ensp;<code>str</code></dt>
+<dd>Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product. After you have selected the brand color, we will automatically generate a complete color palette and assign it effective design semantics. Defauls to '#1677ff'</dd>
+<dt><strong><code>colorSplit</code></strong> :&ensp;<code>str</code></dt>
+<dd>Used as the color of separator, this color is the same as colorBorderSecondary but with transparency. Defauls to 'rgba(5,5,5,0.06)'</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards, and this color is also the darkest neutral color. Defauls to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>colorTextDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of text in disabled state. Defauls to 'rgba(0,0,0,0.25)'</dd>
+<dt><strong><code>colorTextHeading</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the font color of heading. Defauls to 'rgba(0,0,0,0.88)'</dd>
+<dt><strong><code>colorTextLightSolid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the highlight color of text with background color, such as the text in Primary Button components. Defauls to '#fff'</dd>
+<dt><strong><code>colorTextTertiary</code></strong> :&ensp;<code>str</code></dt>
+<dd>The third level of text color is generally used for descriptive text, such as form supplementary explanation text, list descriptive text, etc. Defauls to 'rgba(0,0,0,0.45)'</dd>
+<dt><strong><code>borderRadiusLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG size border radius, used in some large border radius components, such as Card, Modal and other components. Defauls to 8</dd>
+<dt><strong><code>borderRadiusSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size. Defauls to 4</dd>
+<dt><strong><code>controlHeightLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG component height. Defauls to 40</dd>
+<dt><strong><code>controlHeightSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM component height. Defauls to 24</dd>
+<dt><strong><code>controlItemBgActive</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when active. Defauls to '#e6f4ff'</dd>
+<dt><strong><code>controlItemBgHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when hovering. Defauls to 'rgba(0,0,0,0.04)'</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design prioritizes the default interface font of the system, and provides a set of alternative font libraries that are suitable for screen display to maintain the readability and readability of the font under different platforms and browsers, reflecting the friendly, stable and professional characteristics. Defauls to fontFamily</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system, from which the text gradient will be derived</dd>
+<dt><strong><code>fontWeightStrong</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the font weight of heading components (such as h1, h2, h3) or selected item. Defauls to 600</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text. Defauls to 1.5714285714285714</dd>
+<dt><strong><code>lineType</code></strong> :&ensp;<code>str</code></dt>
+<dd>Border style of base components. Defauls to 'solid'</dd>
+<dt><strong><code>lineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of base components. Defauls to 1</dd>
+<dt><strong><code>lineWidthBold</code></strong> :&ensp;<code>int</code></dt>
+<dd>The default line width of the outline class components, such as Button, Input, Select, etc. Defauls to 2</dd>
+<dt><strong><code>marginXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a small size. Defauls to 8</dd>
+<dt><strong><code>marginXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with the smallest siz. Defauls to 4</dd>
+<dt><strong><code>motionDurationMid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, medium speed. Used for medium element animation interaction. Defauls to '0.2s'</dd>
+<dt><strong><code>motionDurationSlow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, slow speed. Used for large element animation interaction. Defauls to '0.3s'</dd>
+<dt><strong><code>padding</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the padding of the element. Defauls to 16</dd>
+<dt><strong><code>paddingSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the small padding of the element. Defauls to 12</dd>
+<dt><strong><code>paddingXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra small padding of the element. Defauls to 8</dd>
+<dt><strong><code>paddingXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra extra small padding of the element. Defauls to 4</dd>
+<dt><strong><code>screenXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the screen width of extra small screens. Defauls to 480</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.calendar.CalendarGlobalTokens.borderRadiusLG"><code class="name">var <span class="ident">borderRadiusLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.borderRadiusSM"><code class="name">var <span class="ident">borderRadiusSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorBgContainer"><code class="name">var <span class="ident">colorBgContainer</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorFillSecondary"><code class="name">var <span class="ident">colorFillSecondary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorIcon"><code class="name">var <span class="ident">colorIcon</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorIconHover"><code class="name">var <span class="ident">colorIconHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorPrimary"><code class="name">var <span class="ident">colorPrimary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorSplit"><code class="name">var <span class="ident">colorSplit</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorTextDisabled"><code class="name">var <span class="ident">colorTextDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorTextHeading"><code class="name">var <span class="ident">colorTextHeading</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorTextLightSolid"><code class="name">var <span class="ident">colorTextLightSolid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.colorTextTertiary"><code class="name">var <span class="ident">colorTextTertiary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.controlHeightLG"><code class="name">var <span class="ident">controlHeightLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.controlHeightSM"><code class="name">var <span class="ident">controlHeightSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.controlItemBgActive"><code class="name">var <span class="ident">controlItemBgActive</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.controlItemBgHover"><code class="name">var <span class="ident">controlItemBgHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.fontWeightStrong"><code class="name">var <span class="ident">fontWeightStrong</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.lineType"><code class="name">var <span class="ident">lineType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.lineWidth"><code class="name">var <span class="ident">lineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.lineWidthBold"><code class="name">var <span class="ident">lineWidthBold</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.marginXS"><code class="name">var <span class="ident">marginXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.marginXXS"><code class="name">var <span class="ident">marginXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.motionDurationMid"><code class="name">var <span class="ident">motionDurationMid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.motionDurationSlow"><code class="name">var <span class="ident">motionDurationSlow</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.padding"><code class="name">var <span class="ident">padding</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.paddingSM"><code class="name">var <span class="ident">paddingSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.paddingXS"><code class="name">var <span class="ident">paddingXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.paddingXXS"><code class="name">var <span class="ident">paddingXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.calendar.CalendarGlobalTokens.screenXS"><code class="name">var <span class="ident">screenXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.calendar.calendar" href="#shinyant.calendar.calendar">calendar</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.calendar.Calendar" href="#shinyant.calendar.Calendar">Calendar</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.calendar.Calendar.change_design" href="#shinyant.calendar.Calendar.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_fullscreen" href="#shinyant.calendar.Calendar.change_fullscreen">change_fullscreen</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_globalDesign" href="#shinyant.calendar.Calendar.change_globalDesign">change_globalDesign</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_locale" href="#shinyant.calendar.Calendar.change_locale">change_locale</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_mode" href="#shinyant.calendar.Calendar.change_mode">change_mode</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_showWeek" href="#shinyant.calendar.Calendar.change_showWeek">change_showWeek</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_validRange" href="#shinyant.calendar.Calendar.change_validRange">change_validRange</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.change_value" href="#shinyant.calendar.Calendar.change_value">change_value</a></code></li>
+<li><code><a title="shinyant.calendar.Calendar.dump" href="#shinyant.calendar.Calendar.dump">dump</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.calendar.CalendarDesignTokens" href="#shinyant.calendar.CalendarDesignTokens">CalendarDesignTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.fullBg" href="#shinyant.calendar.CalendarDesignTokens.fullBg">fullBg</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.fullPanelBg" href="#shinyant.calendar.CalendarDesignTokens.fullPanelBg">fullPanelBg</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.itemActiveBg" href="#shinyant.calendar.CalendarDesignTokens.itemActiveBg">itemActiveBg</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.miniContentHeight" href="#shinyant.calendar.CalendarDesignTokens.miniContentHeight">miniContentHeight</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.monthControlWidth" href="#shinyant.calendar.CalendarDesignTokens.monthControlWidth">monthControlWidth</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarDesignTokens.yearControlWidth" href="#shinyant.calendar.CalendarDesignTokens.yearControlWidth">yearControlWidth</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.calendar.CalendarGlobalTokens" href="#shinyant.calendar.CalendarGlobalTokens">CalendarGlobalTokens</a></code></h4>
+<ul class="two-column">
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.borderRadiusLG" href="#shinyant.calendar.CalendarGlobalTokens.borderRadiusLG">borderRadiusLG</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.borderRadiusSM" href="#shinyant.calendar.CalendarGlobalTokens.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorBgContainer" href="#shinyant.calendar.CalendarGlobalTokens.colorBgContainer">colorBgContainer</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorFillSecondary" href="#shinyant.calendar.CalendarGlobalTokens.colorFillSecondary">colorFillSecondary</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorIcon" href="#shinyant.calendar.CalendarGlobalTokens.colorIcon">colorIcon</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorIconHover" href="#shinyant.calendar.CalendarGlobalTokens.colorIconHover">colorIconHover</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorPrimary" href="#shinyant.calendar.CalendarGlobalTokens.colorPrimary">colorPrimary</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorSplit" href="#shinyant.calendar.CalendarGlobalTokens.colorSplit">colorSplit</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorText" href="#shinyant.calendar.CalendarGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorTextDisabled" href="#shinyant.calendar.CalendarGlobalTokens.colorTextDisabled">colorTextDisabled</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorTextHeading" href="#shinyant.calendar.CalendarGlobalTokens.colorTextHeading">colorTextHeading</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorTextLightSolid" href="#shinyant.calendar.CalendarGlobalTokens.colorTextLightSolid">colorTextLightSolid</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.colorTextTertiary" href="#shinyant.calendar.CalendarGlobalTokens.colorTextTertiary">colorTextTertiary</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.controlHeightLG" href="#shinyant.calendar.CalendarGlobalTokens.controlHeightLG">controlHeightLG</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.controlHeightSM" href="#shinyant.calendar.CalendarGlobalTokens.controlHeightSM">controlHeightSM</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.controlItemBgActive" href="#shinyant.calendar.CalendarGlobalTokens.controlItemBgActive">controlItemBgActive</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.controlItemBgHover" href="#shinyant.calendar.CalendarGlobalTokens.controlItemBgHover">controlItemBgHover</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.fontFamily" href="#shinyant.calendar.CalendarGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.fontSize" href="#shinyant.calendar.CalendarGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.fontWeightStrong" href="#shinyant.calendar.CalendarGlobalTokens.fontWeightStrong">fontWeightStrong</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.lineHeight" href="#shinyant.calendar.CalendarGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.lineType" href="#shinyant.calendar.CalendarGlobalTokens.lineType">lineType</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.lineWidth" href="#shinyant.calendar.CalendarGlobalTokens.lineWidth">lineWidth</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.lineWidthBold" href="#shinyant.calendar.CalendarGlobalTokens.lineWidthBold">lineWidthBold</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.marginXS" href="#shinyant.calendar.CalendarGlobalTokens.marginXS">marginXS</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.marginXXS" href="#shinyant.calendar.CalendarGlobalTokens.marginXXS">marginXXS</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.motionDurationMid" href="#shinyant.calendar.CalendarGlobalTokens.motionDurationMid">motionDurationMid</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.motionDurationSlow" href="#shinyant.calendar.CalendarGlobalTokens.motionDurationSlow">motionDurationSlow</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.padding" href="#shinyant.calendar.CalendarGlobalTokens.padding">padding</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.paddingSM" href="#shinyant.calendar.CalendarGlobalTokens.paddingSM">paddingSM</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.paddingXS" href="#shinyant.calendar.CalendarGlobalTokens.paddingXS">paddingXS</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.paddingXXS" href="#shinyant.calendar.CalendarGlobalTokens.paddingXXS">paddingXXS</a></code></li>
+<li><code><a title="shinyant.calendar.CalendarGlobalTokens.screenXS" href="#shinyant.calendar.CalendarGlobalTokens.screenXS">screenXS</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
