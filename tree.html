@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.tree API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Tree component module for shinyant UI library …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,65 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.tree</code></h1>
 </header>
 <section id="section-intro">
+<p>Tree component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired tree component with hierarchical data display.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>
+<p>Support for checkable, selectable and draggable nodes</p>
+</li>
+<li>
+<p>Customizable design tokens for styling</p>
+</li>
+<li>
+<p>Virtual scrolling for large datasets</p>
+</li>
+<li>
+<p>Multiple selection modes and expand/collapse behaviors</p>
+</li>
+<li>
+<p>Integration with both controlled and uncontrolled states</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, reactive, render, ui
+
+import shinyant
+
+
+node2_2 = shinyant.TreeNode(key=&quot;002&quot;, title=&quot;002&quot;, checkable=True)
+node3_2 = shinyant.TreeNode(key=&quot;003&quot;, title=&quot;003&quot;, checkable=True)
+node1_2 = shinyant.TreeNode(key=&quot;001&quot;, title=&quot;001&quot;, children=[node2_2, node3_2], checkable=True)
+
+app_ui = ui.page_auto(
+    shinyant.nesting_wrap(
+        shinyant.tree(id=&quot;tree&quot;, treeData=[node1_2], checkable=True, multiple=True, selectable=True)
+    ),
+    ui.p(&quot;Selected keys:&quot;),
+    ui.output_text(&quot;select_tree&quot;),
+    ui.p(&quot;Marked keys:&quot;),
+    ui.output_text(&quot;check_tree&quot;),
+)
+
+
+def server(input, output, session):
+    @render.text
+    @reactive.event(input.tree_select)
+    def select_tree():
+        return input.tree_select()
+
+    @render.text
+    @reactive.event(input.tree_check)
+    def check_tree():
+        return input.tree_check()
+
+
+app = App(app_ui, server)
+</code></pre>
 </section>
 <section>
 </section>
@@ -600,38 +659,38 @@ class TreeGlobalTokens:
         Tree Global Design class (Global Tokens from react ant.design)&#34;
 
     Attributes:
-        colorBgContainer [str]: Container background color
-        colorBgContainerDisabled [str]: Control the background color of container in disabled state
-        colorBgTextHover [str]: Control the background color of text in hover state
-        colorBorder [str]: Default border color, used to separate different elements
-        colorPrimary [str]: Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
-        colorPrimaryBorder [str]: The stroke color under the main color gradient, used on the stroke of components such as Slider
-        colorPrimaryHover [str]: Hover state under the main color gradient
-        colorText [str]: Default text color which comply with W3C standards
-        colorTextDisabled [str]: Control the color of text in disabled state
-        colorTextQuaternary [str]: The fourth level of text color is the lightest text color
-        colorWhite [str]: Pure white color don&#39;t changed by theme
-        borderRadius [int]: Border radius of base components
-        borderRadiusSM [int]: SM size border radius, used in small size components
-        controlInteractiveSize [int]: Control the interactive size of control component
-        controlItemBgActiveDisabled [str]: Control the background color of control component item when active and disabled
-        controlItemBgHover [str]: Control the background color of control component item when hovering
-        fontFamily [str]: font family
-        fontSize [int]: The most widely used font size in the design system, from which the text gradient will be derived
-        fontSizeLG [int]: Large font size
-        lineHeight [int]: Line height of text
-        lineType [str]: Border style of base components
-        lineWidth [int]: Border width of base components
-        lineWidthBold [int]: The default line width of the outline class components
-        lineWidthFocus [int]: Control the width of the line when the component is in focus state
-        marginXS [int]: Control the margin of an element, with a small size
-        motionDurationFast [str]: Motion speed, fast speed. Used for small element animation interaction
-        motionDurationMid [str]: Motion speed, medium speed. Used for medium element animation interaction
-        motionDurationSlow [str]: Motion speed, slow speed. Used for large element animation interaction
-        motionEaseInBack [str]: Preset motion curve
-        motionEaseInOut [str]: Preset motion curve
-        motionEaseOutBack [str]: Preset motion curve
-        paddingXS [int]: Control the extra small padding of the element
+        colorBgContainer (str): Container background color
+        colorBgContainerDisabled (str): Control the background color of container in disabled state
+        colorBgTextHover (str): Control the background color of text in hover state
+        colorBorder (str): Default border color, used to separate different elements
+        colorPrimary (str): Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
+        colorPrimaryBorder (str): The stroke color under the main color gradient, used on the stroke of components such as Slider
+        colorPrimaryHover (str): Hover state under the main color gradient
+        colorText (str): Default text color which comply with W3C standards
+        colorTextDisabled (str): Control the color of text in disabled state
+        colorTextQuaternary (str): The fourth level of text color is the lightest text color
+        colorWhite (str): Pure white color don&#39;t changed by theme
+        borderRadius (int): Border radius of base components
+        borderRadiusSM (int): SM size border radius, used in small size components
+        controlInteractiveSize (int): Control the interactive size of control component
+        controlItemBgActiveDisabled (str): Control the background color of control component item when active and disabled
+        controlItemBgHover (str): Control the background color of control component item when hovering
+        fontFamily (str): font family
+        fontSize (int): The most widely used font size in the design system, from which the text gradient will be derived
+        fontSizeLG (int): Large font size
+        lineHeight (int): Line height of text
+        lineType (str): Border style of base components
+        lineWidth (int): Border width of base components
+        lineWidthBold (int): The default line width of the outline class components
+        lineWidthFocus (int): Control the width of the line when the component is in focus state
+        marginXS (int): Control the margin of an element, with a small size
+        motionDurationFast (str): Motion speed, fast speed. Used for small element animation interaction
+        motionDurationMid (str): Motion speed, medium speed. Used for medium element animation interaction
+        motionDurationSlow (str): Motion speed, slow speed. Used for large element animation interaction
+        motionEaseInBack (str): Preset motion curve
+        motionEaseInOut (str): Preset motion curve
+        motionEaseOutBack (str): Preset motion curve
+        paddingXS (int): Control the extra small padding of the element
     &#34;&#34;&#34;
 
     colorBgContainer: str = constants.GlobalToken.colorBgContainer
@@ -669,38 +728,72 @@ class TreeGlobalTokens:
 </details>
 <div class="desc"><p>Tree Global Design class (Global Tokens from react ant.design)"</p>
 <h2 id="attributes">Attributes</h2>
-<p>colorBgContainer [str]: Container background color
-colorBgContainerDisabled [str]: Control the background color of container in disabled state
-colorBgTextHover [str]: Control the background color of text in hover state
-colorBorder [str]: Default border color, used to separate different elements
-colorPrimary [str]: Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
-colorPrimaryBorder [str]: The stroke color under the main color gradient, used on the stroke of components such as Slider
-colorPrimaryHover [str]: Hover state under the main color gradient
-colorText [str]: Default text color which comply with W3C standards
-colorTextDisabled [str]: Control the color of text in disabled state
-colorTextQuaternary [str]: The fourth level of text color is the lightest text color
-colorWhite [str]: Pure white color don't changed by theme
-borderRadius [int]: Border radius of base components
-borderRadiusSM [int]: SM size border radius, used in small size components
-controlInteractiveSize [int]: Control the interactive size of control component
-controlItemBgActiveDisabled [str]: Control the background color of control component item when active and disabled
-controlItemBgHover [str]: Control the background color of control component item when hovering
-fontFamily [str]: font family
-fontSize [int]: The most widely used font size in the design system, from which the text gradient will be derived
-fontSizeLG [int]: Large font size
-lineHeight [int]: Line height of text
-lineType [str]: Border style of base components
-lineWidth [int]: Border width of base components
-lineWidthBold [int]: The default line width of the outline class components
-lineWidthFocus [int]: Control the width of the line when the component is in focus state
-marginXS [int]: Control the margin of an element, with a small size
-motionDurationFast [str]: Motion speed, fast speed. Used for small element animation interaction
-motionDurationMid [str]: Motion speed, medium speed. Used for medium element animation interaction
-motionDurationSlow [str]: Motion speed, slow speed. Used for large element animation interaction
-motionEaseInBack [str]: Preset motion curve
-motionEaseInOut [str]: Preset motion curve
-motionEaseOutBack [str]: Preset motion curve
-paddingXS [int]: Control the extra small padding of the element</p></div>
+<dl>
+<dt><strong><code>colorBgContainer</code></strong> :&ensp;<code>str</code></dt>
+<dd>Container background color</dd>
+<dt><strong><code>colorBgContainerDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of container in disabled state</dd>
+<dt><strong><code>colorBgTextHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of text in hover state</dd>
+<dt><strong><code>colorBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default border color, used to separate different elements</dd>
+<dt><strong><code>colorPrimary</code></strong> :&ensp;<code>str</code></dt>
+<dd>Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product</dd>
+<dt><strong><code>colorPrimaryBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>The stroke color under the main color gradient, used on the stroke of components such as Slider</dd>
+<dt><strong><code>colorPrimaryHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Hover state under the main color gradient</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards</dd>
+<dt><strong><code>colorTextDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of text in disabled state</dd>
+<dt><strong><code>colorTextQuaternary</code></strong> :&ensp;<code>str</code></dt>
+<dd>The fourth level of text color is the lightest text color</dd>
+<dt><strong><code>colorWhite</code></strong> :&ensp;<code>str</code></dt>
+<dd>Pure white color don't changed by theme</dd>
+<dt><strong><code>borderRadius</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border radius of base components</dd>
+<dt><strong><code>borderRadiusSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM size border radius, used in small size components</dd>
+<dt><strong><code>controlInteractiveSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the interactive size of control component</dd>
+<dt><strong><code>controlItemBgActiveDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when active and disabled</dd>
+<dt><strong><code>controlItemBgHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when hovering</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>font family</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system, from which the text gradient will be derived</dd>
+<dt><strong><code>fontSizeLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>Large font size</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>int</code></dt>
+<dd>Line height of text</dd>
+<dt><strong><code>lineType</code></strong> :&ensp;<code>str</code></dt>
+<dd>Border style of base components</dd>
+<dt><strong><code>lineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of base components</dd>
+<dt><strong><code>lineWidthBold</code></strong> :&ensp;<code>int</code></dt>
+<dd>The default line width of the outline class components</dd>
+<dt><strong><code>lineWidthFocus</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the width of the line when the component is in focus state</dd>
+<dt><strong><code>marginXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a small size</dd>
+<dt><strong><code>motionDurationFast</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, fast speed. Used for small element animation interaction</dd>
+<dt><strong><code>motionDurationMid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, medium speed. Used for medium element animation interaction</dd>
+<dt><strong><code>motionDurationSlow</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, slow speed. Used for large element animation interaction</dd>
+<dt><strong><code>motionEaseInBack</code></strong> :&ensp;<code>str</code></dt>
+<dd>Preset motion curve</dd>
+<dt><strong><code>motionEaseInOut</code></strong> :&ensp;<code>str</code></dt>
+<dd>Preset motion curve</dd>
+<dt><strong><code>motionEaseOutBack</code></strong> :&ensp;<code>str</code></dt>
+<dd>Preset motion curve</dd>
+<dt><strong><code>paddingXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra small padding of the element</dd>
+</dl></div>
 <h3>Instance variables</h3>
 <dl>
 <dt id="shinyant.tree.TreeGlobalTokens.borderRadius"><code class="name">var <span class="ident">borderRadius</span> : int</code></dt>

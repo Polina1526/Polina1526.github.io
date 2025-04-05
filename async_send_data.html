@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.async_send_data API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Module for sending shinyant component data to client sessions …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,9 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.async_send_data</code></h1>
 </header>
 <section id="section-intro">
+<p>Module for sending shinyant component data to client sessions.</p>
+<p>This module provides functionality to process component data and send it to
+the client-side session in a shinyant application.</p>
 </section>
 <section>
 </section>
@@ -53,12 +56,34 @@ el.replaceWith(d);
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">async def send_data(id: str):
+    &#34;&#34;&#34;Send component data to the current Shiny session.
+
+    Processes the component data associated with the given ID and sends it as a
+    custom message to the current Shiny session.
+
+    Args:
+        id: The ID of the component whose data should be sent
+
+    Note:
+        If no current session exists, the function will complete without sending data.
+        The message type will be set to the parent component ID.
+    &#34;&#34;&#34;
     current_session = session.get_current_session()
     props = process_data_for_json(components[children_id[id]], children_id[id])
     if current_session is not None:
         await current_session.send_custom_message(type=children_id[id], message=props)</code></pre>
 </details>
-<div class="desc"></div>
+<div class="desc"><p>Send component data to the current Shiny session.</p>
+<p>Processes the component data associated with the given ID and sends it as a
+custom message to the current Shiny session.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>The ID of the component whose data should be sent</dd>
+</dl>
+<h2 id="note">Note</h2>
+<p>If no current session exists, the function will complete without sending data.
+The message type will be set to the parent component ID.</p></div>
 </dd>
 </dl>
 </section>

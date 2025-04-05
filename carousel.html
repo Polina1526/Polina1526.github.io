@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.carousel API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Carousel component module for shinyant UI library …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,74 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.carousel</code></h1>
 </header>
 <section id="section-intro">
+<p>Carousel component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired carousel component with various
+configuration options for slideshow presentation.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>
+<p>Support for any content types in slides</p>
+</li>
+<li>
+<p>Customizable navigation (arrows, dots)</p>
+</li>
+<li>
+<p>Multiple dot positioning options (top, bottom, left, right)</p>
+</li>
+<li>
+<p>Autoplay with configurable speed</p>
+</li>
+<li>
+<p>Smooth transition animations</p>
+</li>
+<li>
+<p>Responsive height adaptation</p>
+</li>
+<li>
+<p>Draggable navigation on desktop</p>
+</li>
+<li>
+<p>Infinite looping mode</p>
+</li>
+<li>
+<p>Customizable design tokens</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, ui
+
+import shinyant
+
+
+content_style_str = &quot;margin:0; height:160px; color:#fff; line-height:160px; text-align:center; background:#364d79; background:#364d79; font-family:'Open Sans';&quot;
+
+app_ui = ui.page_auto(
+    shinyant.nesting_wrap(
+        shinyant.carousel(
+            id=&quot;carousel&quot;,
+            items=[
+                ui.h3(&quot;Slide 1 Content&quot;, style=content_style_str),
+                ui.h3(&quot;Slide 2 Content&quot;, style=content_style_str),
+                ui.h3(&quot;Slide 3 Content&quot;, style=content_style_str),
+            ],
+            fade=True,
+            autoplay=True,
+            dotPosition=&quot;left&quot;,
+        )
+    )
+)
+
+
+def server(input, output, session):
+    pass
+
+
+app = App(app_ui, server)
+</code></pre>
 </section>
 <section>
 </section>

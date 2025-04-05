@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.nesting_wrap API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="A module for processing and wrapping shiny components for use in shinyant …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,9 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.nesting_wrap</code></h1>
 </header>
 <section id="section-intro">
+<p>A module for processing and wrapping shiny components for use in shinyant.</p>
+<p>This module provides functionality to convert shiny and shinyant component objects into HTML tags
+with proper data attributes and dependencies for sending them to react.</p>
 </section>
 <section>
 </section>
@@ -53,6 +56,17 @@ el.replaceWith(d);
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def nesting_wrap(comp: Any) -&gt; Tag:
+    &#34;&#34;&#34;Wrap a Shiny component in a div tag with proper attributes for shinyant.
+
+    Args:
+        comp: The Shiny component object to wrap
+
+    Returns:
+        A Tag object containing the wrapped component
+
+    Raises:
+        TypeError: If the component type is not supported
+    &#34;&#34;&#34;
     if type(comp).__name__ not in SHINY_CLASSES:
         raise TypeError(f&#34;{type(comp).__name__} class object is not supported&#34;)
 
@@ -69,7 +83,19 @@ el.replaceWith(d);
         id=root_id + str(len(components)),
     )</code></pre>
 </details>
-<div class="desc"></div>
+<div class="desc"><p>Wrap a Shiny component in a div tag with proper attributes for shinyant.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>comp</code></strong></dt>
+<dd>The Shiny component object to wrap</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A Tag object containing the wrapped component</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>If the component type is not supported</dd>
+</dl></div>
 </dd>
 <dt id="shinyant.nesting_wrap.process_data_for_json"><code class="name flex">
 <span>def <span class="ident">process_data_for_json</span></span>(<span>data: Any, root_id: str) ‑> Any</span>
@@ -80,6 +106,18 @@ el.replaceWith(d);
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def process_data_for_json(data: Any, root_id: str) -&gt; Any:
+    &#34;&#34;&#34;Recursively process data to prepare it for JSON serialization.
+
+    Args:
+        data: The data to be processed (can be dict, list, Tag, or Shiny component)
+        root_id: The root ID of the component being processed
+
+    Returns:
+        Processed data ready for JSON serialization
+
+    Raises:
+        TypeError: If unsupported Tag types or HTML objects are nested in components
+    &#34;&#34;&#34;
     if isinstance(data, dict):
         return {k: process_data_for_json(v, root_id) for k, v in data.items()}
 
@@ -111,7 +149,21 @@ el.replaceWith(d);
 
     return data</code></pre>
 </details>
-<div class="desc"></div>
+<div class="desc"><p>Recursively process data to prepare it for JSON serialization.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>data</code></strong></dt>
+<dd>The data to be processed (can be dict, list, Tag, or Shiny component)</dd>
+<dt><strong><code>root_id</code></strong></dt>
+<dd>The root ID of the component being processed</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Processed data ready for JSON serialization</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>If unsupported Tag types or HTML objects are nested in components</dd>
+</dl></div>
 </dd>
 </dl>
 </section>

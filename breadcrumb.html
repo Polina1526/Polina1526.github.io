@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.breadcrumb API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Breadcrumb component module for shinyant UI library …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,70 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.breadcrumb</code></h1>
 </header>
 <section id="section-intro">
+<p>Breadcrumb component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired breadcrumb navigation component.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>
+<p>Customizable items with links, dropdown menus and separators</p>
+</li>
+<li>
+<p>Support for custom separators</p>
+</li>
+<li>
+<p>Flexible design tokens for styling control</p>
+</li>
+<li>
+<p>Interactive item management</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, ui
+
+import shinyant
+
+
+app_ui = ui.page_auto(
+    ui.h1(&quot;Title&quot;, id=&quot;title&quot;),
+    ui.h2(&quot;Subtitle&quot;, id=&quot;subtitle&quot;),
+    ui.h3(&quot;Subsubitle&quot;, id=&quot;subsubitle&quot;),
+    shinyant.nesting_wrap(
+        shinyant.breadcrumb(
+            id=&quot;breadcrum1&quot;,
+            items=[
+                shinyant.BreadcrumbItem(title=&quot;Title&quot;, href=&quot;#title&quot;),
+                shinyant.BreadcrumbItem(title=&quot;Subtitle&quot;, href=&quot;#subtitle&quot;),
+                shinyant.BreadcrumbItem(title=&quot;Subsubitle&quot;, href=&quot;#subsubitle&quot;),
+            ],
+            separator=&quot;//&quot;,
+        )
+    ),
+    shinyant.nesting_wrap(
+        shinyant.breadcrumb(
+            id=&quot;breadcrum2&quot;,
+            items=[
+                shinyant.BreadcrumbItem(title=&quot;Title&quot;, href=&quot;#title&quot;),
+                shinyant.BreadcrumbItem(type=&quot;separator&quot;, separator=&quot;&gt;&quot;),
+                shinyant.BreadcrumbItem(title=&quot;Subtitle&quot;, href=&quot;#subtitle&quot;),
+                shinyant.BreadcrumbItem(type=&quot;separator&quot;, separator=&quot;:&quot;),
+                shinyant.BreadcrumbItem(title=&quot;Subsubitle&quot;, href=&quot;#subsubitle&quot;),
+            ],
+            separator=&quot;&quot;,
+        )
+    ),
+)
+
+
+def server(input, output, session):
+    pass
+
+
+app = App(app_ui, server)
+</code></pre>
 </section>
 <section>
 </section>

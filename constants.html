@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.constants API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Module containing design tokens for Ant Design system …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,10 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.constants</code></h1>
 </header>
 <section id="section-intro">
+<p>Module containing design tokens for Ant Design system.</p>
+<p>This module provides a comprehensive collection of design tokens including colors,
+typography, spacing, sizing, and motion parameters that follow Ant Design specifications.
+These tokens are used to maintain design consistency across components.</p>
 </section>
 <section>
 </section>
@@ -48,7 +52,7 @@ el.replaceWith(d);
 <dl>
 <dt id="shinyant.constants.GlobalToken"><code class="flex name class">
 <span>class <span class="ident">GlobalToken</span></span>
-<span>(</span><span>colorBgContainer: Final[str] = '#ffffff',<br>colorBgContainerDisabled: Final[str] = 'rgba(0,0,0,0.04)',<br>colorBgTextHover: Final[str] = 'rgba(0,0,0,0.06)',<br>colorBorder: Final[str] = '#d9d9d9',<br>colorError: Final[str] = '#ff4d4f',<br>colorErrorBg: Final[str] = '#fff2f0',<br>colorErrorText: Final[str] = '#ff4d4f',<br>colorFillSecondary: Final[str] = 'rgba(0,0,0,0.06)',<br>colorFillTertiary: Final[str] = 'rgba(0,0,0,0.04)',<br>colorIcon: Final[str] = 'rgba(0,0,0,0.45)',<br>colorIconHover: Final[str] = 'rgba(0,0,0,0.88)',<br>colorPrimary: Final[str] = '#1677ff',<br>colorPrimaryActive: Final[str] = '#0958d9',<br>colorPrimaryBorder: Final[str] = '#91caff',<br>colorPrimaryHover: Final[str] = '#4096ff',<br>colorSplit: Final[str] = 'rgba(5,5,5,0.06)',<br>colorSuccess: Final[str] = '#52c41a',<br>colorText: Final[str] = 'rgba(0,0,0,0.88)',<br>colorTextDescription: Final[str] = 'rgba(0,0,0,0.45)',<br>colorTextDisabled: Final[str] = 'rgba(0,0,0,0.25)',<br>colorTextHeading: Final[str] = 'rgba(0,0,0,0.88)',<br>colorTextLightSolid: Final[str] = '#fff',<br>colorTextTertiary: Final[str] = 'rgba(0,0,0,0.45)',<br>colorTextQuaternary: Final[str] = 'rgba(0,0,0,0.25)',<br>colorWarning: Final[str] = '#faad14',<br>colorWarningBg: Final[str] = '#fffbe6',<br>colorWarningText: Final[str] = '#faad14',<br>colorWhite: Final[str] = '#fff',<br>borderRadius: Final[int] = 6,<br>borderRadiusLG: Final[int] = 8,<br>borderRadiusSM: Final[int] = 4,<br>controlHeight: Final[int] = 32,<br>controlHeightLG: Final[int] = 40,<br>controlHeightSM: Final[int] = 24,<br>controlInteractiveSize: Final[int] = 16,<br>controlItemBgActive: Final[str] = '#e6f4ff',<br>controlItemBgActiveDisabled: Final[str] = 'rgba(0,0,0,0.04)',<br>controlItemBgHover: Final[str] = 'rgba(0,0,0,0.04)',<br>fontFamily: Final[str] = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: Final[int] = 14,<br>fontSizeIcon: Final[int] = 12,<br>fontSizeLG: Final[int] = 16,<br>fontSizeSM: Final[int] = 12,<br>fontWeightStrong: Final[int] = 600,<br>lineHeight: Final[float] = 1.5714285714285714,<br>lineHeightLG: Final[float] = 1.5,<br>lineType: Final[str] = 'solid',<br>lineWidth: Final[int] = 1,<br>lineWidthBold: Final[int] = 2,<br>lineWidthFocus: Final[int] = 3,<br>margin: Final[int] = 16,<br>marginSM: Final[int] = 12,<br>marginXS: Final[int] = 8,<br>marginXXS: Final[int] = 4,<br>motionDurationFast: Final[str] = '0.1s',<br>motionDurationMid: Final[str] = '0.2s',<br>motionDurationSlow: Final[str] = '0.3s',<br>motionEaseInBack: Final[str] = 'cubic-bezier(0.71,-0.46,0.88,0.6)',<br>motionEaseInOut: Final[str] = 'cubic-bezier(0.645,0.045,0.355,1)',<br>motionEaseOutBack: Final[str] = 'cubic-bezier(0.12,0.4,0.29,1.46)',<br>padding: Final[int] = 16,<br>paddingSM: Final[int] = 12,<br>paddingXS: Final[int] = 8,<br>paddingXXS: Final[int] = 4,<br>screenXS: Final[int] = 480)</span>
+<span>(</span><span>colorBgContainer: Final[str] = '#ffffff',<br>colorBgContainerDisabled: Final[str] = 'rgba(0,0,0,0.04)',<br>colorBgTextActive: Final[str] = 'rgba(0,0,0,0.15)',<br>colorBgTextHover: Final[str] = 'rgba(0,0,0,0.06)',<br>colorBorder: Final[str] = '#d9d9d9',<br>colorError: Final[str] = '#ff4d4f',<br>colorErrorBg: Final[str] = '#fff2f0',<br>colorErrorText: Final[str] = '#ff4d4f',<br>colorFillSecondary: Final[str] = 'rgba(0,0,0,0.06)',<br>colorFill: Final[str] = 'rgba(0,0,0,0.15)',<br>colorFillTertiary: Final[str] = 'rgba(0,0,0,0.04)',<br>colorIcon: Final[str] = 'rgba(0,0,0,0.45)',<br>colorIconHover: Final[str] = 'rgba(0,0,0,0.88)',<br>colorPrimary: Final[str] = '#1677ff',<br>colorPrimaryActive: Final[str] = '#0958d9',<br>colorPrimaryBorder: Final[str] = '#91caff',<br>colorPrimaryHover: Final[str] = '#4096ff',<br>colorSplit: Final[str] = 'rgba(5,5,5,0.06)',<br>colorSuccess: Final[str] = '#52c41a',<br>colorText: Final[str] = 'rgba(0,0,0,0.88)',<br>colorTextDescription: Final[str] = 'rgba(0,0,0,0.45)',<br>colorTextDisabled: Final[str] = 'rgba(0,0,0,0.25)',<br>colorTextHeading: Final[str] = 'rgba(0,0,0,0.88)',<br>colorTextLightSolid: Final[str] = '#fff',<br>colorTextTertiary: Final[str] = 'rgba(0,0,0,0.45)',<br>colorTextQuaternary: Final[str] = 'rgba(0,0,0,0.25)',<br>colorTextPlaceholder: Final[str] = 'rgba(0,0,0,0.25)',<br>colorWarning: Final[str] = '#faad14',<br>colorWarningBg: Final[str] = '#fffbe6',<br>colorWarningText: Final[str] = '#faad14',<br>colorWhite: Final[str] = '#fff',<br>borderRadius: Final[int] = 6,<br>borderRadiusLG: Final[int] = 8,<br>borderRadiusSM: Final[int] = 4,<br>borderRadiusXS: Final[int] = 2,<br>controlHeight: Final[int] = 32,<br>controlHeightLG: Final[int] = 40,<br>controlHeightSM: Final[int] = 24,<br>controlInteractiveSize: Final[int] = 16,<br>controlItemBgActive: Final[str] = '#e6f4ff',<br>controlItemBgActiveDisabled: Final[str] = 'rgba(0,0,0,0.04)',<br>controlItemBgHover: Final[str] = 'rgba(0,0,0,0.04)',<br>controlOutline: Final[str] = 'rgba(5,145,255,0.1)',<br>controlOutlineWidth: Final[int] = 2,<br>controlItemBgActiveHover: Final[str] = '#bae0ff',<br>fontFamily: Final[str] = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: Final[int] = 14,<br>fontSizeIcon: Final[int] = 12,<br>fontSizeLG: Final[int] = 16,<br>fontSizeSM: Final[int] = 12,<br>fontWeightStrong: Final[int] = 600,<br>lineHeight: Final[float] = 1.5714285714285714,<br>lineHeightLG: Final[float] = 1.5,<br>lineType: Final[str] = 'solid',<br>lineWidth: Final[int] = 1,<br>lineWidthBold: Final[int] = 2,<br>lineWidthFocus: Final[int] = 3,<br>margin: Final[int] = 16,<br>marginSM: Final[int] = 12,<br>marginXS: Final[int] = 8,<br>marginXXS: Final[int] = 4,<br>motionDurationFast: Final[str] = '0.1s',<br>motionDurationMid: Final[str] = '0.2s',<br>motionDurationSlow: Final[str] = '0.3s',<br>motionEaseInBack: Final[str] = 'cubic-bezier(0.71,-0.46,0.88,0.6)',<br>motionEaseInOut: Final[str] = 'cubic-bezier(0.645,0.045,0.355,1)',<br>motionEaseOutBack: Final[str] = 'cubic-bezier(0.12,0.4,0.29,1.46)',<br>padding: Final[int] = 16,<br>paddingSM: Final[int] = 12,<br>paddingXS: Final[int] = 8,<br>paddingXXS: Final[int] = 4,<br>screenXS: Final[int] = 480,<br>screenLG: Final[int] = 992,<br>screenSM: Final[int] = 576,<br>zIndexPopupBase: Final[int] = 1000)</span>
 </code></dt>
 <dd>
 <details class="source">
@@ -57,14 +61,28 @@ el.replaceWith(d);
 </summary>
 <pre><code class="python">@dataclass
 class GlobalToken:
+    &#34;&#34;&#34;Dataclass containing all global design tokens for Ant Design system.
+
+    This class provides a centralized collection of design tokens including:\n
+    - Color palette (backgrounds, text, states, etc.)\n
+    - Border radius values\n
+    - Control dimensions\n
+    - Typography settings\n
+    - Spacing and padding values\n
+    - Motion and animation parameters\n
+    - Breakpoint values\n
+    &#34;&#34;&#34;
+
     colorBgContainer: Final[str] = &#34;#ffffff&#34;
     colorBgContainerDisabled: Final[str] = &#34;rgba(0,0,0,0.04)&#34;
+    colorBgTextActive: Final[str] = &#34;rgba(0,0,0,0.15)&#34;
     colorBgTextHover: Final[str] = &#34;rgba(0,0,0,0.06)&#34;
     colorBorder: Final[str] = &#34;#d9d9d9&#34;
     colorError: Final[str] = &#34;#ff4d4f&#34;
     colorErrorBg: Final[str] = &#34;#fff2f0&#34;
     colorErrorText: Final[str] = &#34;#ff4d4f&#34;
     colorFillSecondary: Final[str] = &#34;rgba(0,0,0,0.06)&#34;
+    colorFill: Final[str] = &#34;rgba(0,0,0,0.15)&#34;
     colorFillTertiary: Final[str] = &#34;rgba(0,0,0,0.04)&#34;
     colorIcon: Final[str] = &#34;rgba(0,0,0,0.45)&#34;
     colorIconHover: Final[str] = &#34;rgba(0,0,0,0.88)&#34;
@@ -81,6 +99,7 @@ class GlobalToken:
     colorTextLightSolid: Final[str] = &#34;#fff&#34;
     colorTextTertiary: Final[str] = &#34;rgba(0,0,0,0.45)&#34;
     colorTextQuaternary: Final[str] = &#34;rgba(0,0,0,0.25)&#34;
+    colorTextPlaceholder: Final[str] = &#34;rgba(0,0,0,0.25)&#34;
     colorWarning: Final[str] = &#34;#faad14&#34;
     colorWarningBg: Final[str] = &#34;#fffbe6&#34;
     colorWarningText: Final[str] = &#34;#faad14&#34;
@@ -88,12 +107,18 @@ class GlobalToken:
     borderRadius: Final[int] = 6
     borderRadiusLG: Final[int] = 8
     borderRadiusSM: Final[int] = 4
+    borderRadiusXS: Final[int] = 2
     controlHeight: Final[int] = 32
     controlHeightLG: Final[int] = 40
     controlHeightSM: Final[int] = 24
     controlInteractiveSize: Final[int] = 16
     controlItemBgActive: Final[str] = &#34;#e6f4ff&#34;
     controlItemBgActiveDisabled: Final[str] = &#34;rgba(0,0,0,0.04)&#34;
+    controlItemBgHover: Final[str] = &#34;rgba(0,0,0,0.04)&#34;
+    controlOutline: Final[str] = &#34;rgba(5,145,255,0.1)&#34;
+    controlOutlineWidth: Final[int] = 2
+    controlItemBgActive: Final[str] = &#34;#e6f4ff&#34;
+    controlItemBgActiveHover: Final[str] = &#34;#bae0ff&#34;
     controlItemBgHover: Final[str] = &#34;rgba(0,0,0,0.04)&#34;
     fontFamily: Final[str] = FontFamily
     fontSize: Final[int] = 14
@@ -121,9 +146,36 @@ class GlobalToken:
     paddingSM: Final[int] = 12
     paddingXS: Final[int] = 8
     paddingXXS: Final[int] = 4
-    screenXS: Final[int] = 480</code></pre>
+    screenXS: Final[int] = 480
+    screenLG: Final[int] = 992
+    screenSM: Final[int] = 576
+    zIndexPopupBase: Final[int] = 1000</code></pre>
 </details>
-<div class="desc"><p>GlobalToken(colorBgContainer: Final[str] = '#ffffff', colorBgContainerDisabled: Final[str] = 'rgba(0,0,0,0.04)', colorBgTextHover: Final[str] = 'rgba(0,0,0,0.06)', colorBorder: Final[str] = '#d9d9d9', colorError: Final[str] = '#ff4d4f', colorErrorBg: Final[str] = '#fff2f0', colorErrorText: Final[str] = '#ff4d4f', colorFillSecondary: Final[str] = 'rgba(0,0,0,0.06)', colorFillTertiary: Final[str] = 'rgba(0,0,0,0.04)', colorIcon: Final[str] = 'rgba(0,0,0,0.45)', colorIconHover: Final[str] = 'rgba(0,0,0,0.88)', colorPrimary: Final[str] = '#1677ff', colorPrimaryActive: Final[str] = '#0958d9', colorPrimaryBorder: Final[str] = '#91caff', colorPrimaryHover: Final[str] = '#4096ff', colorSplit: Final[str] = 'rgba(5,5,5,0.06)', colorSuccess: Final[str] = '#52c41a', colorText: Final[str] = 'rgba(0,0,0,0.88)', colorTextDescription: Final[str] = 'rgba(0,0,0,0.45)', colorTextDisabled: Final[str] = 'rgba(0,0,0,0.25)', colorTextHeading: Final[str] = 'rgba(0,0,0,0.88)', colorTextLightSolid: Final[str] = '#fff', colorTextTertiary: Final[str] = 'rgba(0,0,0,0.45)', colorTextQuaternary: Final[str] = 'rgba(0,0,0,0.25)', colorWarning: Final[str] = '#faad14', colorWarningBg: Final[str] = '#fffbe6', colorWarningText: Final[str] = '#faad14', colorWhite: Final[str] = '#fff', borderRadius: Final[int] = 6, borderRadiusLG: Final[int] = 8, borderRadiusSM: Final[int] = 4, controlHeight: Final[int] = 32, controlHeightLG: Final[int] = 40, controlHeightSM: Final[int] = 24, controlInteractiveSize: Final[int] = 16, controlItemBgActive: Final[str] = '#e6f4ff', controlItemBgActiveDisabled: Final[str] = 'rgba(0,0,0,0.04)', controlItemBgHover: Final[str] = 'rgba(0,0,0,0.04)', fontFamily: Final[str] = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'", fontSize: Final[int] = 14, fontSizeIcon: Final[int] = 12, fontSizeLG: Final[int] = 16, fontSizeSM: Final[int] = 12, fontWeightStrong: Final[int] = 600, lineHeight: Final[float] = 1.5714285714285714, lineHeightLG: Final[float] = 1.5, lineType: Final[str] = 'solid', lineWidth: Final[int] = 1, lineWidthBold: Final[int] = 2, lineWidthFocus: Final[int] = 3, margin: Final[int] = 16, marginSM: Final[int] = 12, marginXS: Final[int] = 8, marginXXS: Final[int] = 4, motionDurationFast: Final[str] = '0.1s', motionDurationMid: Final[str] = '0.2s', motionDurationSlow: Final[str] = '0.3s', motionEaseInBack: Final[str] = 'cubic-bezier(0.71,-0.46,0.88,0.6)', motionEaseInOut: Final[str] = 'cubic-bezier(0.645,0.045,0.355,1)', motionEaseOutBack: Final[str] = 'cubic-bezier(0.12,0.4,0.29,1.46)', padding: Final[int] = 16, paddingSM: Final[int] = 12, paddingXS: Final[int] = 8, paddingXXS: Final[int] = 4, screenXS: Final[int] = 480)</p></div>
+<div class="desc"><p>Dataclass containing all global design tokens for Ant Design system.</p>
+<p>This class provides a centralized collection of design tokens including:</p>
+<ul>
+<li>
+<p>Color palette (backgrounds, text, states, etc.)</p>
+</li>
+<li>
+<p>Border radius values</p>
+</li>
+<li>
+<p>Control dimensions</p>
+</li>
+<li>
+<p>Typography settings</p>
+</li>
+<li>
+<p>Spacing and padding values</p>
+</li>
+<li>
+<p>Motion and animation parameters</p>
+</li>
+<li>
+<p>Breakpoint values</p>
+</li>
+</ul></div>
 <h3>Instance variables</h3>
 <dl>
 <dt id="shinyant.constants.GlobalToken.borderRadius"><code class="name">var <span class="ident">borderRadius</span> : Final[int]</code></dt>
@@ -138,11 +190,19 @@ class GlobalToken:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="shinyant.constants.GlobalToken.borderRadiusXS"><code class="name">var <span class="ident">borderRadiusXS</span> : Final[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="shinyant.constants.GlobalToken.colorBgContainer"><code class="name">var <span class="ident">colorBgContainer</span> : Final[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="shinyant.constants.GlobalToken.colorBgContainerDisabled"><code class="name">var <span class="ident">colorBgContainerDisabled</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.colorBgTextActive"><code class="name">var <span class="ident">colorBgTextActive</span> : Final[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -163,6 +223,10 @@ class GlobalToken:
 <div class="desc"></div>
 </dd>
 <dt id="shinyant.constants.GlobalToken.colorErrorText"><code class="name">var <span class="ident">colorErrorText</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.colorFill"><code class="name">var <span class="ident">colorFill</span> : Final[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -226,6 +290,10 @@ class GlobalToken:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="shinyant.constants.GlobalToken.colorTextPlaceholder"><code class="name">var <span class="ident">colorTextPlaceholder</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="shinyant.constants.GlobalToken.colorTextQuaternary"><code class="name">var <span class="ident">colorTextQuaternary</span> : Final[str]</code></dt>
 <dd>
 <div class="desc"></div>
@@ -274,7 +342,19 @@ class GlobalToken:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="shinyant.constants.GlobalToken.controlItemBgActiveHover"><code class="name">var <span class="ident">controlItemBgActiveHover</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="shinyant.constants.GlobalToken.controlItemBgHover"><code class="name">var <span class="ident">controlItemBgHover</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.controlOutline"><code class="name">var <span class="ident">controlOutline</span> : Final[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.controlOutlineWidth"><code class="name">var <span class="ident">controlOutlineWidth</span> : Final[int]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -382,7 +462,19 @@ class GlobalToken:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="shinyant.constants.GlobalToken.screenLG"><code class="name">var <span class="ident">screenLG</span> : Final[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.screenSM"><code class="name">var <span class="ident">screenSM</span> : Final[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="shinyant.constants.GlobalToken.screenXS"><code class="name">var <span class="ident">screenXS</span> : Final[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.constants.GlobalToken.zIndexPopupBase"><code class="name">var <span class="ident">zIndexPopupBase</span> : Final[int]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -409,13 +501,16 @@ class GlobalToken:
 <li><code><a title="shinyant.constants.GlobalToken.borderRadius" href="#shinyant.constants.GlobalToken.borderRadius">borderRadius</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.borderRadiusLG" href="#shinyant.constants.GlobalToken.borderRadiusLG">borderRadiusLG</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.borderRadiusSM" href="#shinyant.constants.GlobalToken.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.borderRadiusXS" href="#shinyant.constants.GlobalToken.borderRadiusXS">borderRadiusXS</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorBgContainer" href="#shinyant.constants.GlobalToken.colorBgContainer">colorBgContainer</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorBgContainerDisabled" href="#shinyant.constants.GlobalToken.colorBgContainerDisabled">colorBgContainerDisabled</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.colorBgTextActive" href="#shinyant.constants.GlobalToken.colorBgTextActive">colorBgTextActive</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorBgTextHover" href="#shinyant.constants.GlobalToken.colorBgTextHover">colorBgTextHover</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorBorder" href="#shinyant.constants.GlobalToken.colorBorder">colorBorder</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorError" href="#shinyant.constants.GlobalToken.colorError">colorError</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorErrorBg" href="#shinyant.constants.GlobalToken.colorErrorBg">colorErrorBg</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorErrorText" href="#shinyant.constants.GlobalToken.colorErrorText">colorErrorText</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.colorFill" href="#shinyant.constants.GlobalToken.colorFill">colorFill</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorFillSecondary" href="#shinyant.constants.GlobalToken.colorFillSecondary">colorFillSecondary</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorFillTertiary" href="#shinyant.constants.GlobalToken.colorFillTertiary">colorFillTertiary</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorIcon" href="#shinyant.constants.GlobalToken.colorIcon">colorIcon</a></code></li>
@@ -431,6 +526,7 @@ class GlobalToken:
 <li><code><a title="shinyant.constants.GlobalToken.colorTextDisabled" href="#shinyant.constants.GlobalToken.colorTextDisabled">colorTextDisabled</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorTextHeading" href="#shinyant.constants.GlobalToken.colorTextHeading">colorTextHeading</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorTextLightSolid" href="#shinyant.constants.GlobalToken.colorTextLightSolid">colorTextLightSolid</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.colorTextPlaceholder" href="#shinyant.constants.GlobalToken.colorTextPlaceholder">colorTextPlaceholder</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorTextQuaternary" href="#shinyant.constants.GlobalToken.colorTextQuaternary">colorTextQuaternary</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorTextTertiary" href="#shinyant.constants.GlobalToken.colorTextTertiary">colorTextTertiary</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.colorWarning" href="#shinyant.constants.GlobalToken.colorWarning">colorWarning</a></code></li>
@@ -443,7 +539,10 @@ class GlobalToken:
 <li><code><a title="shinyant.constants.GlobalToken.controlInteractiveSize" href="#shinyant.constants.GlobalToken.controlInteractiveSize">controlInteractiveSize</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.controlItemBgActive" href="#shinyant.constants.GlobalToken.controlItemBgActive">controlItemBgActive</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.controlItemBgActiveDisabled" href="#shinyant.constants.GlobalToken.controlItemBgActiveDisabled">controlItemBgActiveDisabled</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.controlItemBgActiveHover" href="#shinyant.constants.GlobalToken.controlItemBgActiveHover">controlItemBgActiveHover</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.controlItemBgHover" href="#shinyant.constants.GlobalToken.controlItemBgHover">controlItemBgHover</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.controlOutline" href="#shinyant.constants.GlobalToken.controlOutline">controlOutline</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.controlOutlineWidth" href="#shinyant.constants.GlobalToken.controlOutlineWidth">controlOutlineWidth</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.fontFamily" href="#shinyant.constants.GlobalToken.fontFamily">fontFamily</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.fontSize" href="#shinyant.constants.GlobalToken.fontSize">fontSize</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.fontSizeIcon" href="#shinyant.constants.GlobalToken.fontSizeIcon">fontSizeIcon</a></code></li>
@@ -470,7 +569,10 @@ class GlobalToken:
 <li><code><a title="shinyant.constants.GlobalToken.paddingSM" href="#shinyant.constants.GlobalToken.paddingSM">paddingSM</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.paddingXS" href="#shinyant.constants.GlobalToken.paddingXS">paddingXS</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.paddingXXS" href="#shinyant.constants.GlobalToken.paddingXXS">paddingXXS</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.screenLG" href="#shinyant.constants.GlobalToken.screenLG">screenLG</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.screenSM" href="#shinyant.constants.GlobalToken.screenSM">screenSM</a></code></li>
 <li><code><a title="shinyant.constants.GlobalToken.screenXS" href="#shinyant.constants.GlobalToken.screenXS">screenXS</a></code></li>
+<li><code><a title="shinyant.constants.GlobalToken.zIndexPopupBase" href="#shinyant.constants.GlobalToken.zIndexPopupBase">zIndexPopupBase</a></code></li>
 </ul>
 </li>
 </ul>

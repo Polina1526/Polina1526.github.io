@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.pagination API documentation</title>
+<meta name="description" content="Pagination component module for shinyant UI library …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.pagination</code></h1>
+</header>
+<section id="section-intro">
+<p>Pagination component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired pagination component with flexible
+configuration options.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>Responsive layout with adjustable alignment</li>
+<li>Customizable page size options</li>
+<li>Compact/simple modes for space efficiency</li>
+<li>Quick jumper for direct page navigation</li>
+<li>Size changer for dynamic items per page</li>
+<li>Design tokens for full visual customization</li>
+<li>etc.</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, reactive, render, ui
+
+import shinyant
+
+
+app_ui = ui.page_auto(
+    shinyant.nesting_wrap(
+        shinyant.pagination(
+            id=&quot;pagination&quot;, total=500, current=3, showQuickJumper=True, showSizeChanger=True, responsive=True
+        )
+    ),
+    ui.p(&quot;Current page: &quot;, ui.output_text(&quot;current_page&quot;)),
+)
+
+
+def server(input, output, session):
+    page_current = reactive.Value(3)
+
+    @reactive.effect
+    @reactive.event(input.pagination)
+    async def update_pagination_info():
+        if input.pagination():
+            if &quot;page&quot; in input.pagination():
+                page_current.set(input.pagination()[&quot;page&quot;])
+
+    @output
+    @render.text
+    def current_page():
+        return f&quot;{page_current.get()}&quot;
+
+
+app = App(app_ui, server)
+</code></pre>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.pagination.pagination"><code class="name flex">
+<span>def <span class="ident">pagination</span></span>(<span>id: str,<br>total: int = 0,<br>align: Literal['start', 'center', 'end', ''] = '',<br>current: int | None = 0,<br>defaultCurrent: int = 1,<br>defaultPageSize: int = 10,<br>disabled: bool = False,<br>hideOnSinglePage: bool = False,<br>pageSize: int | None = 10,<br>pageSizeOptions: list[int] = [10, 20, 50, 100],<br>responsive: bool = False,<br>showLessItems: bool = False,<br>showQuickJumper: bool | dict = False,<br>showSizeChanger: bool | dict = False,<br>showTitle: bool = True,<br>simple: bool | dict = False,<br>size: Literal['default', 'small'] = 'default',<br>design: <a title="shinyant.pagination.PaginationDesignTokens" href="#shinyant.pagination.PaginationDesignTokens">PaginationDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.pagination.PaginationGlobalTokens" href="#shinyant.pagination.PaginationGlobalTokens">PaginationGlobalTokens</a> | None = None) ‑> <a title="shinyant.pagination.Pagination" href="#shinyant.pagination.Pagination">Pagination</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pagination(
+    id: str,
+    total: int = 0,
+    align: PaginationAlignTypes = &#34;&#34;,
+    current: int | None = 0,
+    defaultCurrent: int = 1,
+    defaultPageSize: int = 10,
+    disabled: bool = False,
+    hideOnSinglePage: bool = False,
+    pageSize: int | None = 10,
+    pageSizeOptions: list[int] = [10, 20, 50, 100],
+    responsive: bool = False,
+    showLessItems: bool = False,
+    showQuickJumper: bool | dict = False,
+    showSizeChanger: bool | dict = False,
+    showTitle: bool = True,
+    simple: bool | dict = False,
+    size: PaginationSizeTypes = &#34;default&#34;,
+    design: PaginationDesignTokens | None = None,
+    globalDesign: PaginationGlobalTokens | None = None,
+) -&gt; &#34;Pagination&#34;:
+    &#34;&#34;&#34;
+    Creates a pagination component based on ant design react Pagination component
+
+    Args:
+        id (str): name of the component in the application
+        total (int): Total number of data items. Defaults to 0
+        align (str): Specify the position of the pagination. Defaults to &#39;&#39;
+        current (int | None): Current page number. Defaults to None
+        defaultCurrent (int): Default current page. Defaults to 1
+        defaultPageSize (int): Default number of data items per page. Defaults to 10
+        disabled (bool): Disabled state of pagination. Defaults to False
+        hideOnSinglePage (bool): Whether to hide pagination on single page. Defaults to False
+        pageSize (int | None): Number of data items per page. Defaults to None
+        pageSizeOptions (list[int]): Specify the sizeChanger options. Defaults to [10, 20, 50, 100]
+        responsive (bool): If pagination should be responsive. Defaults to False
+        showLessItems (bool): Show less page items. Defaults to False
+        showQuickJumper (bool | dict): Determine whether you can jump to pages directly. Defaults to False
+        showSizeChanger (bool | dict): Determine whether to show pageSize select. Defaults to False
+        showTitle (bool): Show page item&#39;s title. Defaults to True
+        simple (bool | dict): Whether to use simple mode. Defaults to False
+        size (str): Specify pagination size. Defaults to &#39;default&#39;
+        design (PaginationDesignTokens | None): Design of pagination. Defaults to None
+        globalDesign (PaginationGlobalTokens | None): Global design of pagination. Defaults to None
+    &#34;&#34;&#34;
+    if design is None:
+        design = PaginationDesignTokens()
+    if globalDesign is None:
+        globalDesign = PaginationGlobalTokens()
+
+    return Pagination(
+        id=id,
+        align=align,
+        current=current,
+        defaultCurrent=defaultCurrent,
+        defaultPageSize=defaultPageSize,
+        disabled=disabled,
+        hideOnSinglePage=hideOnSinglePage,
+        pageSize=pageSize,
+        pageSizeOptions=pageSizeOptions,
+        responsive=responsive,
+        showLessItems=showLessItems,
+        showQuickJumper=showQuickJumper,
+        showSizeChanger=showSizeChanger,
+        showTitle=showTitle,
+        simple=simple,
+        size=size,
+        total=total,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a pagination component based on ant design react Pagination component</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>total</code></strong> :&ensp;<code>int</code></dt>
+<dd>Total number of data items. Defaults to 0</dd>
+<dt><strong><code>align</code></strong> :&ensp;<code>str</code></dt>
+<dd>Specify the position of the pagination. Defaults to ''</dd>
+<dt><strong><code>current</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Current page number. Defaults to None</dd>
+<dt><strong><code>defaultCurrent</code></strong> :&ensp;<code>int</code></dt>
+<dd>Default current page. Defaults to 1</dd>
+<dt><strong><code>defaultPageSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Default number of data items per page. Defaults to 10</dd>
+<dt><strong><code>disabled</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Disabled state of pagination. Defaults to False</dd>
+<dt><strong><code>hideOnSinglePage</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to hide pagination on single page. Defaults to False</dd>
+<dt><strong><code>pageSize</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Number of data items per page. Defaults to None</dd>
+<dt><strong><code>pageSizeOptions</code></strong> :&ensp;<code>list[int]</code></dt>
+<dd>Specify the sizeChanger options. Defaults to [10, 20, 50, 100]</dd>
+<dt><strong><code>responsive</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If pagination should be responsive. Defaults to False</dd>
+<dt><strong><code>showLessItems</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Show less page items. Defaults to False</dd>
+<dt><strong><code>showQuickJumper</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Determine whether you can jump to pages directly. Defaults to False</dd>
+<dt><strong><code>showSizeChanger</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Determine whether to show pageSize select. Defaults to False</dd>
+<dt><strong><code>showTitle</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Show page item's title. Defaults to True</dd>
+<dt><strong><code>simple</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Whether to use simple mode. Defaults to False</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>str</code></dt>
+<dd>Specify pagination size. Defaults to 'default'</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code>PaginationDesignTokens | None</code></dt>
+<dd>Design of pagination. Defaults to None</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code>PaginationGlobalTokens | None</code></dt>
+<dd>Global design of pagination. Defaults to None</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.pagination.Pagination"><code class="flex name class">
+<span>class <span class="ident">Pagination</span></span>
+<span>(</span><span>id: str,<br>align: Literal['start', 'center', 'end', ''],<br>current: int | None,<br>defaultCurrent: int,<br>defaultPageSize: int,<br>disabled: bool,<br>hideOnSinglePage: bool,<br>pageSize: int | None,<br>pageSizeOptions: list[int],<br>responsive: bool,<br>showLessItems: bool,<br>showQuickJumper: bool | dict,<br>showSizeChanger: bool | dict,<br>showTitle: bool,<br>simple: bool | dict,<br>size: Literal['default', 'small'],<br>total: int,<br>design: <a title="shinyant.pagination.PaginationDesignTokens" href="#shinyant.pagination.PaginationDesignTokens">PaginationDesignTokens</a>,<br>globalDesign: <a title="shinyant.pagination.PaginationGlobalTokens" href="#shinyant.pagination.PaginationGlobalTokens">PaginationGlobalTokens</a>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Pagination:
+    &#34;&#34;&#34;
+    Main class, stores all pagination components and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __paginations: ClassVar[dict[str, &#34;Pagination&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        align: PaginationAlignTypes,
+        current: int | None,
+        defaultCurrent: int,
+        defaultPageSize: int,
+        disabled: bool,
+        hideOnSinglePage: bool,
+        pageSize: int | None,
+        pageSizeOptions: list[int],
+        responsive: bool,
+        showLessItems: bool,
+        showQuickJumper: bool | dict,
+        showSizeChanger: bool | dict,
+        showTitle: bool,
+        simple: bool | dict,
+        size: PaginationSizeTypes,
+        total: int,
+        design: PaginationDesignTokens,
+        globalDesign: PaginationGlobalTokens,
+    ):
+        self.id = resolve_id(id)
+        self.align = align
+        self.current = current
+        self.defaultCurrent = defaultCurrent
+        self.defaultPageSize = defaultPageSize
+        self.disabled = disabled
+        self.hideOnSinglePage = hideOnSinglePage
+        self.pageSize = pageSize
+        self.pageSizeOptions = pageSizeOptions
+        self.responsive = responsive
+        self.showLessItems = showLessItems
+        self.showQuickJumper = showQuickJumper
+        self.showSizeChanger = showSizeChanger
+        self.showTitle = showTitle
+        self.simple = simple
+        self.size = size
+        self.total = total
+        self.design = design
+        self.globalDesign = globalDesign
+        if resolve_id(id) in Pagination.__paginations:
+            raise KeyError(&#34;&#39;Pagination&#39; object with this id already exists&#34;)
+        Pagination.__paginations[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Pagination&#34;:
+        return Pagination.__paginations[resolve_id(id)]
+
+    @classmethod
+    async def change_align(cls, id: str, align: PaginationAlignTypes) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].align = align
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_current(cls, id: str, current: int) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].current = current
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_default_current(cls, id: str, defaultCurrent: int) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].defaultCurrent = defaultCurrent
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_default_page_size(cls, id: str, defaultPageSize: int) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].defaultPageSize = defaultPageSize
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_disabled(cls, id: str, disabled: bool) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].disabled = disabled
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_hide_on_single_page(cls, id: str, hideOnSinglePage: bool) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].hideOnSinglePage = hideOnSinglePage
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_page_size(cls, id: str, pageSize: int) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].pageSize = pageSize
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_page_size_options(cls, id: str, pageSizeOptions: list[int]) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].pageSizeOptions = pageSizeOptions
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_responsive(cls, id: str, responsive: bool) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].responsive = responsive
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_show_less_items(cls, id: str, showLessItems: bool) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].showLessItems = showLessItems
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_show_quick_jumper(cls, id: str, showQuickJumper: bool | dict) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].showQuickJumper = showQuickJumper
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_show_size_changer(cls, id: str, showSizeChanger: bool | dict) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].showSizeChanger = showSizeChanger
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_show_title(cls, id: str, showTitle: bool) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].showTitle = showTitle
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_simple(cls, id: str, simple: bool | dict) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].simple = simple
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_size(cls, id: str, size: PaginationSizeTypes) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].size = size
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_total(cls, id: str, total: int) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].total = total
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: PaginationDesignTokens) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_global_design(cls, id: str, globalDesign: PaginationGlobalTokens) -&gt; None:
+        Pagination.__paginations[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        data = {
+            &#34;shinyant_pagination&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;align&#34;: self.align,
+                &#34;current&#34;: self.current,
+                &#34;defaultCurrent&#34;: self.defaultCurrent,
+                &#34;defaultPageSize&#34;: self.defaultPageSize,
+                &#34;disabled&#34;: self.disabled,
+                &#34;hideOnSinglePage&#34;: self.hideOnSinglePage,
+                &#34;pageSize&#34;: self.pageSize,
+                &#34;pageSizeOptions&#34;: self.pageSizeOptions,
+                &#34;responsive&#34;: self.responsive,
+                &#34;showLessItems&#34;: self.showLessItems,
+                &#34;showQuickJumper&#34;: self.showQuickJumper,
+                &#34;showSizeChanger&#34;: self.showSizeChanger,
+                &#34;showTitle&#34;: self.showTitle,
+                &#34;simple&#34;: self.simple,
+                &#34;size&#34;: self.size,
+                &#34;total&#34;: self.total,
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }
+        return data</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all pagination components and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.pagination.Pagination.change_align"><code class="name flex">
+<span>async def <span class="ident">change_align</span></span>(<span>id: str, align: Literal['start', 'center', 'end', '']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_current"><code class="name flex">
+<span>async def <span class="ident">change_current</span></span>(<span>id: str, current: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_default_current"><code class="name flex">
+<span>async def <span class="ident">change_default_current</span></span>(<span>id: str, defaultCurrent: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_default_page_size"><code class="name flex">
+<span>async def <span class="ident">change_default_page_size</span></span>(<span>id: str, defaultPageSize: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.pagination.PaginationDesignTokens" href="#shinyant.pagination.PaginationDesignTokens">PaginationDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_disabled"><code class="name flex">
+<span>async def <span class="ident">change_disabled</span></span>(<span>id: str, disabled: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_global_design"><code class="name flex">
+<span>async def <span class="ident">change_global_design</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.pagination.PaginationGlobalTokens" href="#shinyant.pagination.PaginationGlobalTokens">PaginationGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_hide_on_single_page"><code class="name flex">
+<span>async def <span class="ident">change_hide_on_single_page</span></span>(<span>id: str, hideOnSinglePage: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_page_size"><code class="name flex">
+<span>async def <span class="ident">change_page_size</span></span>(<span>id: str, pageSize: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_page_size_options"><code class="name flex">
+<span>async def <span class="ident">change_page_size_options</span></span>(<span>id: str, pageSizeOptions: list[int]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_responsive"><code class="name flex">
+<span>async def <span class="ident">change_responsive</span></span>(<span>id: str, responsive: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_show_less_items"><code class="name flex">
+<span>async def <span class="ident">change_show_less_items</span></span>(<span>id: str, showLessItems: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_show_quick_jumper"><code class="name flex">
+<span>async def <span class="ident">change_show_quick_jumper</span></span>(<span>id: str, showQuickJumper: bool | dict) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_show_size_changer"><code class="name flex">
+<span>async def <span class="ident">change_show_size_changer</span></span>(<span>id: str, showSizeChanger: bool | dict) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_show_title"><code class="name flex">
+<span>async def <span class="ident">change_show_title</span></span>(<span>id: str, showTitle: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_simple"><code class="name flex">
+<span>async def <span class="ident">change_simple</span></span>(<span>id: str, simple: bool | dict) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_size"><code class="name flex">
+<span>async def <span class="ident">change_size</span></span>(<span>id: str, size: Literal['default', 'small']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.change_total"><code class="name flex">
+<span>async def <span class="ident">change_total</span></span>(<span>id: str, total: int) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.Pagination.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.pagination.Pagination" href="#shinyant.pagination.Pagination">Pagination</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.pagination.Pagination.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    data = {
+        &#34;shinyant_pagination&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;align&#34;: self.align,
+            &#34;current&#34;: self.current,
+            &#34;defaultCurrent&#34;: self.defaultCurrent,
+            &#34;defaultPageSize&#34;: self.defaultPageSize,
+            &#34;disabled&#34;: self.disabled,
+            &#34;hideOnSinglePage&#34;: self.hideOnSinglePage,
+            &#34;pageSize&#34;: self.pageSize,
+            &#34;pageSizeOptions&#34;: self.pageSizeOptions,
+            &#34;responsive&#34;: self.responsive,
+            &#34;showLessItems&#34;: self.showLessItems,
+            &#34;showQuickJumper&#34;: self.showQuickJumper,
+            &#34;showSizeChanger&#34;: self.showSizeChanger,
+            &#34;showTitle&#34;: self.showTitle,
+            &#34;simple&#34;: self.simple,
+            &#34;size&#34;: self.size,
+            &#34;total&#34;: self.total,
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }
+    return data</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens"><code class="flex name class">
+<span>class <span class="ident">PaginationDesignTokens</span></span>
+<span>(</span><span>itemActiveBg: str = '#ffffff',<br>itemActiveBgDisabled: str = 'rgba(0,0,0,0.15)',<br>itemActiveColorDisabled: str = 'rgba(0,0,0,0.25)',<br>itemBg: str = '#ffffff',<br>itemInputBg: str = '#ffffff',<br>itemLinkBg: str = '#ffffff',<br>itemSize: int = 32,<br>itemSizeSM: int = 24,<br>miniOptionsSizeChangerTop: int = 0)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class PaginationDesignTokens:
+    &#34;&#34;&#34;
+    Pagination Design class (Design Tokens from react ant.design for pagination)
+
+    Attributes:
+        itemActiveBg (str): Background color of active Pagination item. Defaults to &#39;#ffffff&#39;
+        itemActiveBgDisabled (str): Background color of disabled active Pagination item. Defaults to &#39;rgba(0,0,0,0.15)&#39;
+        itemActiveColorDisabled (str): Text color of disabled active Pagination item. Defaults to &#39;rgba(0,0,0,0.25)&#39;
+        itemBg (str): Background color of Pagination item. Defaults to &#39;#ffffff&#39;
+        itemInputBg (str): Background color of input. Defaults to &#39;#ffffff&#39;
+        itemLinkBg (str): Background color of Pagination item link. Defaults to &#39;#ffffff&#39;
+        itemSize (int): Size of Pagination item. Defaults to 32
+        itemSizeSM (int): Size of small Pagination item. Defaults to 24
+        miniOptionsSizeChangerTop (int): Top of Pagination size changer. Defaults to 0
+    &#34;&#34;&#34;
+
+    itemActiveBg: str = &#34;#ffffff&#34;
+    itemActiveBgDisabled: str = &#34;rgba(0,0,0,0.15)&#34;
+    itemActiveColorDisabled: str = &#34;rgba(0,0,0,0.25)&#34;
+    itemBg: str = &#34;#ffffff&#34;
+    itemInputBg: str = &#34;#ffffff&#34;
+    itemLinkBg: str = &#34;#ffffff&#34;
+    itemSize: int = 32
+    itemSizeSM: int = 24
+    miniOptionsSizeChangerTop: int = 0</code></pre>
+</details>
+<div class="desc"><p>Pagination Design class (Design Tokens from react ant.design for pagination)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>itemActiveBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of active Pagination item. Defaults to '#ffffff'</dd>
+<dt><strong><code>itemActiveBgDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of disabled active Pagination item. Defaults to 'rgba(0,0,0,0.15)'</dd>
+<dt><strong><code>itemActiveColorDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text color of disabled active Pagination item. Defaults to 'rgba(0,0,0,0.25)'</dd>
+<dt><strong><code>itemBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of Pagination item. Defaults to '#ffffff'</dd>
+<dt><strong><code>itemInputBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of input. Defaults to '#ffffff'</dd>
+<dt><strong><code>itemLinkBg</code></strong> :&ensp;<code>str</code></dt>
+<dd>Background color of Pagination item link. Defaults to '#ffffff'</dd>
+<dt><strong><code>itemSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of Pagination item. Defaults to 32</dd>
+<dt><strong><code>itemSizeSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Size of small Pagination item. Defaults to 24</dd>
+<dt><strong><code>miniOptionsSizeChangerTop</code></strong> :&ensp;<code>int</code></dt>
+<dd>Top of Pagination size changer. Defaults to 0</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemActiveBg"><code class="name">var <span class="ident">itemActiveBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemActiveBgDisabled"><code class="name">var <span class="ident">itemActiveBgDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemActiveColorDisabled"><code class="name">var <span class="ident">itemActiveColorDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemBg"><code class="name">var <span class="ident">itemBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemInputBg"><code class="name">var <span class="ident">itemInputBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemLinkBg"><code class="name">var <span class="ident">itemLinkBg</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemSize"><code class="name">var <span class="ident">itemSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.itemSizeSM"><code class="name">var <span class="ident">itemSizeSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationDesignTokens.miniOptionsSizeChangerTop"><code class="name">var <span class="ident">miniOptionsSizeChangerTop</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">PaginationGlobalTokens</span></span>
+<span>(</span><span>colorBgContainer: str = '#ffffff',<br>colorBgContainerDisabled: str = 'rgba(0,0,0,0.04)',<br>colorBgTextActive: str = 'rgba(0,0,0,0.15)',<br>colorBgTextHover: str = 'rgba(0,0,0,0.06)',<br>colorBorder: str = '#d9d9d9',<br>colorPrimary: str = '#1677ff',<br>colorPrimaryBorder: str = '#91caff',<br>colorPrimaryHover: str = '#4096ff',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>colorTextDisabled: str = 'rgba(0,0,0,0.25)',<br>colorTextPlaceholder: str = 'rgba(0,0,0,0.25)',<br>borderRadius: int = 6,<br>borderRadiusLG: int = 8,<br>borderRadiusSM: int = 4,<br>controlHeight: int = 32,<br>controlHeightLG: int = 40,<br>controlHeightSM: int = 24,<br>controlOutline: str = 'rgba(5,145,255,0.1)',<br>controlOutlineWidth: int = 2,<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>fontSizeSM: int = 12,<br>fontWeightStrong: int = 600,<br>lineHeight: float = 1.5714285714285714,<br>lineHeightLG: float = 1.5,<br>lineType: str = 'solid',<br>lineWidth: int = 1,<br>lineWidthFocus: int = 3,<br>margin: int = 16,<br>marginSM: int = 12,<br>marginXS: int = 8,<br>marginXXS: int = 4,<br>motionDurationMid: str = '0.2s',<br>paddingXXS: int = 4,<br>screenLG: int = 992,<br>screenSM: int = 576)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class PaginationGlobalTokens:
+    &#34;&#34;&#34;
+    Pagination Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorBgContainer (str): Container background color
+        colorBgContainerDisabled (str): Control the background color of container in disabled state
+        colorBgTextActive (str): Control the background color of text in active state
+        colorBgTextHover (str): Control the background color of text in hover state
+        colorBorder (str): Default border color
+        colorPrimary (str): Brand color
+        colorPrimaryBorder (str): The stroke color under the main color gradient
+        colorPrimaryHover (str): Hover state under the main color gradient
+        colorText (str): Default text color which comply with W3C standards
+        colorTextDisabled (str): Control the color of text in disabled state
+        colorTextPlaceholder (str): Control the color of placeholder text
+        borderRadius (int): Border radius of base components
+        borderRadiusLG (int): LG size border radius
+        borderRadiusSM (int): SM size border radius
+        controlHeight (int): The height of the basic controls
+        controlHeightLG (int): LG component height
+        controlHeightSM (int): SM component height
+        controlOutline (str): Control the outline color of input component
+        controlOutlineWidth (int): Control the outline width of input component
+        fontFamily (str): The font family of Ant Design
+        fontSize (int): The most widely used font size
+        fontSizeSM (int): Small font size
+        fontWeightStrong (int): Control the font weight of heading components
+        lineHeight (float): Line height of text
+        lineHeightLG (float): Line height of large text
+        lineType (str): Border style of base components
+        lineWidth (int): Border width of base components
+        lineWidthFocus (int): Control the width of the line when the component is in focus state
+        margin (int): Control the margin of an element, with a medium size
+        marginSM (int): Control the margin of an element, with a medium-small size
+        marginXS (int): Control the margin of an element, with a small size
+        marginXXS (int): Control the margin of an element, with the smallest size
+        motionDurationMid (str): Motion speed, medium speed
+        paddingXXS (int): Control the extra extra small padding of the element
+        screenLG (int): Control the screen width of large screens
+        screenSM (int): Control the screen width of small screens
+    &#34;&#34;&#34;
+
+    colorBgContainer: str = constants.GlobalToken.colorBgContainer
+    colorBgContainerDisabled: str = constants.GlobalToken.colorBgContainerDisabled
+    colorBgTextActive: str = constants.GlobalToken.colorBgTextActive
+    colorBgTextHover: str = constants.GlobalToken.colorBgTextHover
+    colorBorder: str = constants.GlobalToken.colorBorder
+    colorPrimary: str = constants.GlobalToken.colorPrimary
+    colorPrimaryBorder: str = constants.GlobalToken.colorPrimaryBorder
+    colorPrimaryHover: str = constants.GlobalToken.colorPrimaryHover
+    colorText: str = constants.GlobalToken.colorText
+    colorTextDisabled: str = constants.GlobalToken.colorTextDisabled
+    colorTextPlaceholder: str = constants.GlobalToken.colorTextPlaceholder
+    borderRadius: int = constants.GlobalToken.borderRadius
+    borderRadiusLG: int = constants.GlobalToken.borderRadiusLG
+    borderRadiusSM: int = constants.GlobalToken.borderRadiusSM
+    controlHeight: int = constants.GlobalToken.controlHeight
+    controlHeightLG: int = constants.GlobalToken.controlHeightLG
+    controlHeightSM: int = constants.GlobalToken.controlHeightSM
+    controlOutline: str = constants.GlobalToken.controlOutline
+    controlOutlineWidth: int = constants.GlobalToken.controlOutlineWidth
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    fontSizeSM: int = constants.GlobalToken.fontSizeSM
+    fontWeightStrong: int = constants.GlobalToken.fontWeightStrong
+    lineHeight: float = constants.GlobalToken.lineHeight
+    lineHeightLG: float = constants.GlobalToken.lineHeightLG
+    lineType: str = constants.GlobalToken.lineType
+    lineWidth: int = constants.GlobalToken.lineWidth
+    lineWidthFocus: int = constants.GlobalToken.lineWidthFocus
+    margin: int = constants.GlobalToken.margin
+    marginSM: int = constants.GlobalToken.marginSM
+    marginXS: int = constants.GlobalToken.marginXS
+    marginXXS: int = constants.GlobalToken.marginXXS
+    motionDurationMid: str = constants.GlobalToken.motionDurationMid
+    paddingXXS: int = constants.GlobalToken.paddingXXS
+    screenLG: int = constants.GlobalToken.screenLG
+    screenSM: int = constants.GlobalToken.screenSM</code></pre>
+</details>
+<div class="desc"><p>Pagination Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorBgContainer</code></strong> :&ensp;<code>str</code></dt>
+<dd>Container background color</dd>
+<dt><strong><code>colorBgContainerDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of container in disabled state</dd>
+<dt><strong><code>colorBgTextActive</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of text in active state</dd>
+<dt><strong><code>colorBgTextHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of text in hover state</dd>
+<dt><strong><code>colorBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default border color</dd>
+<dt><strong><code>colorPrimary</code></strong> :&ensp;<code>str</code></dt>
+<dd>Brand color</dd>
+<dt><strong><code>colorPrimaryBorder</code></strong> :&ensp;<code>str</code></dt>
+<dd>The stroke color under the main color gradient</dd>
+<dt><strong><code>colorPrimaryHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Hover state under the main color gradient</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards</dd>
+<dt><strong><code>colorTextDisabled</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of text in disabled state</dd>
+<dt><strong><code>colorTextPlaceholder</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the color of placeholder text</dd>
+<dt><strong><code>borderRadius</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border radius of base components</dd>
+<dt><strong><code>borderRadiusLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG size border radius</dd>
+<dt><strong><code>borderRadiusSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM size border radius</dd>
+<dt><strong><code>controlHeight</code></strong> :&ensp;<code>int</code></dt>
+<dd>The height of the basic controls</dd>
+<dt><strong><code>controlHeightLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>LG component height</dd>
+<dt><strong><code>controlHeightSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM component height</dd>
+<dt><strong><code>controlOutline</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the outline color of input component</dd>
+<dt><strong><code>controlOutlineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the outline width of input component</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size</dd>
+<dt><strong><code>fontSizeSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Small font size</dd>
+<dt><strong><code>fontWeightStrong</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the font weight of heading components</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text</dd>
+<dt><strong><code>lineHeightLG</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of large text</dd>
+<dt><strong><code>lineType</code></strong> :&ensp;<code>str</code></dt>
+<dd>Border style of base components</dd>
+<dt><strong><code>lineWidth</code></strong> :&ensp;<code>int</code></dt>
+<dd>Border width of base components</dd>
+<dt><strong><code>lineWidthFocus</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the width of the line when the component is in focus state</dd>
+<dt><strong><code>margin</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a medium size</dd>
+<dt><strong><code>marginSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a medium-small size</dd>
+<dt><strong><code>marginXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with a small size</dd>
+<dt><strong><code>marginXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the margin of an element, with the smallest size</dd>
+<dt><strong><code>motionDurationMid</code></strong> :&ensp;<code>str</code></dt>
+<dd>Motion speed, medium speed</dd>
+<dt><strong><code>paddingXXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the extra extra small padding of the element</dd>
+<dt><strong><code>screenLG</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the screen width of large screens</dd>
+<dt><strong><code>screenSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Control the screen width of small screens</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.pagination.PaginationGlobalTokens.borderRadius"><code class="name">var <span class="ident">borderRadius</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.borderRadiusLG"><code class="name">var <span class="ident">borderRadiusLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.borderRadiusSM"><code class="name">var <span class="ident">borderRadiusSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorBgContainer"><code class="name">var <span class="ident">colorBgContainer</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorBgContainerDisabled"><code class="name">var <span class="ident">colorBgContainerDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorBgTextActive"><code class="name">var <span class="ident">colorBgTextActive</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorBgTextHover"><code class="name">var <span class="ident">colorBgTextHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorBorder"><code class="name">var <span class="ident">colorBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorPrimary"><code class="name">var <span class="ident">colorPrimary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorPrimaryBorder"><code class="name">var <span class="ident">colorPrimaryBorder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorPrimaryHover"><code class="name">var <span class="ident">colorPrimaryHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorTextDisabled"><code class="name">var <span class="ident">colorTextDisabled</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.colorTextPlaceholder"><code class="name">var <span class="ident">colorTextPlaceholder</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.controlHeight"><code class="name">var <span class="ident">controlHeight</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.controlHeightLG"><code class="name">var <span class="ident">controlHeightLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.controlHeightSM"><code class="name">var <span class="ident">controlHeightSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.controlOutline"><code class="name">var <span class="ident">controlOutline</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.controlOutlineWidth"><code class="name">var <span class="ident">controlOutlineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.fontSizeSM"><code class="name">var <span class="ident">fontSizeSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.fontWeightStrong"><code class="name">var <span class="ident">fontWeightStrong</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.lineHeightLG"><code class="name">var <span class="ident">lineHeightLG</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.lineType"><code class="name">var <span class="ident">lineType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.lineWidth"><code class="name">var <span class="ident">lineWidth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.lineWidthFocus"><code class="name">var <span class="ident">lineWidthFocus</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.margin"><code class="name">var <span class="ident">margin</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.marginSM"><code class="name">var <span class="ident">marginSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.marginXS"><code class="name">var <span class="ident">marginXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.marginXXS"><code class="name">var <span class="ident">marginXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.motionDurationMid"><code class="name">var <span class="ident">motionDurationMid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.paddingXXS"><code class="name">var <span class="ident">paddingXXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.screenLG"><code class="name">var <span class="ident">screenLG</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.pagination.PaginationGlobalTokens.screenSM"><code class="name">var <span class="ident">screenSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.pagination.pagination" href="#shinyant.pagination.pagination">pagination</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.pagination.Pagination" href="#shinyant.pagination.Pagination">Pagination</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.pagination.Pagination.change_align" href="#shinyant.pagination.Pagination.change_align">change_align</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_current" href="#shinyant.pagination.Pagination.change_current">change_current</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_default_current" href="#shinyant.pagination.Pagination.change_default_current">change_default_current</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_default_page_size" href="#shinyant.pagination.Pagination.change_default_page_size">change_default_page_size</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_design" href="#shinyant.pagination.Pagination.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_disabled" href="#shinyant.pagination.Pagination.change_disabled">change_disabled</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_global_design" href="#shinyant.pagination.Pagination.change_global_design">change_global_design</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_hide_on_single_page" href="#shinyant.pagination.Pagination.change_hide_on_single_page">change_hide_on_single_page</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_page_size" href="#shinyant.pagination.Pagination.change_page_size">change_page_size</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_page_size_options" href="#shinyant.pagination.Pagination.change_page_size_options">change_page_size_options</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_responsive" href="#shinyant.pagination.Pagination.change_responsive">change_responsive</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_show_less_items" href="#shinyant.pagination.Pagination.change_show_less_items">change_show_less_items</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_show_quick_jumper" href="#shinyant.pagination.Pagination.change_show_quick_jumper">change_show_quick_jumper</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_show_size_changer" href="#shinyant.pagination.Pagination.change_show_size_changer">change_show_size_changer</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_show_title" href="#shinyant.pagination.Pagination.change_show_title">change_show_title</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_simple" href="#shinyant.pagination.Pagination.change_simple">change_simple</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_size" href="#shinyant.pagination.Pagination.change_size">change_size</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.change_total" href="#shinyant.pagination.Pagination.change_total">change_total</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.dump" href="#shinyant.pagination.Pagination.dump">dump</a></code></li>
+<li><code><a title="shinyant.pagination.Pagination.get_component" href="#shinyant.pagination.Pagination.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.pagination.PaginationDesignTokens" href="#shinyant.pagination.PaginationDesignTokens">PaginationDesignTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemActiveBg" href="#shinyant.pagination.PaginationDesignTokens.itemActiveBg">itemActiveBg</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemActiveBgDisabled" href="#shinyant.pagination.PaginationDesignTokens.itemActiveBgDisabled">itemActiveBgDisabled</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemActiveColorDisabled" href="#shinyant.pagination.PaginationDesignTokens.itemActiveColorDisabled">itemActiveColorDisabled</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemBg" href="#shinyant.pagination.PaginationDesignTokens.itemBg">itemBg</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemInputBg" href="#shinyant.pagination.PaginationDesignTokens.itemInputBg">itemInputBg</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemLinkBg" href="#shinyant.pagination.PaginationDesignTokens.itemLinkBg">itemLinkBg</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemSize" href="#shinyant.pagination.PaginationDesignTokens.itemSize">itemSize</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.itemSizeSM" href="#shinyant.pagination.PaginationDesignTokens.itemSizeSM">itemSizeSM</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationDesignTokens.miniOptionsSizeChangerTop" href="#shinyant.pagination.PaginationDesignTokens.miniOptionsSizeChangerTop">miniOptionsSizeChangerTop</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.pagination.PaginationGlobalTokens" href="#shinyant.pagination.PaginationGlobalTokens">PaginationGlobalTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.borderRadius" href="#shinyant.pagination.PaginationGlobalTokens.borderRadius">borderRadius</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.borderRadiusLG" href="#shinyant.pagination.PaginationGlobalTokens.borderRadiusLG">borderRadiusLG</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.borderRadiusSM" href="#shinyant.pagination.PaginationGlobalTokens.borderRadiusSM">borderRadiusSM</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorBgContainer" href="#shinyant.pagination.PaginationGlobalTokens.colorBgContainer">colorBgContainer</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorBgContainerDisabled" href="#shinyant.pagination.PaginationGlobalTokens.colorBgContainerDisabled">colorBgContainerDisabled</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorBgTextActive" href="#shinyant.pagination.PaginationGlobalTokens.colorBgTextActive">colorBgTextActive</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorBgTextHover" href="#shinyant.pagination.PaginationGlobalTokens.colorBgTextHover">colorBgTextHover</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorBorder" href="#shinyant.pagination.PaginationGlobalTokens.colorBorder">colorBorder</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorPrimary" href="#shinyant.pagination.PaginationGlobalTokens.colorPrimary">colorPrimary</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorPrimaryBorder" href="#shinyant.pagination.PaginationGlobalTokens.colorPrimaryBorder">colorPrimaryBorder</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorPrimaryHover" href="#shinyant.pagination.PaginationGlobalTokens.colorPrimaryHover">colorPrimaryHover</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorText" href="#shinyant.pagination.PaginationGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorTextDisabled" href="#shinyant.pagination.PaginationGlobalTokens.colorTextDisabled">colorTextDisabled</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.colorTextPlaceholder" href="#shinyant.pagination.PaginationGlobalTokens.colorTextPlaceholder">colorTextPlaceholder</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.controlHeight" href="#shinyant.pagination.PaginationGlobalTokens.controlHeight">controlHeight</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.controlHeightLG" href="#shinyant.pagination.PaginationGlobalTokens.controlHeightLG">controlHeightLG</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.controlHeightSM" href="#shinyant.pagination.PaginationGlobalTokens.controlHeightSM">controlHeightSM</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.controlOutline" href="#shinyant.pagination.PaginationGlobalTokens.controlOutline">controlOutline</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.controlOutlineWidth" href="#shinyant.pagination.PaginationGlobalTokens.controlOutlineWidth">controlOutlineWidth</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.fontFamily" href="#shinyant.pagination.PaginationGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.fontSize" href="#shinyant.pagination.PaginationGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.fontSizeSM" href="#shinyant.pagination.PaginationGlobalTokens.fontSizeSM">fontSizeSM</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.fontWeightStrong" href="#shinyant.pagination.PaginationGlobalTokens.fontWeightStrong">fontWeightStrong</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.lineHeight" href="#shinyant.pagination.PaginationGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.lineHeightLG" href="#shinyant.pagination.PaginationGlobalTokens.lineHeightLG">lineHeightLG</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.lineType" href="#shinyant.pagination.PaginationGlobalTokens.lineType">lineType</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.lineWidth" href="#shinyant.pagination.PaginationGlobalTokens.lineWidth">lineWidth</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.lineWidthFocus" href="#shinyant.pagination.PaginationGlobalTokens.lineWidthFocus">lineWidthFocus</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.margin" href="#shinyant.pagination.PaginationGlobalTokens.margin">margin</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.marginSM" href="#shinyant.pagination.PaginationGlobalTokens.marginSM">marginSM</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.marginXS" href="#shinyant.pagination.PaginationGlobalTokens.marginXS">marginXS</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.marginXXS" href="#shinyant.pagination.PaginationGlobalTokens.marginXXS">marginXXS</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.motionDurationMid" href="#shinyant.pagination.PaginationGlobalTokens.motionDurationMid">motionDurationMid</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.paddingXXS" href="#shinyant.pagination.PaginationGlobalTokens.paddingXXS">paddingXXS</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.screenLG" href="#shinyant.pagination.PaginationGlobalTokens.screenLG">screenLG</a></code></li>
+<li><code><a title="shinyant.pagination.PaginationGlobalTokens.screenSM" href="#shinyant.pagination.PaginationGlobalTokens.screenSM">screenSM</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

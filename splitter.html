@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>shinyant.splitter API documentation</title>
+<meta name="description" content="Splitter component module for shinyant UI library …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shinyant.splitter</code></h1>
+</header>
+<section id="section-intro">
+<p>Splitter component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired resizable split panel component
+with flexible layout options.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>
+<p>Horizontal and vertical layout modes</p>
+</li>
+<li>
+<p>Configurable panels with adjustable sizes and constraints</p>
+</li>
+<li>
+<p>Support for collapsible panels</p>
+</li>
+<li>
+<p>Customizable design tokens for styling</p>
+</li>
+<li>
+<p>Lazy loading of panel content</p>
+</li>
+<li>
+<p>Drag-and-drop resizing functionality</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, ui
+
+import shinyant
+
+
+app_ui = ui.page_auto(
+    shinyant.nesting_wrap(
+        shinyant.splitter(
+            id=&quot;main_splitter&quot;,
+            layout=&quot;horizontal&quot;,
+            panels=[
+                shinyant.splitter_panel(
+                    defaultSize=&quot;35%&quot;,
+                    children=[
+                        shinyant.splitter(
+                            id=&quot;vertical_splitter&quot;,
+                            layout=&quot;vertical&quot;,
+                            panels=[
+                                shinyant.splitter_panel(children=[ui.div(&quot;Top panel&quot;)]),
+                                shinyant.splitter_panel(children=[ui.div(&quot;Bottom panel&quot;)]),
+                            ],
+                        )
+                    ],
+                ),
+                shinyant.splitter_panel(children=[ui.div(&quot;Side panel&quot;)]),
+            ],
+        )
+    ),
+)
+
+
+def server(input, output, session):
+    pass
+
+
+app = App(app_ui, server)
+</code></pre>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shinyant.splitter.splitter"><code class="name flex">
+<span>def <span class="ident">splitter</span></span>(<span>id: str,<br>layout: Literal['horizontal', 'vertical'] = 'horizontal',<br>lazy: bool = False,<br>panels: list[<a title="shinyant.splitter.SplitterPanel" href="#shinyant.splitter.SplitterPanel">SplitterPanel</a>] | None = None,<br>design: <a title="shinyant.splitter.SplitterDesignTokens" href="#shinyant.splitter.SplitterDesignTokens">SplitterDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.splitter.SplitterGlobalTokens" href="#shinyant.splitter.SplitterGlobalTokens">SplitterGlobalTokens</a> | None = None) ‑> <a title="shinyant.splitter.Splitter" href="#shinyant.splitter.Splitter">Splitter</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def splitter(
+    id: str,
+    layout: SplitterLayoutTypes = &#34;horizontal&#34;,
+    lazy: bool = False,
+    panels: list[SplitterPanel] | None = None,
+    design: SplitterDesignTokens | None = None,
+    globalDesign: SplitterGlobalTokens | None = None,
+) -&gt; &#34;Splitter&#34;:
+    &#34;&#34;&#34;
+    Creates a splitter component based on ant design react Splitter component
+
+    Args:
+        id (str): name of the component in the application
+        layout (str): Layout direction, can be &#39;horizontal&#39; or &#39;vertical&#39;. Defaults to &#39;horizontal&#39;
+        lazy (bool): Lazy mode for loading panel content. Defaults to False
+        panels (list[SplitterPanel] | None): List of SplitterPanel objects. Defaults to None
+        design (SplitterDesignTokens | None): Design tokens for customizing component appearance. Defaults to None
+        globalDesign (SplitterGlobalTokens | None): Global design tokens for theme customization. Defaults to None
+    &#34;&#34;&#34;
+    if design is None:
+        design = SplitterDesignTokens()
+    if globalDesign is None:
+        globalDesign = SplitterGlobalTokens()
+    if panels is None:
+        panels = []
+
+    return Splitter(
+        id=id,
+        layout=layout,
+        lazy=lazy,
+        panels=panels,
+        design=design,
+        globalDesign=globalDesign,
+    )</code></pre>
+</details>
+<div class="desc"><p>Creates a splitter component based on ant design react Splitter component</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of the component in the application</dd>
+<dt><strong><code>layout</code></strong> :&ensp;<code>str</code></dt>
+<dd>Layout direction, can be 'horizontal' or 'vertical'. Defaults to 'horizontal'</dd>
+<dt><strong><code>lazy</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Lazy mode for loading panel content. Defaults to False</dd>
+<dt><strong><code>panels</code></strong> :&ensp;<code>list[SplitterPanel] | None</code></dt>
+<dd>List of SplitterPanel objects. Defaults to None</dd>
+<dt><strong><code>design</code></strong> :&ensp;<code>SplitterDesignTokens | None</code></dt>
+<dd>Design tokens for customizing component appearance. Defaults to None</dd>
+<dt><strong><code>globalDesign</code></strong> :&ensp;<code>SplitterGlobalTokens | None</code></dt>
+<dd>Global design tokens for theme customization. Defaults to None</dd>
+</dl></div>
+</dd>
+<dt id="shinyant.splitter.splitter_panel"><code class="name flex">
+<span>def <span class="ident">splitter_panel</span></span>(<span>defaultSize: int | str | None = None,<br>min: int | None = None,<br>max: int | None = None,<br>size: int | None = None,<br>collapsible: bool | dict = False,<br>resizable: bool = True,<br>children: list[htmltools._core.Tag | object] | None = None) ‑> <a title="shinyant.splitter.SplitterPanel" href="#shinyant.splitter.SplitterPanel">SplitterPanel</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def splitter_panel(
+    defaultSize: int | str | None = None,
+    min: int | None = None,
+    max: int | None = None,
+    size: int | None = None,
+    collapsible: bool | dict = False,
+    resizable: bool = True,
+    children: list[Tag | object] | None = None,
+) -&gt; SplitterPanel:
+    &#34;&#34;&#34;
+    Create a configuration for a Splitter.Panel to be used with the splitter component.
+
+    Args:
+        defaultSize (int | str | None): Initial panel size support number for px or &#39;percent%&#39; usage. Defaults to None
+        min (int | None): Minimum threshold in pixels. Defaults to None
+        max (int | None): Maximum threshold in pixels. Defaults to None
+        size (int | None): Controlled panel size in pixels. Defaults to None
+        collapsible (bool | dict): Quick folding. Defaults to False
+        resizable (bool): Whether to enable drag and drop. Defaults to True
+        children (list): Child elements to render in the panel. Defaults to None
+
+    Returns:
+        A SplitterPanel object.
+    &#34;&#34;&#34;
+    return SplitterPanel(
+        defaultSize=defaultSize,
+        min=min,
+        max=max,
+        size=size,
+        collapsible=collapsible,
+        resizable=resizable,
+        children=children or [],
+    )</code></pre>
+</details>
+<div class="desc"><p>Create a configuration for a Splitter.Panel to be used with the splitter component.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>defaultSize</code></strong> :&ensp;<code>int | str | None</code></dt>
+<dd>Initial panel size support number for px or 'percent%' usage. Defaults to None</dd>
+<dt><strong><code>min</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Minimum threshold in pixels. Defaults to None</dd>
+<dt><strong><code>max</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Maximum threshold in pixels. Defaults to None</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Controlled panel size in pixels. Defaults to None</dd>
+<dt><strong><code>collapsible</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Quick folding. Defaults to False</dd>
+<dt><strong><code>resizable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to enable drag and drop. Defaults to True</dd>
+<dt><strong><code>children</code></strong> :&ensp;<code>list</code></dt>
+<dd>Child elements to render in the panel. Defaults to None</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A SplitterPanel object.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="shinyant.splitter.Splitter"><code class="flex name class">
+<span>class <span class="ident">Splitter</span></span>
+<span>(</span><span>id: str,<br>layout: Literal['horizontal', 'vertical'],<br>lazy: bool = False,<br>panels: list[<a title="shinyant.splitter.SplitterPanel" href="#shinyant.splitter.SplitterPanel">SplitterPanel</a>] | None = None,<br>design: <a title="shinyant.splitter.SplitterDesignTokens" href="#shinyant.splitter.SplitterDesignTokens">SplitterDesignTokens</a> | None = None,<br>globalDesign: <a title="shinyant.splitter.SplitterGlobalTokens" href="#shinyant.splitter.SplitterGlobalTokens">SplitterGlobalTokens</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Splitter:
+    &#34;&#34;&#34;
+    Main class, stores all splitters and provides an interface to access them
+    &#34;&#34;&#34;
+
+    __splitters: ClassVar[dict[str, &#34;Splitter&#34;]] = {}
+
+    def __init__(
+        self,
+        id: str,
+        layout: SplitterLayoutTypes,
+        lazy: bool = False,
+        panels: list[SplitterPanel] | None = None,
+        design: SplitterDesignTokens | None = None,
+        globalDesign: SplitterGlobalTokens | None = None,
+    ):
+        self.id = resolve_id(id)
+        self.layout = layout
+        self.lazy = lazy
+        self.panels = panels or []
+        self.design = design or SplitterDesignTokens()
+        self.globalDesign = globalDesign or SplitterGlobalTokens()
+
+        if resolve_id(id) in Splitter.__splitters:
+            raise KeyError(&#34;&#39;Splitter&#39; object with this id already exists&#34;)
+        Splitter.__splitters[resolve_id(id)] = self
+
+    @classmethod
+    def get_component(cls, id: str) -&gt; &#34;Splitter&#34;:
+        return Splitter.__splitters[resolve_id(id)]
+
+    @classmethod
+    async def change_layout(cls, id: str, layout: SplitterLayoutTypes) -&gt; None:
+        Splitter.__splitters[resolve_id(id)].layout = layout
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_lazy(cls, id: str, lazy: bool) -&gt; None:
+        Splitter.__splitters[resolve_id(id)].lazy = lazy
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_panels(cls, id: str, panels: list[SplitterPanel]) -&gt; None:
+        Splitter.__splitters[resolve_id(id)].panels = panels
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_design(cls, id: str, design: SplitterDesignTokens) -&gt; None:
+        Splitter.__splitters[resolve_id(id)].design = design
+        await send_data(resolve_id(id))
+
+    @classmethod
+    async def change_global_design(cls, id: str, globalDesign: SplitterGlobalTokens) -&gt; None:
+        Splitter.__splitters[resolve_id(id)].globalDesign = globalDesign
+        await send_data(resolve_id(id))
+
+    def dump(self) -&gt; dict:
+        &#34;&#34;&#34;Dump splitter data for serialization&#34;&#34;&#34;
+        data = {
+            &#34;shinyant_splitter&#34;: {
+                &#34;id&#34;: self.id,
+                &#34;layout&#34;: self.layout,
+                &#34;lazy&#34;: self.lazy,
+                &#34;panels&#34;: [panel.to_dict() for panel in self.panels],
+                &#34;design&#34;: asdict(self.design),
+                &#34;globalDesign&#34;: asdict(self.globalDesign),
+            }
+        }
+        return data</code></pre>
+</details>
+<div class="desc"><p>Main class, stores all splitters and provides an interface to access them</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="shinyant.splitter.Splitter.change_design"><code class="name flex">
+<span>async def <span class="ident">change_design</span></span>(<span>id: str,<br>design: <a title="shinyant.splitter.SplitterDesignTokens" href="#shinyant.splitter.SplitterDesignTokens">SplitterDesignTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.Splitter.change_global_design"><code class="name flex">
+<span>async def <span class="ident">change_global_design</span></span>(<span>id: str,<br>globalDesign: <a title="shinyant.splitter.SplitterGlobalTokens" href="#shinyant.splitter.SplitterGlobalTokens">SplitterGlobalTokens</a>) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.Splitter.change_layout"><code class="name flex">
+<span>async def <span class="ident">change_layout</span></span>(<span>id: str, layout: Literal['horizontal', 'vertical']) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.Splitter.change_lazy"><code class="name flex">
+<span>async def <span class="ident">change_lazy</span></span>(<span>id: str, lazy: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.Splitter.change_panels"><code class="name flex">
+<span>async def <span class="ident">change_panels</span></span>(<span>id: str,<br>panels: list[<a title="shinyant.splitter.SplitterPanel" href="#shinyant.splitter.SplitterPanel">SplitterPanel</a>]) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.Splitter.get_component"><code class="name flex">
+<span>def <span class="ident">get_component</span></span>(<span>id: str) ‑> <a title="shinyant.splitter.Splitter" href="#shinyant.splitter.Splitter">Splitter</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.splitter.Splitter.dump"><code class="name flex">
+<span>def <span class="ident">dump</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dump(self) -&gt; dict:
+    &#34;&#34;&#34;Dump splitter data for serialization&#34;&#34;&#34;
+    data = {
+        &#34;shinyant_splitter&#34;: {
+            &#34;id&#34;: self.id,
+            &#34;layout&#34;: self.layout,
+            &#34;lazy&#34;: self.lazy,
+            &#34;panels&#34;: [panel.to_dict() for panel in self.panels],
+            &#34;design&#34;: asdict(self.design),
+            &#34;globalDesign&#34;: asdict(self.globalDesign),
+        }
+    }
+    return data</code></pre>
+</details>
+<div class="desc"><p>Dump splitter data for serialization</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.splitter.SplitterDesignTokens"><code class="flex name class">
+<span>class <span class="ident">SplitterDesignTokens</span></span>
+<span>(</span><span>splitBarDraggableSize: int = 20,<br>splitBarSize: int = 2,<br>splitTriggerSize: int = 6)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class SplitterDesignTokens:
+    &#34;&#34;&#34;
+    Splitter Design class (Design Tokens from react ant.design for splitter)
+
+    Attributes:
+        splitBarDraggableSize (int): Drag and drop the identity element size. Defaults to 20
+        splitBarSize (int): Drag the element size. Defaults to 2
+        splitTriggerSize (int): Drag and drop trigger area size. Defaults to 6
+    &#34;&#34;&#34;
+
+    splitBarDraggableSize: int = 20
+    splitBarSize: int = 2
+    splitTriggerSize: int = 6</code></pre>
+</details>
+<div class="desc"><p>Splitter Design class (Design Tokens from react ant.design for splitter)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>splitBarDraggableSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Drag and drop the identity element size. Defaults to 20</dd>
+<dt><strong><code>splitBarSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Drag the element size. Defaults to 2</dd>
+<dt><strong><code>splitTriggerSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>Drag and drop trigger area size. Defaults to 6</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.splitter.SplitterDesignTokens.splitBarDraggableSize"><code class="name">var <span class="ident">splitBarDraggableSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterDesignTokens.splitBarSize"><code class="name">var <span class="ident">splitBarSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterDesignTokens.splitTriggerSize"><code class="name">var <span class="ident">splitTriggerSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens"><code class="flex name class">
+<span>class <span class="ident">SplitterGlobalTokens</span></span>
+<span>(</span><span>colorFill: str = 'rgba(0,0,0,0.15)',<br>colorPrimary: str = '#1677ff',<br>colorText: str = 'rgba(0,0,0,0.88)',<br>borderRadiusXS: int = 2,<br>controlHeightSM: int = 24,<br>controlItemBgActive: str = '#e6f4ff',<br>controlItemBgActiveHover: str = '#bae0ff',<br>controlItemBgHover: str = 'rgba(0,0,0,0.04)',<br>fontFamily: str = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",<br>fontSize: int = 14,<br>fontSizeSM: int = 12,<br>lineHeight: float = 1.5714285714285714,<br>zIndexPopupBase: int = 1000)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class SplitterGlobalTokens:
+    &#34;&#34;&#34;
+    Splitter Global Design class (Global Tokens from react ant.design)
+
+    Attributes:
+        colorFill (str): The darkest fill color is used to distinguish between the second and third level of fill color
+        colorPrimary (str): Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product
+        colorText (str): Default text color which comply with W3C standards
+        borderRadiusXS (int): XS size border radius
+        controlHeightSM (int): SM component height
+        controlItemBgActive (str): Control the background color of control component item when active
+        controlItemBgActiveHover (str): Control the background color of control component item when hovering and active
+        controlItemBgHover (str): Control the background color of control component item when hovering
+        fontFamily (str): The font family of Ant Design prioritizes the default interface font of the system
+        fontSize (int): The most widely used font size in the design system
+        fontSizeSM (int): Small font size
+        lineHeight (float): Line height of text
+        zIndexPopupBase (int): Base zIndex of component like FloatButton, Affix which can be cover by large popup
+    &#34;&#34;&#34;
+
+    colorFill: str = constants.GlobalToken.colorFill
+    colorPrimary: str = constants.GlobalToken.colorPrimary
+    colorText: str = constants.GlobalToken.colorText
+    borderRadiusXS: int = constants.GlobalToken.borderRadiusXS
+    controlHeightSM: int = constants.GlobalToken.controlHeightSM
+    controlItemBgActive: str = constants.GlobalToken.controlItemBgActive
+    controlItemBgActiveHover: str = constants.GlobalToken.controlItemBgActiveHover
+    controlItemBgHover: str = constants.GlobalToken.controlItemBgHover
+    fontFamily: str = constants.GlobalToken.fontFamily
+    fontSize: int = constants.GlobalToken.fontSize
+    fontSizeSM: int = constants.GlobalToken.fontSizeSM
+    lineHeight: float = constants.GlobalToken.lineHeight
+    zIndexPopupBase: int = constants.GlobalToken.zIndexPopupBase</code></pre>
+</details>
+<div class="desc"><p>Splitter Global Design class (Global Tokens from react ant.design)</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>colorFill</code></strong> :&ensp;<code>str</code></dt>
+<dd>The darkest fill color is used to distinguish between the second and third level of fill color</dd>
+<dt><strong><code>colorPrimary</code></strong> :&ensp;<code>str</code></dt>
+<dd>Brand color is one of the most direct visual elements to reflect the characteristics and communication of the product</dd>
+<dt><strong><code>colorText</code></strong> :&ensp;<code>str</code></dt>
+<dd>Default text color which comply with W3C standards</dd>
+<dt><strong><code>borderRadiusXS</code></strong> :&ensp;<code>int</code></dt>
+<dd>XS size border radius</dd>
+<dt><strong><code>controlHeightSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>SM component height</dd>
+<dt><strong><code>controlItemBgActive</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when active</dd>
+<dt><strong><code>controlItemBgActiveHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when hovering and active</dd>
+<dt><strong><code>controlItemBgHover</code></strong> :&ensp;<code>str</code></dt>
+<dd>Control the background color of control component item when hovering</dd>
+<dt><strong><code>fontFamily</code></strong> :&ensp;<code>str</code></dt>
+<dd>The font family of Ant Design prioritizes the default interface font of the system</dd>
+<dt><strong><code>fontSize</code></strong> :&ensp;<code>int</code></dt>
+<dd>The most widely used font size in the design system</dd>
+<dt><strong><code>fontSizeSM</code></strong> :&ensp;<code>int</code></dt>
+<dd>Small font size</dd>
+<dt><strong><code>lineHeight</code></strong> :&ensp;<code>float</code></dt>
+<dd>Line height of text</dd>
+<dt><strong><code>zIndexPopupBase</code></strong> :&ensp;<code>int</code></dt>
+<dd>Base zIndex of component like FloatButton, Affix which can be cover by large popup</dd>
+</dl></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="shinyant.splitter.SplitterGlobalTokens.borderRadiusXS"><code class="name">var <span class="ident">borderRadiusXS</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.colorFill"><code class="name">var <span class="ident">colorFill</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.colorPrimary"><code class="name">var <span class="ident">colorPrimary</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.colorText"><code class="name">var <span class="ident">colorText</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.controlHeightSM"><code class="name">var <span class="ident">controlHeightSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.controlItemBgActive"><code class="name">var <span class="ident">controlItemBgActive</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.controlItemBgActiveHover"><code class="name">var <span class="ident">controlItemBgActiveHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.controlItemBgHover"><code class="name">var <span class="ident">controlItemBgHover</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.fontFamily"><code class="name">var <span class="ident">fontFamily</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.fontSize"><code class="name">var <span class="ident">fontSize</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.fontSizeSM"><code class="name">var <span class="ident">fontSizeSM</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.lineHeight"><code class="name">var <span class="ident">lineHeight</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="shinyant.splitter.SplitterGlobalTokens.zIndexPopupBase"><code class="name">var <span class="ident">zIndexPopupBase</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="shinyant.splitter.SplitterPanel"><code class="flex name class">
+<span>class <span class="ident">SplitterPanel</span></span>
+<span>(</span><span>defaultSize: int | str | None = None,<br>min: int | None = None,<br>max: int | None = None,<br>size: int | None = None,<br>collapsible: bool | dict = False,<br>resizable: bool = True,<br>children: list[htmltools._core.Tag | object] | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SplitterPanel:
+    &#34;&#34;&#34;
+    Splitter Panel class, represents a panel in the Splitter component
+
+    Attributes:
+        defaultSize (int | str | None): Initial panel size support number for px or &#39;percent%&#39; usage
+        min (int | None): Minimum threshold in pixels
+        max (int | None): Maximum threshold in pixels
+        size (int | None): Controlled panel size in pixels
+        collapsible (bool | dict): Quick folding
+        resizable (bool): Whether to enable drag and drop
+        children (list): Child elements to render in the panel
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        defaultSize: int | str | None = None,
+        min: int | None = None,
+        max: int | None = None,
+        size: int | None = None,
+        collapsible: bool | dict = False,
+        resizable: bool = True,
+        children: list[Tag | object] | None = None,
+    ):
+        self.defaultSize = defaultSize
+        self.min = min
+        self.max = max
+        self.size = size
+        self.collapsible = collapsible
+        self.resizable = resizable
+        self.children = children or []
+
+    def to_dict(self) -&gt; dict[str, Any]:
+        &#34;&#34;&#34;
+        Builds a dictionary representation of the panel
+        &#34;&#34;&#34;
+        panel_data = {
+            &#34;defaultSize&#34;: self.defaultSize,
+            &#34;min&#34;: self.min,
+            &#34;max&#34;: self.max,
+            &#34;size&#34;: self.size,
+            &#34;collapsible&#34;: self.collapsible,
+            &#34;resizable&#34;: self.resizable,
+        }
+
+        if self.children:
+            panel_data[&#34;children&#34;] = self.children
+
+        return panel_data</code></pre>
+</details>
+<div class="desc"><p>Splitter Panel class, represents a panel in the Splitter component</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>defaultSize</code></strong> :&ensp;<code>int | str | None</code></dt>
+<dd>Initial panel size support number for px or 'percent%' usage</dd>
+<dt><strong><code>min</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Minimum threshold in pixels</dd>
+<dt><strong><code>max</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Maximum threshold in pixels</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int | None</code></dt>
+<dd>Controlled panel size in pixels</dd>
+<dt><strong><code>collapsible</code></strong> :&ensp;<code>bool | dict</code></dt>
+<dd>Quick folding</dd>
+<dt><strong><code>resizable</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to enable drag and drop</dd>
+<dt><strong><code>children</code></strong> :&ensp;<code>list</code></dt>
+<dd>Child elements to render in the panel</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="shinyant.splitter.SplitterPanel.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict[str, typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict[str, Any]:
+    &#34;&#34;&#34;
+    Builds a dictionary representation of the panel
+    &#34;&#34;&#34;
+    panel_data = {
+        &#34;defaultSize&#34;: self.defaultSize,
+        &#34;min&#34;: self.min,
+        &#34;max&#34;: self.max,
+        &#34;size&#34;: self.size,
+        &#34;collapsible&#34;: self.collapsible,
+        &#34;resizable&#34;: self.resizable,
+    }
+
+    if self.children:
+        panel_data[&#34;children&#34;] = self.children
+
+    return panel_data</code></pre>
+</details>
+<div class="desc"><p>Builds a dictionary representation of the panel</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="shinyant" href="index.html">shinyant</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="shinyant.splitter.splitter" href="#shinyant.splitter.splitter">splitter</a></code></li>
+<li><code><a title="shinyant.splitter.splitter_panel" href="#shinyant.splitter.splitter_panel">splitter_panel</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="shinyant.splitter.Splitter" href="#shinyant.splitter.Splitter">Splitter</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.splitter.Splitter.change_design" href="#shinyant.splitter.Splitter.change_design">change_design</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.change_global_design" href="#shinyant.splitter.Splitter.change_global_design">change_global_design</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.change_layout" href="#shinyant.splitter.Splitter.change_layout">change_layout</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.change_lazy" href="#shinyant.splitter.Splitter.change_lazy">change_lazy</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.change_panels" href="#shinyant.splitter.Splitter.change_panels">change_panels</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.dump" href="#shinyant.splitter.Splitter.dump">dump</a></code></li>
+<li><code><a title="shinyant.splitter.Splitter.get_component" href="#shinyant.splitter.Splitter.get_component">get_component</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.splitter.SplitterDesignTokens" href="#shinyant.splitter.SplitterDesignTokens">SplitterDesignTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.splitter.SplitterDesignTokens.splitBarDraggableSize" href="#shinyant.splitter.SplitterDesignTokens.splitBarDraggableSize">splitBarDraggableSize</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterDesignTokens.splitBarSize" href="#shinyant.splitter.SplitterDesignTokens.splitBarSize">splitBarSize</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterDesignTokens.splitTriggerSize" href="#shinyant.splitter.SplitterDesignTokens.splitTriggerSize">splitTriggerSize</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.splitter.SplitterGlobalTokens" href="#shinyant.splitter.SplitterGlobalTokens">SplitterGlobalTokens</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.borderRadiusXS" href="#shinyant.splitter.SplitterGlobalTokens.borderRadiusXS">borderRadiusXS</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.colorFill" href="#shinyant.splitter.SplitterGlobalTokens.colorFill">colorFill</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.colorPrimary" href="#shinyant.splitter.SplitterGlobalTokens.colorPrimary">colorPrimary</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.colorText" href="#shinyant.splitter.SplitterGlobalTokens.colorText">colorText</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.controlHeightSM" href="#shinyant.splitter.SplitterGlobalTokens.controlHeightSM">controlHeightSM</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.controlItemBgActive" href="#shinyant.splitter.SplitterGlobalTokens.controlItemBgActive">controlItemBgActive</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.controlItemBgActiveHover" href="#shinyant.splitter.SplitterGlobalTokens.controlItemBgActiveHover">controlItemBgActiveHover</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.controlItemBgHover" href="#shinyant.splitter.SplitterGlobalTokens.controlItemBgHover">controlItemBgHover</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.fontFamily" href="#shinyant.splitter.SplitterGlobalTokens.fontFamily">fontFamily</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.fontSize" href="#shinyant.splitter.SplitterGlobalTokens.fontSize">fontSize</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.fontSizeSM" href="#shinyant.splitter.SplitterGlobalTokens.fontSizeSM">fontSizeSM</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.lineHeight" href="#shinyant.splitter.SplitterGlobalTokens.lineHeight">lineHeight</a></code></li>
+<li><code><a title="shinyant.splitter.SplitterGlobalTokens.zIndexPopupBase" href="#shinyant.splitter.SplitterGlobalTokens.zIndexPopupBase">zIndexPopupBase</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="shinyant.splitter.SplitterPanel" href="#shinyant.splitter.SplitterPanel">SplitterPanel</a></code></h4>
+<ul class="">
+<li><code><a title="shinyant.splitter.SplitterPanel.to_dict" href="#shinyant.splitter.SplitterPanel.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

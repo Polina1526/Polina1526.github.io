@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
 <title>shinyant.input API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="Input component module for shinyant UI library …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,6 +36,57 @@ el.replaceWith(d);
 <h1 class="title">Module <code>shinyant.input</code></h1>
 </header>
 <section id="section-intro">
+<p>Input component module for shinyant UI library.</p>
+<p>This module provides an Ant Design-inspired input component with various types,
+styles and configurations.</p>
+<p><strong>Key features include:</strong></p>
+<ul>
+<li>
+<p>Multiple input types (basic, password, textArea, search)</p>
+</li>
+<li>
+<p>Customizable design tokens for styling</p>
+</li>
+<li>
+<p>Support for addons, prefixes/suffixes</p>
+</li>
+<li>
+<p>Validation states (error, warning)</p>
+</li>
+<li>
+<p>Responsive sizing and variants</p>
+</li>
+<li>
+<p>Character counting functionality</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+<p>The component follows Ant Design specifications while adapting them for Python usage.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from shiny import App, reactive, render, ui
+
+import shinyant
+
+
+app_ui = ui.page_auto(
+    ui.p(&quot;Input example&quot;),
+    shinyant.nesting_wrap(shinyant.input(id=&quot;input&quot;, placeholder=&quot;Input text&quot;, allowClear=True)),
+    ui.p(&quot;Output shiny:&quot;),
+    ui.output_text(id=&quot;input_text&quot;),
+)
+
+
+def server(input, output, session):
+    @render.text
+    @reactive.event(input.input)
+    def input_text():
+        return input.input()
+
+
+app = App(app_ui, server)
+</code></pre>
 </section>
 <section>
 </section>
